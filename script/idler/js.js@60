@@ -1,0 +1,1227 @@
+function makeUnpredictableErrorAlert(text) // аналогичная функция make_error_message в common.php. их стоит менять параллельно
+{
+	intro = "Упс. Что-то пошло не так!";
+	outro = "Попробуйте позже или дайте нам знать об ошибке: в специальной форме в левом нижнему углу сайта или написав на";
+	alert(intro + ' ' + text + '\n' + outro + ' info@braingames.ru. Спасибо!');
+}
+
+function ChangeValue(element1, element2)
+{
+	document.getElementById(element2).value = document.getElementById(element1).value;
+}
+
+function AddFastAnswer(element1, element2)
+{
+	document.getElementById(element2).value = document.getElementById(element2).value + " " + document.getElementById(element1).value;
+}
+
+function areYouSure(message)
+{
+	return confirm(message);
+}
+
+function AddComment(id)
+{
+	if (document.getElementById(id).value == '')
+	{
+		alert('Невозможно добавить комментарий!\nПоле с текстом комментария пусто!');
+		return false;
+	}
+	//document.getElementById("Form" + id).submit();
+	return true;
+}
+
+function AddAnswer(id1, id2)
+{
+	var res = document.getElementById(id1).value != '' 
+				 || document.getElementById(id2).value != '';
+	if (!res)
+		alert('Невозможно отправить ответ!\nПоле с текстом ответа пусто!');
+	return res;
+}
+
+function ShowAddAnswerForm(id)
+{
+	var elem = document.getElementById(id);
+	elem.style.display = elem.style.display == 'none' ? '' : 'none';
+}
+
+function SendPm()
+{
+	var frm = document.getElementById("SendPmForm");
+	if (!frm)
+		return false;
+	
+	var errstr = "";
+	if (!frm.toUsersName.value)
+		errstr += "\n *  не указан получатель";
+	if (!frm.pmTitle.value)
+		errstr += "\n *  не указана тема сообщения";
+	if (!frm.pmText.value)
+		errstr += "\n *  не указан текст сообщения";
+	if (errstr)
+	{
+		alert("Невозможно отправить сообщение!\nОшибки:" + errstr);
+		return false;
+	}
+	//frm.submit();
+	return true;
+}
+
+/*
+function convtex1(str, p, offset, sinput)
+{
+	return '<img src="latex.php?latex='+p.replace(/\x25/g, '%25').replace(/\x2B/g, '%2B').replace(/\s/g, '+')+'" alt="'+p.replace(/\x2B/g, '%2B').replace(/\s/g, '+')+'" style="vertical-align:middle;">';
+}
+
+function convtex(s)
+{
+	return document.getElementById(s).value.
+		replace(/\</g,'&lt;').replace(/\>/g, '&gt;').
+		replace(/\$\$([^\$]*)\$\$/g, convtex1).
+		replace(/\r\n|\r|\n/g, '<br>').
+		replace(/\[b\](.*?)\[\/b\]/g, '<b>$1</b>').
+		replace(/\[i\](.*?)\[\/i\]/g, '<i>$1</i>').
+		replace(/\[code\](.*?)\[\/code\]/g, '<pre>$1</pre>').
+		replace(/\[\/quote\]/g, '</div></div>').
+		replace(/\[quote'|\[quote\\\\?'|\[quote&#039;/g, '<div class=quoteDiv><div class=quoteDiv1>').
+		replace(/']|\\\\?']|&#039;]/g, '</div><div class=quoteDiv2>');
+}
+*/
+
+function quote_to_html(text)
+{
+	return text.replace(/&#039;/g, "'")
+		.replace(/\[\/quote\]/g, '</div></div>')
+		.replace(/\[quote\s*?(\\?'([^']*?)\\?')?\]/g, function (str, _t, title, offset, s) {
+			return '<div class="quoteDiv"><div class="quoteDiv1">' + (title ? title : '') + '</div><div class="quoteDiv2">';
+		});
+}
+
+function spoiler_to_html(text)
+{
+	return text.replace(/\[spoiler(\s*=\s*"([^"]*?)")?\s*\]/gi, function (str, title_part, title, offset, s) {
+			return '<div class="spoiler"><div class="spoiler-head">' + (title ? title : "Свернуть / Развернуть") + '</div><div class="spoiler-body" style="display: none;">';
+		}).replace(/\[\/spoiler\]/gi, '</div></div>');
+}
+
+$(document).ready(function() {
+	$(".spoiler-head").live('click', function() { $(this).next().toggle(250); })
+	$(".spoilersupport").each(function() {
+		var item = $(this);
+		item.html(spoiler_to_html(item.html()));
+	});
+});
+
+function make_preview(src_id, dst_id)
+{
+	var text = $("#" + src_id).val().
+		replace(/\</g,'&lt;').replace(/\>/g, '&gt;').
+		replace(/\r\n|\r|\n/g, '<br>').
+		replace(/\[b\](.*?)\[\/b\]/g, '<b>$1</b>').
+		replace(/\[i\](.*?)\[\/i\]/g, '<i>$1</i>').
+		replace(/\[code\](.*?)\[\/code\]/g, '<pre>$1</pre>');
+
+	text = spoiler_to_html(text);
+	text = quote_to_html(text);
+	
+	var dst = $("#" + dst_id);
+	dst.html(text);
+		dst.get(0).style.display = '';
+	MathJax.Hub.Queue(["Typeset", MathJax.Hub, dst_id]);
+}
+
+function latexed()
+{
+	window.open('script/idler/LaTexEd.html', 'wlatexed', 'width=600, height=500, toolbar=no, location=no, directories=no, menubar=no, resizable=yes, fullscreen=no');
+}
+
+//@omican голосование за интересность задачи
+function vote_apply(puzzleId, vote)
+{
+	$('#ajax_' + puzzleId).remove('');
+	$('#vote_links_' + puzzleId).prepend('<img style="margin-right:3px;" height="11" title="выполняется запрос..." id="ajax_' + puzzleId + '" src="/img/common/ajax-loader-small.gif" />'); 
+	
+	$.post('/ajax/vote.php', {puzzleId:puzzleId, vote:vote}, 
+		function(data)
+		{
+			if (data == 1)
+			{
+				//ответ сервера: принят положительный голос
+				$('#vote_good_' + puzzleId).css('font-weight', 'bold'); 
+				$('#vote_good_' + puzzleId).attr('title', 'отменить голос');
+				$('#vote_bad_' + puzzleId).css('font-weight', 'normal'); 
+				$('#vote_bad_' + puzzleId).attr('title', 'задача мне не понравилась');
+				$('#ajax_' + puzzleId).attr('src', '/img/common/ajax-check-small.png');
+				$('#ajax_' + puzzleId).attr('title', 'голос принят');
+			}
+			else if (data == 0)
+			{
+				//ответ сервера: принят отрицательный голос
+				$('#vote_bad_' + puzzleId).css('font-weight', 'bold'); 
+				$('#vote_bad_' + puzzleId).attr('title', 'отменить голос');
+				$('#vote_good_' + puzzleId).css('font-weight', 'normal'); 
+				$('#vote_good_' + puzzleId).attr('title', 'задача мне понравилась');
+				$('#ajax_' + puzzleId).attr('src', '/img/common/ajax-check-small.png');
+				$('#ajax_' + puzzleId).attr('title', 'голос принят');
+			}
+			else if (data == -1)
+			{
+				//ответ сервера: голос удален
+				$('#vote_bad_' + puzzleId).css('font-weight', 'normal'); 
+				$('#vote_bad_' + puzzleId).attr('title', 'задача мне не понравилась');
+				$('#vote_good_' + puzzleId).css('font-weight', 'normal'); 
+				$('#vote_good_' + puzzleId).attr('title', 'задача мне понравилась');
+				$('#ajax_' + puzzleId).attr('src', '/img/common/ajax-check-small.png');
+				$('#ajax_' + puzzleId).attr('title', 'голос удален');
+			}
+			else
+			{
+				//отображаем полученную ошибку
+				$('#ajax_' + puzzleId).attr('src', '/img/common/ajax-cross-small.png');
+				$('#ajax_' + puzzleId).attr('title', 'ошибка при выполнении запроса');
+				alert('Ошибка при выполнении запроса: ' + data);
+			}
+		}
+	);
+}
+
+//@omican установка настройки профиля или другого флажка
+function setTool(tool, flag, userId = 0, flagId = 0, isSingular = 1)
+{
+	// если userId = 0, то ajax/tool.php будет использовать айди логин-юзера
+	
+	$('#tool' + tool).attr('disabled', 'disabled');
+	$('#tool' + tool + '_td').html('<img style="margin-right:3px;" height="11" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />')
+	
+	$.post('/ajax/tool.php', {tool:tool, flag:flag, userId:userId, flagId:flagId, isSingular:isSingular}, 
+		function(data)
+		{
+			if (data == 1 || data == 0)
+			{
+				$('#tool' + tool).attr('disabled', '');
+				$('#tool' + tool + '_td').html('<img style="margin-right:3px;" height="11" title="настройка сохранена" src="/img/common/ajax-check-small.png" />');
+			}
+			else
+			{
+				//отображаем полученную ошибку
+				$('#tool' + tool).attr('disabled', '');
+				$('#tool' + tool + '_td').html('<img style="margin-right:3px;" height="11" title="ошибка при выполнении запроса" src="/img/common/ajax-cross-small.png" />');
+				alert('Ошибка при выполнении запроса: ' + data);
+			}
+		}
+	);
+}
+
+//@omican обработка нажатия кнопки "проверьте немедленно"
+function checkMePlease(puzzleId, whoTalk)
+{
+	//@alan формируем prompt
+	var minamount = 0.1;
+	if (whoTalk)
+		minamount = 0.5;
+		
+	var textIf = '';
+	if (whoTalk)
+		textIf = ': 1) вашему модератору будет отправлено письмо-напоминание; 2) ваш ответ будет освобожден для проверки всеми модераторами; 3)';
+		
+	var text = 'Вы хотите воспользоваться платной услугой ускорения проверки ответа. \n\n По нажатию кнопки «Ок»' + textIf + ' ответ будет выделен в списке ответов и проверяющим будет предложено денежное поощрение (подробнее см. «?» справа от кнопки).\n\n Какую сумму вы бы хотели предложить за проверку вашего ответа? \nМинимальная сумма ' + minamount + ' Мозгобакса.';
+
+	var amount = prompt(text, minamount);
+	if (amount == null)
+		return false;
+	
+	amount = amount.replace(',','.');
+	amount = parseFloat(amount);
+		
+	//@alan обрабатываем запрос
+	$('#ajax' + puzzleId).remove();
+	$('#checkMe' + puzzleId).attr('disabled', 'disabled');
+	$('#checkMe' + puzzleId + '_td').prepend('<img style="margin-right:3px;" id="ajax' + puzzleId + '" height="11" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />')
+
+	$.post('/ajax/checkme.php', {'puzzleId':puzzleId, 'amount':amount},
+		function(data)
+		{
+			if (data == 1)
+			{
+				$('#checkMe' + puzzleId + '_td').html('<img style="margin-right:3px;" height="11" title="настройка сохранена" src="/img/common/ajax-check-small.png" />&nbsp; Выполнено!');
+				window.location.reload();
+			}
+			else
+			{
+				$('#ajax' + puzzleId).remove();
+				$('#checkMe' + puzzleId).attr('disabled', '');
+				$('#checkMe' + puzzleId + '_td').prepend('<img style="margin-right:3px;" height="11" title="ошибка при выполнении запроса" src="/img/common/ajax-cross-small.png" />');
+				if (data == 2)
+					alert('Ошибка: некорректная сумма! Сумма меньше разрешенного минимума или введена с ошибками. Вводите сумму цифрами, пользуясь точкой в качестве десятичного разделителя.');
+				else if (data.includes('пополните баланс'))
+					showAppendMoneyForm(data);
+				else
+					alert('Ошибка при выполнении запроса: ' + data);
+			}
+		}
+	);
+}
+
+//@Sna1L загрузка статистики задачи
+function showPuzzleStat(puzzleId)
+{
+	var element = document.getElementById('puzzleStatBox_' + puzzleId);
+	if (element.style.display == 'none') {
+		$('#puzzleStatBox_' + puzzleId).html('<br><img height="20" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" /><br>');
+		$('#puzzleStatBox_' + puzzleId).load('/ajax/getPuzzleStat.php?puzzleId=' + puzzleId);
+		element.style.display = '';
+	}
+	else
+	{
+		element.style.display = 'none';
+	}
+}
+
+//@alan обновление статистики задачи
+function updatePuzzleStat(puzzleId)
+{
+	$('#puzzleStatBox_' + puzzleId).load('/ajax/updatePuzzleStat.php?puzzleId=' + puzzleId);
+}
+
+//@alan покупка доступа к фичам, связанным с задачей
+function buyPuzzleAccess(htmlId, type, puzzleId = 0)
+{
+	$(htmlId).html('<br><img height="20" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" /><br>');
+
+	// if (type == 'puzzle')
+	// {
+	// 	var text = "Вы можете поблагодарить модератора " + moderName + " за проверку, пожертвовав ему часть ваших Мозгобаксов, которые он позже сможет обналичить.\n\nПо нажатию кнопки «Ок» ваши Мозгобаксы перейдут модератору. Коммисия сайта за операцию: 10%.\n\nКакую бы сумму вы хотели пожертвовать?\nМинимальная сумма: " + minamount + " Мозгобакс.";
+	// 	var puzzleIndex = prompt(text, 1);
+	// 	if (puzzleIndex < 1 || 10 < puzzleIndex)
+	// 	{
+	// 		alert('Некорректно введен номер задачи');
+	// 		return false;
+	// 	}
+	// 	if (!confirm ('Вы хотите задачу ' + puzzleIndex))
+	// 	return false;
+	// }
+
+	var params = { object: 'Puzzle', method: 'BuyPuzzleAccess', type: type, puzzleId: puzzleId };
+	$.post('/ajax/execute.php', {'params': JSON.stringify(params)},
+		function(data)
+		{
+			if (data.includes('ok'))
+			{ // все ок, обновляем страницу
+				if (type != 'puzzle' && type != 'puzzleSelected')
+				{
+					location.href = location.href + '&reload=1' + htmlId; // @alan: &reload=1 ничего не делает, но без него страница не обновляется почему-то, просто перемещается к хеш тагу
+				}
+				else
+				{
+					var split = data.split('ok');
+					window.alert('Вы получили доступ к задаче "' + split[2] + '".\nПриятного решения!');
+					location.href = '/?path=comments&puzzle=' + split[1] + '&drafts=1';
+				}
+			}
+			else if (data.includes('пополните баланс'))
+			{ // мало денег на счету
+				showAppendMoneyForm(data);
+			}
+			else
+			{ // непредсказуемая ошибка
+				makeUnpredictableErrorAlert(data);
+			}
+		});
+}
+
+//@alan запрет модератору проверять задачи юзера
+function buyModerToBlacklist(moderId, moderName, payment)
+{
+	var ok = confirm("Если вам сильно не хочется чтобы модератор " + moderName + " проверял ваши ответы, вы можете воспользоваться данной услугой.\nОднако, просим вас применять её только в исключительных ситуациях, когда не удалось разрешить вопрос посредством личного разговора с модератором, или с помощью раздела \"Рассудите, кто прав\" на форуме.\n\nПо нажатию кнопки «Ок» модератор " + moderName + " сбросится с проверки всех ваших ответов, и у него не будет возможности взять на проверку все ваши будущие ответы, а с вас спишется плата за услугу: " + payment + " Мозгобаксов.");
+
+	if (!ok) return false;
+
+	var params = { object: 'Users', method: 'BuyModerToBlacklist', moderId: moderId };
+	$.post('/ajax/execute.php', {'params': JSON.stringify(params)},
+		function(data)
+		{
+			if (data == 'ok')
+			{ // все ок, сообщаем пользователю и заканчиваем
+				alert("Модератор " + moderName + " теперь не сможет проверять ваши ответы.\nВаши незачтенные обсуждения, которые он вел (если таковые были) освобождены для проверки другими модераторами.\n\nВНИМАНИЕ! Все обсуждения, где последний ответ принадлежит модератору считаются проверенными. Поэтому, если в каком-либо из вышеупомянутых обсуждений ваш ответ не последний, но вы хотите чтобы ответ перепроверил другой модератор, вам нужно отправить новое сообщение в это обсуждение.");
+				location.href = location.href;
+			}
+			else if (data.includes('пополните баланс'))
+			{ // мало денег на счету
+				showAppendMoneyForm(data);
+			}
+			else
+			{ // непредсказуемая ошибка
+				makeUnpredictableErrorAlert(data);
+			}
+		});
+}
+
+//@alan покупка номерного сертификата
+function buyCertificate(htmlId)
+{
+	$(htmlId).html('<br><img height="20" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" /><br>');
+
+	var params = { object: 'Users', method: 'BuyCertificate' };
+	$.post('/ajax/execute.php', {'params': JSON.stringify(params)},
+		function(data)
+		{
+			if (data.includes('ok'))
+			{ // все ок - показываем сертификат
+				var split = data.split('ok');
+				var certNumber = split[1];
+				location.href = '/?path=certificates&cnumber=' + certNumber;
+			}
+			else if (data.includes('пополните баланс'))
+			{ // мало денег на счету
+				showAppendMoneyForm(data);
+			}
+			else
+			{ // непредсказуемая ошибка
+				makeUnpredictableErrorAlert(data);
+			}
+		});
+}
+
+//@alan донатим модератору
+function thankYouModer(moderId, moderName, puzzleId = 0, puzzleTitle = '')
+{
+	var minamount = 0.1;
+	var text = "Вы можете поблагодарить модератора " + moderName + " за проверку, пожертвовав ему часть ваших Мозгобаксов, которые он позже сможет обналичить.\n\nПо нажатию кнопки «Ок» ваши Мозгобаксы перейдут модератору. Коммисия сайта за операцию: 10%.\n\nКакую бы сумму вы хотели пожертвовать?\nМинимальная сумма: " + minamount + " Мозгобакс.";
+	var amount = prompt(text, minamount);
+	if (amount == null)
+		return false;
+		
+	amount = amount.replace(',','.');
+	amount = parseFloat(amount);
+	if (amount < minamount) 
+	{
+		alert('Ошибка: некорректная сумма! Сумма меньше разрешенного минимума или введена с ошибками. Вводите сумму цифрами, пользуясь точкой в качестве десятичного разделителя.');
+		return false;
+	}
+
+	var params = { object: 'Users', method: 'ThankYouModer', moderId: moderId, payment: amount, puzzleId: puzzleId, puzzleTitle: puzzleTitle };
+	$.post('/ajax/execute.php', {'params': JSON.stringify(params)},
+		function(data)
+		{
+			if (data == 'ok')
+			{ // все ок, сообщаем пользователю и заканчиваем
+				alert("Спасибо! Модератор " + moderName + " получил " + (amount*0.9).toFixed(4) + " Мозгобаксов. Приятного решения задач!");
+			}
+			else if (data.includes('пополните баланс'))
+			{ // мало денег на счету
+				showAppendMoneyForm(data);
+			}
+			else
+			{ // непредсказуемая ошибка
+				makeUnpredictableErrorAlert(data);
+			}
+		});
+}
+
+//@alan донатим задаче
+function thankYouPuzzle(puzzleId, puzzleTitle)
+{
+	var minamount = 0.05;
+	var text = "Если вам понравилась задача \"" + puzzleTitle + "\", вы можете поднять \"Престиж задачи\" и поблагодарить нас за проделанную над ней работу, пожертвовав часть ваших Мозгобаксов в фонд сайта.\n\nПо нажатию кнопки «Ок» Мозгобаксы перейдут с вашего счета на счет задачи \"" + puzzleTitle + "\", тем самым подняв ее в списке \"Самые престижные\", топовые задачи из которого попадают на главную страницу сайта.\nВсе деньги, которые вы кладете на счет и переводите в Мозгобаксы идут на развитие сайта и помогают нам добавлять на сайт новые качественные задачи, и показывать \"Игры Разума\" и интелектуальные удовольствия большему числу людей! Спасибо вам большое!\n\nКакую бы сумму вы хотели пожертвовать?\nМинимальная сумма: " + minamount + " Мозгобаксов."
+	var amount = prompt(text, minamount);
+	if (amount == null)
+		return false;
+		
+	amount = amount.replace(',','.');
+	amount = parseFloat(amount);
+	if (amount < minamount) 
+	{
+		alert('Ошибка: некорректная сумма! Сумма меньше разрешенного минимума или введена с ошибками. Вводите сумму цифрами, пользуясь точкой в качестве десятичного разделителя.');
+		return false;
+	}
+
+	var params = { object: 'Puzzle', method: 'ThankYouPuzzle', puzzleId: puzzleId, payment: amount };
+	$.post('/ajax/execute.php', {'params': JSON.stringify(params)},
+		function(data)
+		{
+			if (data == 'ok')
+			{ // все ок, сообщаем пользователю и заканчиваем
+				alert("Спасибо! Престиж задачи \"" + puzzleTitle + "\" был поднят на " + amount + " Мозгобаксов.");
+				location.href = location.href + '&reload=1#CONTENT_Id';
+			}
+			else if (data.includes('пополните баланс'))
+			{ // мало денег на счету
+				showAppendMoneyForm(data);
+			}
+			else
+			{ // непредсказуемая ошибка
+				makeUnpredictableErrorAlert(data);
+			}
+		});
+}
+
+//@omican получение комментариев
+function getComments(puzzleId, type, page, refreshPager, scrollTo, commentsId, doQuote)
+{
+	//обновлять ли пагинатор (нужно при смене страницы)
+	if (typeof refreshPager == "undefined")
+		refreshPager = true;
+	//id элемента, к которому скроллить окно
+	if (typeof scrollTo == "undefined")
+		scrollTo = 'faq';
+	//id коммента, который надо найти и отобразить в ряду других
+	if (typeof commentsId == "undefined")
+		commentsId = 0;
+	//включать ли цитирование выбранного коммента
+	if (typeof doQuote == "undefined")
+		doQuote = false;
+
+	$('#commentsAjax1').html('<img style="margin-left:3px;" id="commentsAjaxImg" height="11" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />')
+	$('#commentsAjax2').html('<img style="margin-left:3px;" id="commentsAjaxImg" height="11" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />')
+
+	//запрос
+	$.post('/ajax/comments.php', {puzzleId:puzzleId, type:type, page:page, commentsId:commentsId}, 
+		function(data)
+		{
+			if (!isNaN(parseInt(data.charAt(0)))) //код ошибки в ответе
+			{
+				if (data == '1')
+				{
+					//удаление старых строк таблицы комментов
+					var startDelete=false;
+					$('#commentsTable > tbody > tr').each(function()
+						{
+							//конец удаления
+							if ($(this).attr('id') == 'commentsFooter')
+								return false;
+							//начало удаления
+							if ($(this).attr('id') == 'commentsHeader')
+								startDelete = true;
+							if (startDelete && $(this).attr('id') != 'commentsHeader')
+								$(this).remove();
+						});
+				}
+				else
+				{
+					document.getElementById("commentsTable").innerHTML = '<tr align="center" style="background-color: #FFFFFF;"><td><br>' + data.replace(/[0-9]/g, '') + '<br><br></td></tr>';
+					//alert('Ошибка при отправке запроса: \n\r' + data);
+				}
+			}
+			else
+			{
+				//удаление старых строк таблицы комментов
+				var startDelete=false;
+				$('#commentsTable > tbody > tr').each(function()
+					{
+						//конец удаления
+						if ($(this).attr('id') == 'commentsFooter')
+							return false;
+						//начало удаления
+						if ($(this).attr('id') == 'commentsHeader')
+							startDelete = true;
+						if (startDelete && $(this).attr('id') != 'commentsHeader')
+							$(this).remove();
+					});
+				//вывод полученных комментов
+				$('#commentsHeader').after(data); 
+				//обновление пагинатора
+				if (refreshPager)
+				{
+					$('#pagerTop > a').each(function()
+						{
+							if ($(this).html() == commentsPageCurrent)
+							{
+								$(this).removeClass('rating');
+								$(this).addClass('ratingDisabled');
+							}
+							else
+							{
+								$(this).removeClass('ratingDisabled');
+								$(this).addClass('rating');
+							}
+						});
+					$('#pagerBottom > a').each(function()
+						{
+							if ($(this).html() == commentsPageCurrent)
+							{
+								$(this).removeClass('rating');
+								$(this).addClass('ratingDisabled');
+							}
+							else
+							{
+								$(this).removeClass('ratingDisabled');
+								$(this).addClass('rating');
+							}
+						});
+				}
+				//скролл окна
+				if (scrollTo != 'none' && (!disableScroll || commentsId>0 && !doQuote))
+				{
+					var toScroll = $('#' + scrollTo).offset().top - $(window).scrollTop(); 
+					$('html,body').animate({scrollTop: '+=' + toScroll + 'px'}, 400);
+				}
+			}
+			
+			if(doQuote)
+				addQuote(commentsId);
+			
+			$('#commentsAjax1').html('&nbsp;');
+			$('#commentsAjax2').html('&nbsp;');
+		}
+	);
+}
+
+//отправка запроса на добавление/удаление/редактирование коммента
+function sendComment(puzzleId, type, commentId)
+{
+	if (typeof commentId == "undefined")
+		commentId = 0;
+	var text = $.trim($('textarea#addCommentText').val());
+	if (type != 'del' && type != 'del2' && type != 'del2M' && !text)
+	{
+		alert('Введите текст комментария!');
+		return false;
+	}
+	if (type == 'del' || type == 'del2' || type == 'del2M')
+	{
+		$('#delComment' + commentId + '_td').html('<img style="margin-right:3px;" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />' + $('#delComment' + commentId + '_td').html());
+	}
+	else
+	{
+		$('textarea#addCommentText').attr("disabled", "disabled");
+		$('input#addComment').attr("disabled", "disabled");
+		$('#addComment_td').html('<img style="margin-right:3px;" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />');
+	}
+	
+	//запрос
+	$.post('/ajax/comment.php', {puzzleId:puzzleId, text:text, type:type, commentId:commentId}, 
+		function(data)
+		{
+			$('#addComment_td').html('<img style="margin-right:3px;" title="запрос выполнен" src="/img/common/ajax-check-small.png" />')
+			if (parseInt(data.charAt(0)) == 0) //успех
+			{
+				if (type == 'del' || type == 'del2' || type == 'del2M')
+				{
+					$('#addComment_td').html('<img style="margin-right:3px;" title="Комментарий удален" src="/img/common/ajax-check-small.png" />');
+					$('tr#comment' + commentId).remove();
+					//обновление пагинатора
+					if (commentsTypeCurrent != 'all') // возможно нужна проверка и на all2 и all2M? (c) alan
+					{
+						commentsTotal -= 1;
+						if (type == 'del')
+							$('span#countComments1').html(commentsTotal);
+						else if (type == 'del2')
+							$('span#countComments2').html(commentsTotal);
+						else//if (type == 'del2M')
+							$('span#countComments2M').html(commentsTotal);
+						if (commentsTotal % commentsPerPage == 0)
+						{
+							var pageMaxOld = commentsTotal / commentsPerPage + 1;
+							$('a#pagerTop' + pageMaxOld).remove();
+							$('a#pagerBottom' + pageMaxOld).remove();
+						}
+					}
+					//обновление списка комментов
+					getComments(commentsPuzzle, commentsTypeCurrent, commentsPageCurrent, true, 'none');
+				}
+				else if (commentId > 0)
+				{
+					$('#addComment_td').html('<img style="margin-right:3px;" title="Комментарий изменен" src="/img/common/ajax-check-small.png" />');
+					$('span#commentFormCaption').html('Добавление комментария:');
+					$('input#addComment').attr('src', 'images/idler/addcomment.gif');
+					$('input#addComment').attr('title', 'добавить комментарий');
+					$('input#addComment').attr('onClick', 'javascript: sendComment(commentsPuzzle,commentsTypeCurrent,0);');
+					$('textarea#addCommentText').val('');
+					if (commentsTypeCurrent == 'all')
+						$('tr#addComment_tr').hide();
+					//обновление списка комментов
+					getComments(commentsPuzzle, commentsTypeCurrent, commentsPageCurrent, true, 'comment' + commentId);
+				}
+				else
+				{
+					$('#addComment_td').html('<img style="margin-right:3px;" title="Комментарий добавлен" src="/img/common/ajax-check-small.png" />');
+					$('textarea#addCommentText').val('');
+					//обновление числа комментов
+					commentsTotal += 1;
+					if (type == 'comments')
+						$('span#countComments1').html(commentsTotal);
+					else if (type == 'comments2')
+						$('span#countComments2').html(commentsTotal);
+					else// if (type == 'comments2M')
+						$('span#countComments2M').html(commentsTotal);
+					//обновление пагинатора
+					var pageMax = Math.ceil(commentsTotal / commentsPerPage);
+					if (commentsTotal % commentsPerPage == 1)
+					{
+						$('td#pagerTop').html($('td#pagerTop').html() + '<a id="pagerTop' + pageMax + '" href="javascript: getComments(commentsPuzzle,commentsTypeCurrent,' + pageMax + ')" class="rating">' + pageMax + '</a>');
+						$('td#pagerBottom').html($('td#pagerBottom').html() + '<a id="pagerBottom' + pageMax + '" href="javascript: getComments(commentsPuzzle,commentsTypeCurrent,' + pageMax + ')" class="rating">' + pageMax + '</a>');
+					}
+					//обновление списка комментов
+					getComments(commentsPuzzle, commentsTypeCurrent, pageMax, true, 'comment' + parseInt(data.substring(1)));
+				}
+			}
+			else
+			{
+				alert('Ошибка при отправке запроса: \n\r' + data);
+			}
+			$('textarea#addCommentText').attr("disabled", "");
+			$('input#addComment').attr("disabled", "");
+		}
+	);
+}
+
+//замена всех вхождений подстроки в строке
+function replaceAll(txt, replace, with_this)
+{
+	return txt.replace(new RegExp(replace, 'g'), with_this);
+}
+
+//форматирование текста коммента для цитирования
+function divToQuote(txt)
+{
+		txt = replaceAll(txt, '<div class="quoteDiv"><div class="quoteDiv1">', '[quote\'');
+		txt = replaceAll(txt, '</div><div class="quoteDiv2">', '\']');
+		txt = replaceAll(txt, '</div></div>', '[/quote]');
+		return replaceAll(txt, '<br>', '');
+}
+
+//цитирование коммента
+function addQuote(commentId, usersName)
+{
+	var text = $('div#commentText' + commentId).html();
+	text = divToQuote(text);
+	text = htmlDecode(text);
+	text = '[quote\' ' + usersName + ' ' + $('span#commentDate' + commentId).html() + '\'] ' + text + '[/quote]';
+	$('textarea#addCommentText').val($('textarea#addCommentText').val() + text + '\n');
+	if (!disableScroll)
+	{
+		var toScroll = $('#addComment').offset().top - $(window).scrollTop() - 500;
+		$('html,body').animate({scrollTop: '+=' + toScroll + 'px'}, 400);
+	}
+	$('textarea#addCommentText').focus();
+}
+
+function htmlDecode(value)
+{
+	return $('<div/>').html(value).text();
+}
+
+//подготовка формы для редактирования коммента
+function editComment(commentId)
+{
+	var text = $('div#commentText' + commentId).html();
+	text = divToQuote(text);
+	text = htmlDecode(text);
+	$('textarea#addCommentText').val(text);
+	$('span#commentFormCaption').html('РЕДАКТИРОВАНИЕ комментария:');
+	$('input#addComment').attr('src', 'images/idler/edit.gif');
+	$('input#addComment').attr('title', 'изменить комментарий');
+	if (commentsTypeCurrent == 'all')
+		$('input#addComment').attr('onClick', 'javascript: sendComment(0,\'comments\',' + commentId + ');');
+	else if (commentsTypeCurrent == 'all2')
+		$('input#addComment').attr('onClick', 'javascript: sendComment(0,\'comments2\',' + commentId + ');');
+	else if (commentsTypeCurrent == 'all2M')
+		$('input#addComment').attr('onClick', 'javascript: sendComment(0,\'comments2M\',' + commentId + ');');
+	else
+		$('input#addComment').attr('onClick', 'javascript: sendComment(0,\'' + commentsTypeCurrent + '\',' + commentId + ');');
+
+	$('tr#addComment_tr').show();
+	if (!disableScroll)
+	{
+		var toScroll = $('#addComment').offset().top - $(window).scrollTop() - 500;
+		$('html,body').animate({scrollTop: '+=' + toScroll + 'px'}, 400);
+	}
+	$('textarea#addCommentText').focus();
+}
+
+//отправка запроса на добавление/редактирование категории
+function sendCategory(catId)
+{
+	var catName = $.trim($('input#catName_' + catId).val());
+	var catAliasName = $.trim($('input#catAliasName_' + catId).val());
+	var catDescription = $.trim($('textarea#catDescription_' + catId).val());
+	var catVisible = $('input#catVisible_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo0 = $('input#catVisibleTo0_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo1 = $('input#catVisibleTo1_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo2 = $('input#catVisibleTo2_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo3 = $('input#catVisibleTo3_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo4 = $('input#catVisibleTo4_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo5 = $('input#catVisibleTo5_' + catId).is(':checked') ? '1' : '0';
+	var catVisibleTo6 = $('input#catVisibleTo6_' + catId).is(':checked') ? '1' : '0';
+
+	if (catId == 0 && (!catName || !catAliasName))
+	{
+		alert('Введите имя и alias категории!');
+		return;
+	}
+	if (catId > 0 && !catAliasName)
+	{
+		if (!confirm('Вы уверены, что желаете удалить категорию "' + catName + '" (id: ' + catId + ')?'))
+			return;
+	}
+
+	$('span#ajax_' + catId).html('<img style="margin-left:3px;" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />');
+	$('input#button_' + catId).attr("disabled", "disabled");
+	$('input#catName_' + catId).attr("disabled", "disabled");
+	$('input#catAliasName_' + catId).attr("disabled", "disabled");
+	$('textarea#catDescription_' + catId).attr("disabled", "disabled");
+	$('input#catVisible_' + catId).attr("disabled", "disabled");
+	
+	for (var i = 0; i <= 6; i++)
+		$('input#catVisibleTo' + i + '_' + catId).attr("disabled", "disabled");
+
+	//данные о видимости отправляются единой строкой вида 10010111
+	var visibility = catVisible + catVisibleTo0 + catVisibleTo1 + catVisibleTo2 + catVisibleTo3 + catVisibleTo4 + catVisibleTo5 + catVisibleTo6;
+	
+	//запрос
+	$.post('/ajax/category.php', {catId:catId, catName:catName, catAliasName:catAliasName, catDescription:catDescription, visibility:visibility}, 
+		function(data)
+		{
+			if (parseInt(data.charAt(0)) == 0) //успех
+			{
+				$('span#ajax_' + catId).html('<img style="margin-left:3px;" title="запрос выполнен" src="/img/common/ajax-check-small.png" />');
+				if (catId == 0 || !catAliasName)
+					location.reload();
+			}
+			else
+			{
+				$('span#ajax_' + catId).html('<img style="margin-left:3px;" title="ошибка при выполнении запроса" src="/img/common/ajax-cross-small.png" />');
+				alert('Ошибка при отправке запроса: \n\r' + data);
+			}
+			$('input#button_' + catId).attr("disabled", "");
+			$('input#catName_' + catId).attr("disabled", "");
+			$('input#catAliasName_' + catId).attr("disabled", "");
+			$('textarea#catDescription_' + catId).attr("disabled", "");
+			$('input#catVisible_' + catId).attr("disabled", "");
+			for (i = 0; i <= 6; i++)
+				$('input#catVisibleTo' + i + '_' + catId).attr("disabled", "");
+		}
+	);
+}
+
+//@alan проверка ввода при регистрации
+
+// запускаем не чаще чем раз в секунду
+var isCheckRegFieldsWaiting = false;
+function checkRegFieldsHandler()
+{
+	if (isCheckRegFieldsWaiting)
+		return;
+	isCheckRegFieldsWaiting = true;
+	setTimeout(function() {
+		isCheckRegFieldsWaiting = false;
+		checkRegFields();
+	}, 1000);
+}
+
+function checkRegFields()
+{
+	var nameInput = $('#regUserNameInput');
+	var emailInput = $('#regEmailInput');
+	var passwInput = $('#regUserPasswInput');
+	var passw2Input = $('#regUserPassw2Input');
+	var name = nameInput.val();
+	var email = emailInput.val();
+	var passw = passwInput.val();
+	var passw2 = passw2Input.val();
+	var nameReact = $('#regUserNameReact');
+	var passwReact = $('#regUserPasswReact');
+	var passwReact2 = $('#regUserPassw2React');
+	var emailReact = $('#regEmailReact');
+	var nameEmailReact = $('#regNameAndEmailReact');
+
+	document.cookie = "regUserNameInput=" + name + "; max-age=" + 180*24*60*60 + "; Samesite=Lax";
+	document.cookie = "regEmailInput=" + email + "; max-age=" + 180*24*60*60 + "; Samesite=Lax";
+
+	// пока все поля пусты - ничего не пишем
+	if (name.length == 0 && email.length == 0 && passw.length == 0 && passw2.length == 0 )
+	{
+		nameReact.text('');
+		passwReact.text('');
+		passwReact2.text('');
+		emailReact.text('');
+		nameEmailReact.html('Пожалуйста, заполните все поля');
+		nameInput.removeClass();
+		emailInput.removeClass();
+		passwInput.removeClass();
+		passw2Input.removeClass();
+		return;
+	}
+
+	var checkSymbol = '<img style="margin-right:3px;" height="11" title="настройка сохранена" src="/img/common/ajax-check-small.png" />';
+
+	// проверяем имя
+	var ok = true;
+	if (name.length < 2)
+	{
+		ok = false;
+		nameReact.text('Имя должно состоять как минимум из 2 символов.');
+	}
+	else if (name.length > 20)
+	{
+		ok = false;
+		nameReact.text('Имя должно быть короче 20 символов.');
+	}
+	else if (name.match(/[^0-9a-zA-Zа-яА-ЯёЁ_]/))
+	{
+		ok = false;
+		nameReact.text('Разрешены только буквы, цифры и _.');
+	}
+	if (!ok)
+	{
+		nameInput.addClass("errorBorder");
+		nameEmailReact.text('');
+		emailReact.text(''); // важно подчистить ошибки в остальных полях, так как мы их проверять не будем пока имя не будет исправлено. Ну и просто не стоит грузить пользователя информацией.
+		passwReact.text('');
+		passw2React.text('');
+		return;
+	}
+	
+	// проверяем почту и пару почта+имя
+	if (email.length == 0 && name.length == 0)
+	{
+		emailReact.text('');
+		nameReact.text('');
+		
+		// в почте и имени нет ошибок
+		nameEmailReact.text('');
+	}
+	else
+	{
+		$.post('/ajax/checkRegFields.php', {name:name, email:email}, 
+			function(data)
+			{
+				if (data == 0)
+				{
+					if (email.length == 0)
+					{
+						emailReact.text('');
+					}
+					else
+					{
+						emailReact.html(checkSymbol);
+						emailInput.removeClass();
+					}	
+					
+					if (name.length == 0)
+					{
+						nameReact.text('');
+					}
+					else
+					{
+						nameReact.html(checkSymbol);
+						nameInput.removeClass();
+					}
+
+					// в почте и имени нет ошибок
+					nameEmailReact.text('');
+				}
+				// ошибка в записи почты
+				else if (data.indexOf("email err") >= 0)
+				{
+					emailInput.addClass("errorBorder");
+					emailReact.html(data.replace("email err: ",""));
+					nameReact.text(''); // если в почте ошибка, мы не можем проверить имя - не помечаем его как проверенное
+					nameEmailReact.text('');
+					return;
+				}
+				// пользователь с таким именем/почтой уже есть, пишем длинное пояснение что с этим можно сделать
+				else 
+				{
+					if (data.indexOf("email usersReg err: name usersReg err:") >= 0)
+					{
+						emailInput.addClass("errorBorder");
+						nameInput.addClass("errorBorder");
+					}
+					else if (data.indexOf("email usersReg err") >= 0)
+					{
+						emailInput.addClass("errorBorder");
+						nameInput.removeClass();
+					}
+					else if (data.indexOf("name usersReg err") >= 0)
+					{
+						emailInput.removeClass();
+						nameInput.addClass("errorBorder");
+					}
+					emailReact.text('');
+					nameReact.text('');
+					data = data.replace("email usersReg err: ","");
+					data = data.replace("name usersReg err: ","");
+					nameEmailReact.html(data);
+					return;
+				}
+			}
+		);
+	}
+
+	// проверяем пароль
+	if(passw.length == 0 && passw2.length == 0)
+	{
+		passwReact.text('');
+		passw2React.text('');
+	}
+	else if(passw.length < 6)
+	{
+		passwInput.addClass("errorBorder");
+		passw2Input.removeClass();
+		passwReact.text('Пароль должен состоять как минимум из 6 символов.');
+		passwReact2.text('');
+		return;
+	}
+	else if(passw != passw2)
+	{
+		passwInput.removeClass();
+		passw2Input.addClass("errorBorder");
+		passwReact.text('');
+		passwReact2.text('Пароли не совпадают.');
+		return;
+	}
+	else
+	{
+		passwReact.html(checkSymbol);
+		passwReact2.html(checkSymbol);
+		passwInput.removeClass();
+		passw2Input.removeClass();
+	}
+}
+
+function sendBugFormToEmail()
+{
+	var inputs = $('form#mail_form :input');
+	var bodyStr = "";
+	inputs.each(function(index, value) {
+		if (value.name)
+			bodyStr += value.name + " = " + value.value + "\r\n";
+	});
+
+	window.location = "mailto:info@braingames.ru?subject=bug&body=" + encodeURIComponent(bodyStr);
+}
+
+function setSkin(skin) {
+		var today = new Date();
+		var expire = new Date();
+		expire.setTime(today.getTime() + 3600000*24*365);
+		document.cookie = 'skin'+"="+skin + ";expires="+expire.toGMTString();
+}
+
+function showLogRegForm(isLog = true, isLoginAccess = false)
+{
+	if (isLog) // форма логина активна
+	{		
+		document.getElementById("logregLog").style.display = "table-row";
+		document.getElementById("logregReg").style.display = "none";
+		document.getElementById("logregLogBtn").className = "blockRectActive";
+		document.getElementById("logregRegBtn").className = "blockRect";
+	}
+	else // форма регистрации активна
+	{
+		document.getElementById("logregLog").style.display = "none";
+		document.getElementById("logregReg").style.display = "table-row";
+		document.getElementById("logregLogBtn").className = "blockRect";
+		document.getElementById("logregRegBtn").className = "blockRectActive";
+	}
+
+	if (isLoginAccess) // показываем форму логина потому что незалогиненным нельзя на эту страницу
+	{
+		document.getElementById("accessLoginMsg").innerHTML = "Привет! Данная страница доступна только авторизованным пользователям.<br><br>";
+	}
+
+	// отображаем модальное окно
+	document.getElementById('modalWindowId').style.display = 'block';
+}
+
+function showAppendMoneyForm(text = '')
+{
+	if (text != '')
+	{
+		document.getElementById('appendMoneyModalWindowTextId').innerHTML = text + '<br><br><br>';
+		document.getElementById('appendMoneyBalanceText').innerHTML = '';
+		var numbers = text.match(/[+-]?([0-9]*[.])?[0-9]+/g).map(Number);
+		var amountToAdd = 10;
+		if (numbers.length == 2)
+		{ // в строке упоминается баланс, а затем сумма для оплаты
+			amountToAdd = numbers[1] - numbers[0];
+		}
+		else if (numbers.length == 1)
+		{ // в случае покупки реальных товаров - упоминается только недостача средств
+			amountToAdd = numbers[0];
+		}
+		document.getElementById('mozgo_usd').value = amountToAdd;
+		moneyCourse = 100; // TODO - config
+		document.getElementById('mozgosum').innerHTML = amountToAdd * moneyCourse;
+	}
+
+	// отображаем модальное окно
+	document.getElementById('modalWindowId').style.display = 'block';
+}
+
+function showModalMessage(text, reset = false)
+{
+	document.getElementById('modalWindowTextId').innerHTML = text;
+	document.getElementById('modalWindowSubId').style.maxWidth = '350px';
+	document.getElementById('modalWindowSubId').style.marginTop = '150px';
+	document.getElementById('modalWindowId').style.paddingTop = '100px';
+	document.getElementById('modalWindowId').style.display = 'block';
+	if (reset)
+	{
+		document.getElementById('modalWindowCloseId').onclick = function() { 
+			document.getElementById('modalWindowId').style.display = 'none';
+			location.href=location.href.replace('#CONTENT_Id','').replace('&reload=1','') + '&reload=1#CONTENT_Id'; 
+		};
+	}
+}
+
+function activateTab(selected) {
+	$(".selector").find(".active").removeClass("active");
+
+	$(selected).addClass("active");
+	$(".tab-content").eq($(selected).index()).addClass("active");
+}
+
+// копирует текст из поля ввода в буфер обмена
+function elementToClipboard(el, isHidden = false)
+{
+	var copyText = document.getElementById(el);
+
+	/* Показываем спрятанный элемент (иначе select не сработает) */
+	if (isHidden)
+	copyText.style.display = "block";
+
+	/* Select the text field */
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+	/* Copy the text inside the text field */
+	document.execCommand("copy");
+
+	/* Прячем назад спрятанный элемент */
+	if (isHidden)
+		copyText.style.display = "none";
+
+	/* Alert the copied text */
+	alert("Ссылка "  + copyText.value + " скопирована в буфер обмена.");
+}
+
+// скрипт для вставления ссылки на сайт каждый раз когда пользователь копирует текст с сайта в буфер обмена. 
+// Взят с https://blog.slytech.ltd/sozdanie-bloga/ssylka-na-istochnik.html
+function addCopyright() {
+	var istS = 'Источник:'; // Слово должно находится в кавычках!
+	var copyR = '© braingames.ru';//'© WPguru.ru'; // Слово должно находится в кавычках!
+	var body_element = document.getElementsByTagName('body')[0];
+	var choose = window.getSelection();
+	var myLink = document.location.href;
+	var authorLink = "<br /><br />" + istS + ' ' + "<a href='"+myLink+"'>"+myLink+"</a>";//<br />" + copyR;
+	var copytext = choose + authorLink;
+	var addDiv = document.createElement('div');
+	addDiv.style.position='absolute';
+	addDiv.style.left='-99999px';
+	body_element.appendChild(addDiv);
+	addDiv.innerHTML = copytext;
+	choose.selectAllChildren(addDiv);
+	window.setTimeout(function() {
+			body_element.removeChild(addDiv);
+	},0);
+}
+
+// прячем/показываем сертификат
+function switchCertificateVisibility(certId) {
+	$('#hideCert').attr('disabled', 'disabled');
+	$('#hideCert_info').html('<img style="margin-right:3px;" height="11" title="выполняется запрос..." src="/img/common/ajax-loader-small.gif" />')
+
+	var params = { object: 'Users', method: 'SwitchCertificateVisibility', certId: certId };
+	$.post('/ajax/execute.php', {'params': JSON.stringify(params)},
+		function(data)
+		{
+			if (data.includes('ok'))
+			{ // все ок
+				$('#hideCert').attr('disabled', '');
+				$('#hideCert_info').html('<img style="margin-right:3px;" height="11" title="настройка сохранена" src="/img/common/ajax-check-small.png" />');
+				var text = $('#hideCert_isHidden_' + certId);
+				if ($.trim(text.html()) != "скрыт")
+				{
+					text.html("скрыт");
+				}
+				else
+				{
+					text.html("публичный");
+				}
+			}
+			else
+			{ // непредсказуемая ошибка
+				$('#hideCert').attr('disabled', '');
+				$('#hideCert_info').html('<img style="margin-right:3px;" height="11" title="ошибка при выполнении запроса" src="/img/common/ajax-cross-small.png" />');
+				makeUnpredictableErrorAlert(data);
+			}
+		});
+}
+
+// скрипт для печати страницы с помощью кнопки (не всегда работает)
+function print(divId = false) {
+	// window.print(); не работает по непонятной причине, приэтому приходится печатать в обход
+	
+	var prtContent = document.documentElement;
+	if (divId)
+	{
+		prtContent = document.getElementById(divId);
+	}
+	var WinPrint = window.open('', '', 'left=0,top=0,width=900,height=700,toolbar=0,scrollbars=0,status=0');
+	WinPrint.document.write(prtContent.innerHTML);
+	WinPrint.document.close();
+	WinPrint.focus();
+	WinPrint.print();
+	//WinPrint.close();
+}
+
+// скрипт для форматирования текста для печати, так чтобы тест влезал в отведенное ему поле
+function certificatePrintFitter() {
+	var page = document.getElementById('profileCertificatePrintId');
+	var el = document.getElementById('certificateAchivements');
+	var hightNeeded = page.offsetWidth * 297 / 210 * 0.95; // A4 paper, отрезаем 5% для безопасности, так как при изменении зума страница может начать не влезать в одну страницу A4
+
+	// убеждаемся, что текст влазит в отведенное ему место
+	// сначала обрезаем текст примерно
+	while (page.offsetHeight > hightNeeded + 13) // строка высотою ~7, 13 берем c запасом, так чтобы точно хватило на одну строчку
+	{
+		el.innerHTML = el.innerHTML.slice(0, -80); // строка длиной ~130, 80 берем с запасом, так чтобы точно удалить меньше одной строки
+	}
+
+	// обрезаем текст с точностью до слова
+	while (page.offsetHeight > hightNeeded)
+	{
+		// удаляем последнее слово
+		var iSpace = el.innerHTML.lastIndexOf(", ");
+		var iBreak = el.innerHTML.lastIndexOf("<br>");
+		var iLast = Math.max(iSpace, iBreak);
+		el.innerHTML = el.innerHTML.substring(0, iLast) + ' ...';
+	}
+
+	// убеждаемся что использовано всё место отведенное под текст и колонтитул текст будет внизу страницы
+	while (page.offsetHeight <= hightNeeded)
+	{
+		el.innerHTML += '<br>';
+	}
+	el.innerHTML = el.innerHTML.slice(0, -4); // удаляем последний <br>, из-за которого высота выше желаемой
+}
+
+// распечатка в пдф
+function saveAsPDF(divId, usersName, certNumber = '') {
+	const { jsPDF } = window.jspdf;
+
+	// Default export is a4 paper, portrait, using millimeters for units
+	const pdf = new jsPDF();
+	
+	pdf.setFont('verdana');
+	var source = document.getElementById(divId);
+	var margins = {
+		top: 20,
+		left: 14
+	};
+	pdf.html( // см. варианты тут https://htmlpreview.github.io/?https://github.com/MrRio/jsPDF/blob/master/docs/module-html.html#~html
+		source, {
+		callback: function (pdf) {
+			pdf.save("BGCertificate_" + usersName + (certNumber == '' ? "" : "_" + certNumber) + ".pdf");
+		},
+		html2canvas: { // см. варианты тут https://html2canvas.hertzen.com/configuration
+			scale: 0.366
+		},
+		x: margins.left, // x coord
+		y: margins.top
+	});
+
+}

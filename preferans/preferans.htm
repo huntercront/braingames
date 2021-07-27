@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>Преферанс</title>
+  <script type="text/javascript" src="preferans.js"></script>
+</head>
+
+<body>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(11243257, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/11243257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->        
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+       <script type="text/javascript">
+           _uacct = "UA-321042-2";
+           urchinTracker();
+       </script>
+  <canvas id="preferansCanvas" width="900" height="600" style="border:1px solid #000000;">
+  </canvas>
+
+  <textarea id="historyArea" rows="10" cols="40">
+  </textarea>
+
+  </br>
+
+  <label>Юг</label>
+  <input type="text" id="southTextBox">
+  <label>Запад</label>
+  <input type="text" id="westTextBox">
+  <label>Восток</label>
+  <input type="text" id="eastTextBox">
+  </br>
+
+  <label>Козыри</label>
+  <select id = "trumpSelect">
+    <option id="S">Пики</option>
+    <option id="C">Трефы</option>
+    <option id="D">Бубны</option>
+    <option id="H">Черви</option>
+    <option id="">Без козырей</option>
+  </select>  
+
+  <label>Первый ход</label>
+  <select id = "firstMoveSelect">
+    <option id="S">Юг</option>
+    <option id="W">Запад</option>
+    <option id="E">Восток</option>
+  </select>  
+  </br>
+
+  <button id="NewGameBtn" onclick="game = new Game();">
+  Новая игра
+  </button>
+
+  <button id="HistoryBtn" onclick="if (game != undefined) {document.getElementById('historyArea').value = game.history.join('\n')}">
+  История игры
+  </button>
+
+  <img src="deck/deck.jpg" style="display: none;" id="spriteImage" onload="loadImage()" />
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"674eb071dfa319e3","version":"2021.7.0","r":1,"token":"786201510e0549d4be4b6cb300bdbbeb","si":10}'></script>
+</body>
+
+</html>

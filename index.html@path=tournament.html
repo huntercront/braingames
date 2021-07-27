@@ -1,0 +1,2548 @@
+﻿<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <title>Результаты турниров</title>
+    <meta name="yandex-tableau-widget" content="logo=images/idler/logo.gif, color=#ffffff, feed=https://www.braingames.ru/feed.php" />
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <meta http-equiv="Keywords" content="задачи, загадки, логические задачи, головоломки, ребусы, математика">
+    <meta name="Description" content="Около 500 уникальных задач разного уровня сложности тщательно  отобранных и обработанных 	коллективом модераторов сайта. Основной идеей сайта является недоступность ответов до момента самостоятельного решения 	задачи, а также проверка ответов людьми, прошедшими предварительную квалификацию Сообщество полностью самоорганизовано, 	наполнение сайта формируется самим сообществом: от предложения, отбора и корректировки условий задач, до избирания 	модераторов. Контроль этого процесса проводится группой наиболее инициативных и высокорейтинговых пользователей сайта.">
+    <link rel="Stylesheet" href="css/jqueryui/jquery-ui-1.8.6.custom.css@28.css" type="text/css">
+    <link rel="Stylesheet" href="css/idler/styles.css@28.css" type="text/css">
+    <link rel="Stylesheet" href="css/idler/modal.css@28.css" type="text/css">
+    <script src="script/jquery/jquery-1.4.4.min.js@60" language="javascript" type="text/javascript"></script>
+    <script src="script/idler/js.js@60" language="javascript" type="text/javascript"></script>
+
+    <style>
+        input.txt {
+            border: 1px solid black;
+        }
+        
+        .rating {
+            font-family: Tahoma;
+            color: #666666;
+            font-size: 8pt;
+            background: #F4F4E8;
+            line-height: 2;
+            padding: 2px 5px;
+        }
+    </style>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="80x80" href="apple-touch-icon-80x80.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$$','$$'], ['\\(','\\)'] ], displayMath: [ ['$$$','$$$'] ], processClass:"comments|quoteDiv2|with-math", ignoreClass:".*" }, menuSettings: { zoom:"Double-Click" },"HTML-CSS": { scale: 120 }, CommonHTML:
+        { scale: 120 } });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML&locale=ru" type="text/javascript" async></script>
+
+    <!-- скрипты и стили для Яндекс-функционала"Поделиться" -->
+    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="https://yastatic.net/share2/share.js" charset="windows-1251"></script>
+    <style>
+        /*подправляем стиль кнопки на наш вкус*/
+        
+        .ya-share2__container_size_s {
+            /*размер кнопок*/
+        }
+        
+        .ya-share2__icon {
+            /*размер кнопок*/
+        }
+        
+        .ya-share2__link_more {
+            /*кнопка всплывающего меню поделиться*/
+            /*height: 14px !important; 
+				width: 14px !important; */
+            background-color: transparent !important;
+            border-width: 1px !important;
+            border-style: dotted !important;
+            border-color: #999933 !important;
+        }
+        
+        .ya-share2__badge {
+            /*иконоки сайтов*/
+            /*height: 22px !important; 
+				width: 22px !important; */
+        }
+    </style>
+
+</head>
+
+
+<!-- пропускаем лишнюю страницу в форме пополения баланса -->
+
+<body bgcolor="#FFFFFF" onload="javascript: var form = document.getElementById('appendMoneyExternalForm'); if (form) form.submit();
+				">
+
+    <!-- facebook -->
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <div class="nocertprint">
+        <!-- Модальное окно -->
+
+
+        <div id="modalWindowId" class="modalBG">
+            <div class="modalWindow" id="modalWindowSubId">
+                <span id="modalWindowCloseId" class="modalClose" onclick="javascript:document.getElementById('modalWindowId').style.display = 'none';">&times;</span>
+                <div id="modalWindowTextId">
+                    <div id="accessLoginMsg" style="text-align: center; margin-left: 10px;margin-top: 20px;border: solid 0px black;"><br>
+                    </div>
+                    <table style="table-layout: fixed; width: 100%; max-width: 600px; border-collapse: collapse;">
+                        <tr style="padding: 0; margin: 0;">
+                            <td align="center" style="width: 50%; max-width: 290px; padding: 0; margin: 0;">
+                                <div id="logregLogBtn" class="blockRectActive" style="cursor: pointer; padding: 10px 0px 10px 0px; font-size: 15px; width: 100%;" onclick='javascript:showLogRegForm();' title="Вкладка 1">Авторизация</div>
+                            </td>
+                            <td align="center" style="width: 50%; max-width: 290px; padding: 0; margin: 0;">
+                                <div id="logregRegBtn" class="blockRect" style="cursor: pointer; padding: 10px 0px 10px 0px; font-size: 15px; width: 100%;" onclick='javascript:showLogRegForm(false);' title="Вкладка 2">Регистрация</div>
+                            </td>
+                        </tr>
+                        <tr id="logregLog">
+                            <td colspan=2 class="blockRectActive" align="center" style="height: 380px; padding: 10px 10px 10px 10px;">
+                                <div class="block" style="text-align: center; margin-left: 10px; border: solid 0px black; font-size: 13px;">
+                                    <form action="index.html@path=tournament.html" method="POST">
+
+                                        <div style="margin: 5px;">
+                                            <label style="display: inline-block;width: 150px;border: solid 0px black; padding: 15px 15px 15px 15px;" for="login">Логин или e-mail:</label><br>
+                                            <input type="text" id="login" name="loginUserName" value="" class="bigtxt" size="50">
+                                        </div>
+
+                                        <div style="margin: 5px;">
+                                            <label style="display: inline-block;width: 50px;border: solid 0px black; padding: 15px 15px 15px 15px;" padding-bottom: 10px; " for=" password ">Пароль:</label><br>
+						<input type=" password " id=" password " name=" loginUserPassw " class=" bigtxt " size=" 50 ">
+			</div>
+			<div class=" rightdescription ">
+													<a href=" index.html@path=forgetpassw.html " class=" taskcategory " style=" font-size: 13px; ">забыли пароль?</a>
+							</div>
+
+			<div align=" center " style=" padding: 80px 15px 15px 15px; " >
+				Запомнить меня?
+				<input type=" checkbox " name=" savePassw " id=" savePassw " checked=" checked "><br>
+				<br>
+				<input type=" submit " name=" btnLogin " value=" Войти " class=" btn ">
+			</div>
+
+		</form>
+	</div>
+		</td>
+	</tr>
+	<tr id=" logregReg " style=" display: none; ">
+		<td colspan=2 class=" blockRectActive " align=" center " style=" height: 380px; padding: 10px 10px 10px 10px; ">
+				<br>Привет! Похоже
+			вы хотите проверить свое решение одной из наших задач.<br>
+		Мы проверяем все решения на сайте вручную и с радостью проверим ваше!<br>
+		<br>
+		Но сначала
+		нам важно убедиться что вы не робот :)
+<br>
+Пожалуйста, пройдите тест от Мегамозга, решив 3 задачи — эти задачи проще тех, что опубликованы на сайте. Все ответы числовые.<br>
+<br>
+<form action=" https://www.braingames.ru/?path=tournament&amp;showRegistrationForm=1 " method=" post ">
+	<table border=" 0 " cellpadding=" 3 " cellspacing=" 0 " align=" center " width=" 100% ">
+		<tr>
+			<td width=" 100% " bgcolor=" #F4F4E8 ">У мегамозга в темном чулане есть мешок с чистыми носками, в котором 10 пар белых, 20 пар черных, и 30 пар синих.. Какое минимальное число носков из мешка нужно вытащить, чтобы можно было гарантированно надеть пару одинаковых?</td>
+			<td bgcolor=" #F4F4E8 ">
+				<input type=" text " name=" answer_0_13 " class=" txt " size=" 10 ">
+			</td>
+		</tr>
+	</table>
+	<table border=" 0 " cellpadding=" 0 " cellspacing=" 0 " style=" width: 100%; ">
+		<tr>
+			<td colspan=3 style=" background-image:url(images/idler/1x1grey.gif); "><img src=" images/idler/1x1grey.gif " alt=" " border=" 0 " style=" height:2px; "></td>
+		</tr>
+	</table> 
+	<table border=" 0 " cellpadding=" 3 " cellspacing=" 0 " align=" center " width=" 100% ">
+		<tr>
+			<td width=" 100% " bgcolor=" #F4F4E8 ">Назовите следующий член последовательности: 1 3 9 27 81 ...</td>
+			<td bgcolor=" #F4F4E8 ">
+				<input type=" text " name=" answer_1_4 " class=" txt " size=" 10 ">
+			</td>
+		</tr>
+	</table>
+	<table border=" 0 " cellpadding=" 0 " cellspacing=" 0 " style=" width: 100%; ">
+		<tr>
+			<td colspan=3 style=" background-image:url(images/idler/1x1grey.gif); "><img src=" images/idler/1x1grey.gif " alt=" " border=" 0 " style=" height:2px; "></td>
+		</tr>
+	</table> 
+	<table border=" 0 " cellpadding=" 3 " cellspacing=" 0 " align=" center " width=" 100% ">
+		<tr>
+			<td width=" 100% " bgcolor=" #F4F4E8 ">Сколько существует натуральных чисел, меньших 1000, которые не делятся ни на 5, ни на 7?</td>
+			<td bgcolor=" #F4F4E8 ">
+				<input type=" text " name=" answer_2_0 " class=" txt " size=" 10 ">
+			</td>
+		</tr>
+	</table>
+	<table border=" 0 " cellpadding=" 0 " cellspacing=" 0 " style=" width: 100%; ">
+		<tr>
+			<td colspan=3 style=" background-image:url(images/idler/1x1grey.gif); "><img src=" images/idler/1x1grey.gif " alt=" " border=" 0 " style=" height:2px; "></td>
+		</tr>
+	</table> 
+<br>
+<div style=" text-align:left; max-width:1000px; margin-left:30px; margin-right:30px; padding:10px; border-radius:4px; border:1px solid #400000; background-color:#ffd0c0; ">
+Администрация сайта &laquo;Игры разума&raquo; считает посетителей www.braingames.ru людьми взрослыми и ответственными, которые соблюдают <a href=" https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D1%8D%D1%82%D0%B8%D0%BA%D0%B5%D1%82 ">сетевой этикет</a> в общении, относятся друг к другу уважительно, избегая оскорбительных (и тем более нецензурных) выражений, не провоцируют конфликты и не нарушают законы Российской Федерации.
+Администрация выражает признательность пользователям, которые ссылаются на сайт &laquo;Игры разума&raquo;, публикуя задачи www.braingames.ru на других сайтах, и не пишут ответы в открытом доступе.
+</div>
+<br>
+<input type=" submit " name=" btnAnswer " value=" Зарегистрироваться " class=" btn ">
+</form>
+		</td>
+	</tr>
+</table>							</div>
+		</div>
+	</div>
+
+		
+<!-- Yandex.Metrika counter -->
+<script type=" text/javascript " >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document," script "," https://mc.yandex.ru/metrika/tag.js "," ym ");
+ 
+    ym(11243257," init ", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src=" https://mc.yandex.ru/watch/11243257 " style=" position:absolute; left:-9999px; " alt=" " /></div></noscript>
+ <!-- /Yandex.Metrika counter -->        
+ <script src=" https://www.google-analytics.com/urchin.js " type=" text/javascript "></script>
+         <script type=" text/javascript ">
+             _uacct =" UA-321042-2 ";
+             urchinTracker();
+         </script>
+ 
+		
+		<noindex>
+<div class="message ">
+	<div class="message-inner s-sb ">
+		<div class="message-text ">
+<h4 class="title-sm color-white ">Турнир с Райффайзен</h4>
+<p class="descr descr-sm color-white m-0 ">В августе Braingames.ru совместно с Райффайзен начинает новую турнирную активность. 2 новые задачи каждый месяц. Турнир
+в ноябре. Победителям — призы</p>
+		</div>
+		<button class="close-message btn "><div class="icon icon-sm "><svg width="24 " height="24 " viewBox="0 0 24 24 " fill="none " xmlns="http://www.w3.org/2000/svg ">
+			<line x1="8.41421 " y1="7.43604 " x2="17 " y2="16.0218 " stroke="white " stroke-width="2 "
+				stroke-linecap="round " />
+			<line x1="17 " y1="7.41421 " x2="8.41421 " y2="16 " stroke="white " stroke-width="2 " stroke-linecap="round " />
+		</svg></div> 
+</button>
+	</div>
+</div>
+
+		</noindex>
+	</div>
+
+		<table border=" 0 " width=100% class=" nocertprint ">
+			<tr>
+				<td align=left width=30%>
+					<h1 style=" margin-top: 0; margin-bottom: 0 ">Логические задачи. Самостоятельное решение приносит удовольствие!</h1>
+				</td>
+				<td align=center width=40%>
+					<font style=" margin-top: 20; margin-bottom: 0 ">
+						<br>С 2006 года <a href=" index.html@path=usersrating&amp;type=puzzleSolving&amp;user_group=users.html ">игроки</a> присылают нам интересные задачи, а <a href=" index.html@path=usersrating&amp;type=puzzleSolving&amp;user_group=1.html ">модераторы</a> публикуют лучшие из них и проверяют ваши ответы.<br><br>
+					</font>
+				</td>
+				<td align=right width=30%>
+					<font style=" margin-top: 20; margin-bottom: 0 "><br>
+
+<i>Большое количество квадратов наводит на мысль, что лучше взять окружность.</i>		
+
+		<br><br>    </font>
+				</td>
+			</tr>
+		</table>
+		<div id=" overDiv " style=" position:absolute; visibility:hidden; z-index:1000; "></div>
+<script type=" text/javascript " language=" JavaScript " src=" script/idler/overlib/overlib.js@60 "></script>
+
+						<!-- ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА-->
+		<table cellpadding=" 0 " cellspacing=" 1 " border=" 0 " class=" nocertprint ">
+			<tr>
+				<td rowspan=" 2 ">
+					<a href=" index.html ">
+						<img src=" images/idler/logo.gif "  alt=" Игры разума - задачи, загадки, логические игры, головоломки " border=" 0 ">
+					</a>
+				</td>
+				<td width=" 100% " height=" 97 " style=" vertical-align:middle; " colspan=2>
+					<table style=" height:32px; ">
+						<tr>
+							<td class=" topmenu "><a  class=" topmenu " href=" index.html@path=usersrating&amp;type=puzzleSolving.html ">Рейтинг</a></td>
+							<td class=" topmenu " style=" text-decoration: none "><a  class=" topmenu " href=" index.html@path=usersrating&amp;type=contributions.html ">Активность</a></td>
+							<td class=" topmenu "><a class=" topmenu " title=" Логин и пароль как на сайте. " href=" https://braingames.ru/forum/ " target=_blank>Форум</a></td>
+							<td class=" topmenu "><a href='forum/index.php@showtopic=336&amp;pid=2236&amp;st=0&amp;.html#entry2236' class=" topmenu " title='Часто задаваемые вопросы'><b>FAQ</b></a></td>
+														<td class=" topmenu " style=" text-decoration: none "><a  class=" topmenu " href=" index.html@path=mindGames.html " style=" white-space: nowrap; ">Игра-М</a></td>
+							<td align=" left " valign=" top ">
+								<table border=" 0 " cellspacing=" 0 " cellpadding=" 0 ">
+									<tr>
+										<td>
+																					</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=" 3 ">
+					&nbsp;
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan=" 3 " style=" background-image:url(images/idler/1x1grey.gif); ">
+					<img src=" images/idler/1x1grey.gif " alt=" " border=" 0 " style=" height:2px; ">
+				</td>
+			</tr>
+		</table>
+		<!-- EOF :: ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА ШАПКА-->
+
+		<table border=" 0 " cellpadding=" 0 " cellspacing=" 0 " style=" width: 100%; height: 100%;table-layout: fixed; ">
+			<tr>
+				<!-- ЛЕВАЯ СТОРОНА (КАТЕГОРИИ, ЛОГИН, ТОП ЮЗЕРЫ) -->
+				<td style=" padding-left: 10px;padding-right: 10px;width: 240px; " valign=" top " class=" nocertprint ">
+					<table border=" 0 " cellpadding=" 0 " cellspacing=" 0 " width=" 100% ">
+						<tr>
+							<td class=" login ">
+								<span class=" tasktitle ">Категории задач</span>
+								
+<div style=" margin-left: 5px;border: solid 0px black; ">
+	 <!-- EOF: if isset($LoginUserData) -->
+
+			
+	<div style=" border: solid 0px black; ">
+		<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+		<span>
+						<a href=" index.html@displayOpts=default.html " class=" taskcategory ">
+				Все
+			</a>
+					</span>
+
+	</div>
+
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@displayOpts=unanswered.html "  title=" Общий список задач. на которые Вы не отвечали. " class=" taskcategory ">
+							<b>Все задачи без ответов</b>
+						</a>
+												</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=New.html " title=" В этой категории публикуются новые задачи. Обновление происходит раз в одну - две недели. " class=" taskcategory ">
+							<b>Новые задачи</b>
+																																				</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=donations.html " title=" В этой категории задачи отсортированы по Престижу. " class=" taskcategory ">
+							<b>Самые престижные</b>
+													</a>
+													<sup style='color:red;text-decoration: none'>New!</sup>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=interest.html " title=" В этой категории задачи отсортированы по симпатиям решивших. " class=" taskcategory ">
+							<b>Самые симпатичные</b>
+													</a>
+													<sup style='color:red;text-decoration: none'>New!</sup>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=algorithm.html " title=" Задачи на нахождение алгоритмов - последовательности действий, приводящих к нужному результату. " class=" taskcategory ">
+							Алгоритмы
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=weighing.html " title=" Задачи на выявление предмета по его весу. Разновидность алгоритмических задач. " class=" taskcategory ">
+							Взвешивания
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=geometry.html " title=" Задачи на построения, нахождение площади, разрезание геометрических фигур. " class=" taskcategory ">
+							Геометрия
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=child.html " title=" Задачи наиболее подходящие для ребенка дошкольного возраста. " class=" taskcategory ">
+							Детям
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=zagadki.html " title=" Головоломки, решение которых необходимо угадать. " class=" taskcategory ">
+							Загадки
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=games.html " title=" Задачи, имитирующие игровые ситуации. Разновидность алгоритмических. " class=" taskcategory ">
+							Игры
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=liars.html " title=" Лжецы никогда не говорят правду, правдецы никогда не лгут, хитрецы могут сказать правду, или солгать. Как правило необходимо что-то у них выяснить, задавая вопросы.
+                                                " class=" taskcategory ">
+							Лжецы, хитрецы, правдивцы
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=logic.html " title=" Большинство наших головоломок на логику имеет простой до гениальности ответ. " class=" taskcategory ">
+							Логика
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=algebra.html " title=" Задачи, на вычисления, решение математических выражений, нахождение числовых закономерностей. " class=" taskcategory ">
+							Математика
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=life.html " title=" Для решения этих задач не достаточно одних только логических рассуждений: нужно применить смекалку, придумав что-то, не указанное явно в условии. " class=" taskcategory ">
+							На смекалку
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=equivival.html " title=" Определить следующий член последовательности, либо найти соответствие в ряду. Классическим примером является Задача Энштейна, которую, как говорят, могут решить только
+                                                2% взрослых людей. " class=" taskcategory ">
+							Последовательности
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=pref.html " title=" Розыгрыши партий и задачи по карточной игре преферанс. " class=" taskcategory ">
+							Преферанс
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=prog.html " title=" Написание алгоритмов на разных языках программирования. " class=" taskcategory ">
+							Программистам
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=probability.html " title=" Определить вероятность какого-либо события. " class=" taskcategory ">
+							Теория вероятностей
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=physical.html " title=" Школьного курса физики хватит, чтобы решить остроумные задачи из этой категории. " class=" taskcategory ">
+							Физика
+													</a>
+																		</span>
+		</div>
+			<div>
+			<span style=" width: 3px; "><img src=" images/idler/li.gif " alt=" "></span>
+
+			<span>
+															<a href=" index.html@path=category&amp;catname=chess.html " title=" Розыгрыши партий и задачи по настольным играм с применением шашек и шахмат. " class=" taskcategory ">
+							Шахматы и шашки
+													</a>
+																		</span>
+		</div>
+	
+
+</div>
+							</td>
+						</tr>
+					</table>
+					<br>
+						<div class=" block " style=" text-align: center; margin-left: 5px; margin-bottom: 0px; border: solid 0px black; ">
+			<div align=" center " style=" padding: 15px 15px 15px 15px; " >
+				<input type=" submit " value=" Войти на сайт " class=" loginbtn " onclick='javascript:showLogRegForm();'>
+			</div>
+			<div align=" center " style=" padding: 15px 15px 15px 15px; " >
+				<input type=" submit " value=" Регистрация " class=" loginbtn " onclick='javascript:showLogRegForm(false);' style=" background-color: transparent; border:none ">
+			</div>
+	</div>
+
+					<br>
+					<div class=" block ">
+						<div style=" margin: 5px;text-align: center; ">Мы в соцсетях:</div>
+						<div style=" margin: 5px;text-align: center; ">
+							&nbsp;<a href=" https://www.facebook.com/BrainGamesRu/ " target=" blank "><img src=" images/social/facebook.png "></a>
+							&nbsp;<a href=" https://vk.com/braingamesclub " target=" blank "><img src=" images/social/vkontakte.png "></a>
+							&nbsp;<a href=" https://t.me/braingames_ru " target=" blank "><img src=" images/social/telegram.png "></a>
+							&nbsp;<a href=" https://twitter.com/braingames_ru " target=" blank "><img src=" images/social/twitter.png "></a>
+							&nbsp;<a href=" https://braingames-ru.livejournal.com/ " target=" blank "><img src=" images/social/lj.png "></a>
+						</div>
+					</div>
+
+					<br>
+					
+	<div style=" text-align: center; "></div>
+
+<!-- топ пользователей -->
+<div class=" outblocktitle " title=" Баллы за решеные задачи / число задач ">РЕЙТИНГ</div>
+
+
+<div class=" block ">
+	<div class=" blockTitle ">ТОП ПОЛЬЗОВАТЕЛЕЙ</div>
+
+	<div style=" padding-bottom: 5px;padding-right: 5px; ">
+		<table class=" top10 " border=" 0 " cellpadding=" 0 " cellspacing=" 3 " width=" 100% ">
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">1.</td>
+					<td><a href=" index.html@path=profile&amp;id=9526.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока AleXXL ">AleXXL</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1776</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">557</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">2.</td>
+					<td><a href=" index.html@path=profile&amp;id=17467.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока marzelik ">marzelik</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1767</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">547</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">3.</td>
+					<td><a href=" index.html@path=profile&amp;id=24438.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока zmerch2 ">zmerch2</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1738</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">547</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">4.</td>
+					<td><a href=" index.html@path=profile&amp;id=10388.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока vijj ">vijj</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1732</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">540</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">5.</td>
+					<td><a href=" index.html@path=profile&amp;id=31630.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока $erges ">$erges</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1687</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">536</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">6.</td>
+					<td><a href=" index.html@path=profile&amp;id=17798.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока fiviol ">fiviol</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1664</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">518</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">7.</td>
+					<td><a href=" index.html@path=profile&amp;id=3541.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока lka ">lka</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1654</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">497</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">8.</td>
+					<td><a href=" index.html@path=profile&amp;id=27031.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока VitalyKolobkov ">VitalyKolobkov</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1649</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">518</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">9.</td>
+					<td><a href=" index.html@path=profile&amp;id=30447.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Andrej Bazhan ">Andrej Bazhan</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1640</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">476</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">10.</td>
+					<td><a href=" index.html@path=profile&amp;id=12021.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока pulsar ">pulsar</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1639</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">514</span>
+					</td>
+				</tr>
+
+					</table>
+	</div>
+</div>
+
+
+<div class=" block ">
+	<div class=" blockTitle ">ТОП МОДЕРАТОРОВ</div>
+
+	<div style=" padding-bottom: 5px;padding-right: 5px; ">
+		<table class=" top10 " border=" 0 " cellpadding=" 0 " cellspacing=" 3 " width=" 100% ">
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">1.</td>
+					<td><a href=" index.html@path=profile&amp;id=10355.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Kurush ">Kurush</a>, <a href=" index.html@path=profile&amp;id=47072.html
+                                                " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Owen ">Owen</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1782</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">559</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">2.</td>
+					<td><a href=" index.html@path=profile&amp;id=46798.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Megatron ">Megatron</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1777</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">558</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">3.</td>
+					<td><a href=" index.html@path=profile&amp;id=16853.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока UNDEFEAT ">UNDEFEAT</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1773</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">554</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">4.</td>
+					<td><a href=" index.html@path=profile&amp;id=53537.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока BAS14 ">BAS14</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1764</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">555</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">5.</td>
+					<td><a href=" index.html@path=profile&amp;id=17240.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока alan ">alan</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1763</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">550</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">6.</td>
+					<td><a href=" index.html@path=profile&amp;id=20646.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока mishik ">mishik</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1753</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">546</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">7.</td>
+					<td><a href=" index.html@path=profile&amp;id=2749.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Mosk ">Mosk</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1710</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">540</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">8.</td>
+					<td><a href=" index.html@path=profile&amp;id=54198.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Айсар ">Айсар</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1709</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">535</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">9.</td>
+					<td><a href=" index.html@path=profile&amp;id=9548.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока yagupop77 ">yagupop77</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1704</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">530</span>
+					</td>
+				</tr>
+
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">10.</td>
+					<td><a href=" index.html@path=profile&amp;id=12606.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Prosto Chelovek ">Prosto Chelovek</a></td>
+					<td align=" right " valign=top width=" 60px ">
+						<span class=" scoretopusers ">1689</span>
+						<span class=" scoretopusers " style=" font-size: smaller; vertical-align: top; position: relative; top: -0.1em; ">532</span>
+					</td>
+				</tr>
+
+					</table>
+	</div>
+</div>
+
+<br>
+
+<!-- top of contributors -->
+<div class=" outblocktitle " title=" Баллы за проверку задач, предложение задач на сайт и оценку задач. Подробнее на странице 'Активность' . ">ВКЛАД В САЙТ</div>
+
+
+<div class=" block ">
+	<div class=" blockTitle ">ТОП ПОЛЬЗОВАТЕЛЕЙ</div>
+
+	<div style=" margin-bottom: 5px;margin-right: 5px; ">
+		<table class=" top10 " border=" 0 " cellpadding=" 0 " cellspacing=" 3 " width=" 100% ">
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">1.</td>
+					<td><a href=" index.html@path=profile&amp;id=15507.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока anivano ">anivano</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">11010</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">2.</td>
+					<td><a href=" index.html@path=profile&amp;id=5756.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока kknop ">kknop</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">10010</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">3.</td>
+					<td><a href=" index.html@path=profile&amp;id=24438.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока zmerch2 ">zmerch2</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">6050</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">4.</td>
+					<td><a href=" index.html@path=profile&amp;id=23231.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Troublemaker ">Troublemaker</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5740</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">5.</td>
+					<td><a href=" index.html@path=profile&amp;id=31630.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока $erges ">$erges</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5590</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">6.</td>
+					<td><a href=" index.html@path=profile&amp;id=2000.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока gips ">gips</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5410</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">7.</td>
+					<td><a href=" index.html@path=profile&amp;id=10388.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока vijj ">vijj</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5390</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">8.</td>
+					<td><a href=" index.html@path=profile&amp;id=17798.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока fiviol ">fiviol</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5350</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">9.</td>
+					<td><a href=" index.html@path=profile&amp;id=20666.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Zelo ">Zelo</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5330</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">10.</td>
+					<td><a href=" index.html@path=profile&amp;id=24208.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока rys6 ">rys6</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">5170</td>
+				</tr>
+					</table>
+	</div>
+</div>
+
+<div class=" block ">
+	<div class=" blockTitle ">ТОП МОДЕРАТОРОВ</div>
+
+	<div style=" margin-bottom: 5px;margin-right: 5px; ">
+		<table class=" top10 " border=" 0 " cellpadding=" 0 " cellspacing=" 3 " width=" 100% ">
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">1.</td>
+					<td><a href=" index.html@path=profile&amp;id=9203.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Grom ">Grom</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">206821</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">2.</td>
+					<td><a href=" index.html@path=profile&amp;id=22173.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Corvin_Holy ">Corvin_Holy</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">152276</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">3.</td>
+					<td><a href=" index.html@path=profile&amp;id=7397.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока sergeip ">sergeip</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">150267</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">4.</td>
+					<td><a href=" index.html@path=profile&amp;id=1144.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Mouse ">Mouse</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">123758</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">5.</td>
+					<td><a href=" index.html@path=profile&amp;id=46798.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока Megatron ">Megatron</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">108111</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">6.</td>
+					<td><a href=" index.html@path=profile&amp;id=18231.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока АлександрС ">АлександрС</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">100084</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">7.</td>
+					<td><a href=" index.html@path=profile&amp;id=9548.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока yagupop77 ">yagupop77</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">93082</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">8.</td>
+					<td><a href=" index.html@path=profile&amp;id=14252.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока telepnev ">telepnev</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">92450</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">9.</td>
+					<td><a href=" index.html@path=profile&amp;id=16853.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока UNDEFEAT ">UNDEFEAT</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">91938</td>
+				</tr>
+							<tr>
+					<td width=" 15px; " valign=top align=" right ">10.</td>
+					<td><a href=" index.html@path=profile&amp;id=24344.html " style='color: black; text-decoration: none;font-family:verdana;font-size: 11px' title=" Профиль игрока ark-57 ">ark-57</a></td>
+					<td align=" right " valign=top width=" 60px " class=" contributiontopusers ">86947</td>
+				</tr>
+					</table>
+	</div>
+</div>
+					<br>
+
+					<div class=" block ">
+						<div style=" margin: 5px;text-align: center; ">Ошибка? Замечание? Предложение?</div>
+						<div style=" margin: 5px;text-align: center; ">
+							<form name=" mail_form " id=" mail_form " action=" index.html@path=tournament.html " method=" POST " enctype=" text/plain ">
+								<input type=" hidden " name=" name " size=" 30 " value=" ">
+								<input type=" hidden " name=" page " size=" 30 " value=" /index.phppath=tournament ">
+								<textarea name=" comments " rows=" 7 " cols=" 24 "></textarea>
+								<input type=" button " value=" Отправить " onclick=" sendBugFormToEmail() ">
+							</form>
+						</div>
+
+						<div style=" margin: 5px; ">PHP программистам, иллюстраторам, дизайнерам - <a href=" index.html@path=help.html ">работа</a>, рекламистам - <a href=" https://braingames.ru/forum/index.php?showtopic=2626 ">реклама</a>, преподавателям - <a href="
+                                                https://braingames.ru/forum/index.php?showtopic=4330 ">тесты</a>, рекрутинговым агентствам и менеджерам по персоналу - кандидаты, блогерам и журналистам - контент, выделенному серверу - сайт.
+						</div>
+
+											</div>
+
+					<br>
+
+					<!-- EOF :: анонсы -->
+				</td>
+				<!-- EOF :: ЛЕВАЯ СТОРОНА (КАТЕГОРИИ, ЛОГИН, ТОП ЮЗЕРЫ) -->
+			<link rel=" stylesheet " href=" ./tournament/style.css ">
+				<!-- СОДЕРЖИМОЕ СТРАНИЦЫ -->
+				<td id=" CONTENT_Id " style=" padding-left: 10px;padding-right: 10px; " valign=" top " align=" center ">
+			<main class=" tournament-main ">
+	<div class=" tournament-wraper ">
+<div class=" tournament-logo c-s ">
+	<img src=" ./tournament/raiffeisen-logo.svg " alt=" Лого Райффайзен " width=" 135 " height=" 54 ">
+</div>
+<section class=" tournament-info tournament-block block-round ">
+	<header class=" tournament-head ">
+<h1 class=" title-xl color-white ">Турнир с Райффайзен</h1>
+<p class=" descr color-white ">Braingames.ru совместно с Райффайзен начинает новую турнирную активность.</p>
+<p class=" descr color-white ">Мы будем публиковать по две отборочные задачи в месяц в августе, сентябре и октябре. В начале ноября мы проведем турнир
+среди участников отбора и лучшим вручим призы от Райффайзен.</p>
+<p class=" descr color-white ">Следите за ходом отбора и турнира на этой странице.</p>
+
+<button class=" cta main-cta ">Принять участие</button>
+	</header>
+	<div class=" tournament-sub ">
+		<p class=" descr color-white m-0 ">Публикуем задачи каждые две недели. Подпишитесь, если хотите получать уведомления про новые задачи на почту</p>
+		<form action=" " method=" post " class=" c-s tournament-sub-form ">
+<input type=" email " name=" email " id=" tournament-email " class=" tournament-input inline-input " placeholder=" Электронная почта "><button class=" cta color-white btn-sm button-sub ">Подписаться</button>
+		</form>
+	</div>
+</section>
+
+<section class=" tournament-block tournament-steps block-padding ">
+	<h2 class=" title-xl color-dark color-black ">Как проходит турнир</h2>
+	<div class=" row ">
+		<div class=" col-50 ">
+	<div class="icon-text s-s ">
+		<div class="icon bg-icon icon-m c-c ">
+			<img src="./tournament/torn-icon-1.svg " alt="Отбор ">
+		</div>
+		<div class="text-cntent ">
+			<h4 class="title-l color-black ">1. Отбор</h4>
+					<p class=" descr color-black m-0 ">Раз в две недели
+					публикуем задачу. Задачи проходят строгий отбор</p>
+		</div>
+	</div>
+		</div>
+		<div class=" col-50 ">
+		<div class="icon-text s-s ">
+			<div class="icon bg-icon icon-m c-c ">
+				<img src="./tournament/torn-icon-2.svg " alt="Рейтинг ">
+			</div>
+			<div class="text-cntent ">
+				<h4 class="title-l color-black ">2. Рейтинг</h4>
+				<p class=" descr color-black m-0 ">В конце каждого месяца подводим итоги и формируем рейтинги</p>
+			</div>
+		</div>
+		</div>
+		<div class=" col-50 ">
+			<div class="icon-text s-s ">
+				<div class="icon bg-icon icon-m c-c ">
+					<img src="./tournament/torn-icon-3.svg " alt="Турнир ">
+				</div>
+				<div class="text-cntent ">
+					<h4 class="title-l color-black ">3. Рейтинг</h4>
+					<p class=" descr color-black m-0 ">Каждые 3 месяца среди победителей промежуточного отбора проводится турнир с абсолютно новыми задачами</p>
+				</div>
+			</div>
+		</div>
+		<div class=" col-50 ">
+				<div class="icon-text s-s ">
+					<div class="icon bg-icon icon-m c-c ">
+						<img src="./tournament/torn-icon-4.svg " alt="Награждение ">
+					</div>
+					<div class="text-cntent ">
+						<h4 class="title-l color-black ">4. Награждение</h4>
+						<p class=" descr color-black m-0 ">Победители получают призы от Райффайзен</p>
+					</div>
+				</div>
+		</div>
+	</div>
+</section>
+
+<section class=" tournament-block block-padding tournament-info ">
+<h2 class=" title-xl color-dark color-black ">Календарь</h2>
+<p class=" descr color-black m-0 ">Мы будем публиковать по две отборочные задачи в месяц в августе, сентябре и октябре. В начале ноября мы проведем турнир
+среди участников отбора и лучшим вручим призы от Райффайзен.</p>
+
+<div class="tournament-calendar c-s ">
+	<img src="./tournament/calendar.svg " alt="Календарь ">
+</div>
+</section>
+<section class="tournament-block tournament-tasks block-padding mt-3 block-round ">
+	<h2 class=" title-xl color-dark color-black ">Задачи</h2>
+	<div class="tournament-questions ">
+	<h4 class="title-l color-black bold c-s has-hide-panel ">Август. Отбор <div class="icon icon-sm "><img
+				src="./tournament/toggle-icon.svg " alt=" " width="24 " height="24 "></div>
+	</h4>
+	<div class="tasks-wrapper ">
+	<article class="task ">
+<div id="puzzleInfo " class="puzzle ">
+	<table border="0 " width="100% ">
+		<tbody>
+			<tr>
+				<td valign="top ">
+					<div oncopy="addCopyright() " style="margin-left: 10px; margin-top: 5px; border: solid 0px black; ">
+						<table>
+							<tbody>
+								<tr>
+									<td class="tournament-icon ">
+										<img src="./tournament/raiffeisen-icon.svg " alt=" ">
+									</td>
+									<td><span class="tasktitle ">Отрезки и точки</span></td>
+
+									<td>
+										<div class="ya-share2 " data-curtain=" " data-shape="round "
+											data-color-scheme="whiteblack " data-size="s " data-limit="0 "
+											data-copy="first " data-more-button-type="short "
+											data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp,skype "
+											data-title="Задача «Кошелек, кошелек... какой кошелек?» "
+											data-description="В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один из кошельков опустошили, а все монетки из него
+                                                разложили по одной в кошельки с меньшими номерами. В вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать суммарный вес любых выбранных кошельков вместе с их содержимым. При
+                                                этом известно, что копеечная монетка весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно гарантированно узнать номер опустевшего кошелька? "
+											data-image="https://braingames.ru/images/idler/logo.gif "
+											data-url="https://braingames.ru/?path=comments&amp;puzzle=721 "
+											title="Поделиться задачей анонимно "></div>
+									</td>
+
+									<td>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div oncopy="addCopyright() " style="line-height: 150%; margin-left: 10px; ">
+						<span class="taskdescription "><a href="?path=category&amp;catname=weighing "
+								title="Задача относится к категории &quot;Взвешивания&quot; "
+								class="taskcategory ">Взвешивания</a>,&nbsp;<span
+								title="Решение этой задачи принесет вам 1 балл рейтинга ">Вес:
+								<b>1</b></span>,&nbsp;<span title="Задача понравилась 100% решивших ">Симпатии:
+								<b>100%</b></span>,&nbsp;<span
+								title="Игроки поблагодарили нас за задачу, пожертвовав 0.7 Мозгобаксов Вы тоже можете сделать на странице комментариев или обсуждения решения задачи, нажав кнопку &quot;спасибо за задачу&quot; ">Престиж:&nbsp;0.7</span>,&nbsp;<span
+								title="Задача была опубликована 14.03.2021 ">14.03.2021</span></span><span
+							class="rightdescription ">Задачу предложил:<a href="?path=profile&amp;id=12005 "
+								style="color: black; text-decoration: none;font-family:verdana;font-size: 11px "
+								title="Профиль игрока Breghnev ">Breghnev</a></span>
+					</div>
+					<!--- статистика задачи --->
+					<div id="puzzleStatBox_721 " align="center " style="display:none; ">
+					</div>
+					<!--- EOF: статистика задачи  --->
+					<div style="margin-left: 10px; margin-right: 10px; ">
+						<hr border="none " background-color="grey " height="1px ">
+					</div>
+					<div oncopy="addCopyright() " class="with-math "
+						style="margin-left: 10px; margin-right: 10px; border: solid 0px black; font-size:14px; line-height: 140%; ">
+						В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом
+						следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один из
+						кошельков опустошили, а все монетки из него разложили по одной в кошельки с меньшими номерами. В
+						вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать суммарный
+						вес любых выбранных кошельков вместе с их содержимым. При этом известно, что копеечная монетка
+						весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно гарантированно
+						узнать номер опустевшего кошелька?
+					</div>
+					<div class="emptyDiv10 "></div>
+
+					<!-- Нижний левый блок ссылок -->
+					<span style="float: left; margin-left: 10px; margin-bottom: 10px; ">
+						<span class="answerlink cta color-white btn-sm task-unswer "
+							onclick="window.location='/?path=comments&amp;puzzle=721&amp;showRegistrationForm=1' ">
+							зарегистрироваться и проверить ответ
+						</span>
+					</span>
+
+					<!-- Нижний правый блок ссылок -->
+					<span style="float: right; margin-right: 10px; margin-bottom: 10px; ">
+
+						<!-- FAQ задачи. часть 1 -->
+
+						<span style="margin: 5px; ">
+							<a href="?path=comments&amp;puzzle=721 " class="link ">Комментарии: 15</a>
+						</span>
+
+
+
+
+					</span>
+
+					<!-- FAQ задачи. часть 2 -->
+
+
+
+
+					<div id="viewFaqBlock721 "
+						style="float:left; padding: 0; background-color: #EFEFEF; text-align: left; vertical-align: middle; width: 100%; display: none; ">
+						<div id="viewFaq721 " style="border-radius: 0; font-size: 11px; padding: 10px 10px 10px 10px; ">
+							<b>Примечания к условию задачи:</b><br><br>
+						</div>
+					</div>
+
+					<!-- $part == 'display' -->
+					<!-- Форма ответа на задачу -->
+					<div id="721 " style="display:none;margin-bottom:10px; ">
+						<form action="/#scroll721 " method="post " name="form721 " id="form721 "
+							enctype="multipart/form-data ">
+							<input type="hidden " name="MAX_FILE_SIZE " value="102400 ">
+							<input type="hidden " name="ansPuzzleId " value="721 ">
+
+							<table border="0 " cellpadding="1 " cellspacing="1 " width="100% " style="padding: 10px; ">
+
+								<tbody>
+									<tr class="puzzlecolor ">
+										<td class="comments " align="center " width="100% ">
+											<textarea placeholder="Ответ: Не забудьте ответить на поставленный в условии вопрос. Обоснование: Не забудьте обосновать свой ответ. " style="width:100%; heigth:100px;resize: vertical; "
+												name="ansAnswerText " id="ansAnswerText721 " rows="6 "
+												cols="50 "></textarea>
+										</td>
+									</tr>
+									<tr class="puzzlecolor ">
+										<td colspan="2 " class="comments ">Добавить картинку:&nbsp;
+											<input type="file " accept="image/gif,image/png,image/jpeg " name="image "
+												id="image721 "> (Макс. 500x500, 100КБ)
+										</td>
+									</tr>
+
+									<tr class="puzzlecolor ">
+										<td style="text-align: center; " colspan="2 ">
+
+											<input type="image " src="admin/img/answer.gif " name="sendAnswer "
+												onclick="javascript: return AddAnswer( 'ansAnswerText721', 'image721'); ">
+
+										</td>
+
+
+									</tr>
+
+									<tr>
+										<td style="text-align: center; " colspan="2 ">
+											<input type="button " value="Предпросмотр "
+												onclick="make_preview( 'ansAnswerText721', 'tdf721') ">
+											<input type="button " value="Редактор формул LaTex " onclick="latexed(); ">
+										</td>
+									</tr>
+
+
+
+
+									<tr style="padding-left: 50px; ">
+										<td colspan="2 " width="100% " style="margin-left: 20px; ">
+											Для выделения наиболее важной части текста вы можете использовать
+											спецсимволы: [i]<i>для курсива</i>[/i] и [b]<b>для выделения жирным
+												шрифтом</b>[/b].<br>
+											Улучшить отображение формул помогут знаки $$: $$a^3-b^2=c^4$$ отобразится
+											как <img src="admin/img/latex.png "><br>
+										</td>
+									</tr>
+
+									<tr>
+										<td colspan="2 " id="tdf721 " class="comments " width="100% ">
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</form>
+					</div>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	</article>
+
+<article class="task ">
+	<div id="puzzleInfo " class="puzzle ">
+		<table border="0 " width="100% ">
+			<tbody>
+				<tr>
+					<td valign="top ">
+						<div oncopy="addCopyright() "
+							style="margin-left: 10px; margin-top: 5px; border: solid 0px black; ">
+							<table>
+								<tbody>
+									<tr>
+										<td class="tournament-icon ">
+											<img src="./tournament/raiffeisen-icon.svg " alt=" ">
+										</td>
+										<td><span class="tasktitle ">Отрезки и точки</span></td>
+
+										<td>
+											<div class="ya-share2 " data-curtain=" " data-shape="round "
+												data-color-scheme="whiteblack " data-size="s " data-limit="0 "
+												data-copy="first " data-more-button-type="short "
+												data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp,skype "
+												data-title="Задача «Кошелек, кошелек... какой кошелек?» "
+												data-description="В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один из кошельков опустошили, а все монетки из него
+                                                разложили по одной в кошельки с меньшими номерами. В вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать суммарный вес любых выбранных кошельков вместе с их содержимым. При
+                                                этом известно, что копеечная монетка весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно гарантированно узнать номер опустевшего кошелька? "
+												data-image="https://braingames.ru/images/idler/logo.gif "
+												data-url="https://braingames.ru/?path=comments&amp;puzzle=721 "
+												title="Поделиться задачей анонимно "></div>
+										</td>
+
+										<td>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div oncopy="addCopyright() " style="line-height: 150%; margin-left: 10px; ">
+							<span class="taskdescription "><a href="?path=category&amp;catname=weighing "
+									title="Задача относится к категории &quot;Взвешивания&quot; "
+									class="taskcategory ">Взвешивания</a>,&nbsp;<span
+									title="Решение этой задачи принесет вам 1 балл рейтинга ">Вес:
+									<b>1</b></span>,&nbsp;<span title="Задача понравилась 100% решивших ">Симпатии:
+									<b>100%</b></span>,&nbsp;<span
+									title="Игроки поблагодарили нас за задачу, пожертвовав 0.7 Мозгобаксов Вы тоже можете сделать на странице комментариев или обсуждения решения задачи, нажав кнопку &quot;спасибо за задачу&quot; ">Престиж:&nbsp;0.7</span>,&nbsp;<span
+									title="Задача была опубликована 14.03.2021 ">14.03.2021</span></span><span
+								class="rightdescription ">Задачу предложил:<a href="?path=profile&amp;id=12005 "
+									style="color: black; text-decoration: none;font-family:verdana;font-size: 11px "
+									title="Профиль игрока Breghnev ">Breghnev</a></span>
+						</div>
+						<!--- статистика задачи --->
+						<div id="puzzleStatBox_721 " align="center " style="display:none; ">
+						</div>
+						<!--- EOF: статистика задачи  --->
+						<div style="margin-left: 10px; margin-right: 10px; ">
+							<hr border="none " background-color="grey " height="1px ">
+						</div>
+						<div oncopy="addCopyright() " class="with-math "
+							style="margin-left: 10px; margin-right: 10px; border: solid 0px black; font-size:14px; line-height: 140%; ">
+							В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом
+							следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один из
+							кошельков опустошили, а все монетки из него разложили по одной в кошельки с меньшими
+							номерами. В
+							вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать
+							суммарный
+							вес любых выбранных кошельков вместе с их содержимым. При этом известно, что копеечная
+							монетка
+							весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно
+							гарантированно
+							узнать номер опустевшего кошелька?
+						</div>
+						<div class="emptyDiv10 "></div>
+
+						<!-- Нижний левый блок ссылок -->
+						<span style="float: left; margin-left: 10px; margin-bottom: 10px; ">
+							<span class="answerlink cta color-white btn-sm task-unswer "
+								onclick="window.location='/?path=comments&amp;puzzle=721&amp;showRegistrationForm=1' ">
+								Ответить на задачу
+							</span>
+						</span>
+
+						<!-- Нижний правый блок ссылок -->
+						<span style="float: right; margin-right: 10px; margin-bottom: 10px; ">
+
+							<!-- FAQ задачи. часть 1 -->
+
+							<span style="margin: 5px; ">
+								<a href="?path=comments&amp;puzzle=721 " class="link ">Комментарии: 15</a>
+							</span>
+
+
+
+
+						</span>
+
+						<!-- FAQ задачи. часть 2 -->
+
+
+
+
+						<div id="viewFaqBlock721 "
+							style="float:left; padding: 0; background-color: #EFEFEF; text-align: left; vertical-align: middle; width: 100%; display: none; ">
+							<div id="viewFaq721 "
+								style="border-radius: 0; font-size: 11px; padding: 10px 10px 10px 10px; ">
+								<b>Примечания к условию задачи:</b><br><br>
+							</div>
+						</div>
+
+						<!-- $part == 'display' -->
+						<!-- Форма ответа на задачу -->
+						<div id="721 " style="display:none;margin-bottom:10px; ">
+							<form action="/#scroll721 " method="post " name="form721 " id="form721 "
+								enctype="multipart/form-data ">
+								<input type="hidden " name="MAX_FILE_SIZE " value="102400 ">
+								<input type="hidden " name="ansPuzzleId " value="721 ">
+
+								<table border="0 " cellpadding="1 " cellspacing="1 " width="100% "
+									style="padding: 10px; ">
+
+									<tbody>
+										<tr class="puzzlecolor ">
+											<td class="comments " align="center " width="100% ">
+												<textarea
+													placeholder="Ответ: Не забудьте ответить на поставленный в условии вопрос. Обоснование: Не забудьте обосновать свой ответ. "
+													style="width:100%; heigth:100px;resize: vertical; "
+													name="ansAnswerText " id="ansAnswerText721 " rows="6 "
+													cols="50 "></textarea>
+											</td>
+										</tr>
+										<tr class="puzzlecolor ">
+											<td colspan="2 " class="comments ">Добавить картинку:&nbsp;
+												<input type="file " accept="image/gif,image/png,image/jpeg "
+													name="image " id="image721 "> (Макс. 500x500, 100КБ)
+											</td>
+										</tr>
+
+										<tr class="puzzlecolor ">
+											<td style="text-align: center; " colspan="2 ">
+
+												<input type="image " src="admin/img/answer.gif " name="sendAnswer "
+													onclick="javascript: return AddAnswer( 'ansAnswerText721', 'image721'); ">
+
+											</td>
+
+
+										</tr>
+
+										<tr>
+											<td style="text-align: center; " colspan="2 ">
+												<input type="button " value="Предпросмотр "
+													onclick="make_preview( 'ansAnswerText721', 'tdf721') ">
+												<input type="button " value="Редактор формул LaTex "
+													onclick="latexed(); ">
+											</td>
+										</tr>
+
+
+
+
+										<tr style="padding-left: 50px; ">
+											<td colspan="2 " width="100% " style="margin-left: 20px; ">
+												Для выделения наиболее важной части текста вы можете использовать
+												спецсимволы: [i]<i>для курсива</i>[/i] и [b]<b>для выделения жирным
+													шрифтом</b>[/b].<br>
+												Улучшить отображение формул помогут знаки $$: $$a^3-b^2=c^4$$
+												отобразится
+												как <img src="admin/img/latex.png "><br>
+											</td>
+										</tr>
+
+										<tr>
+											<td colspan="2 " id="tdf721 " class="comments " width="100% ">
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</form>
+						</div>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</article>
+
+
+
+<div class="user-rating ">
+	<table class="rating-table ">
+		<caption class="rating-title title-l " >Рейтинг победителей</caption>
+		<thead>
+			<tr class="rating-name-line ">
+					<td class="rating-col rating-col-name ">Логин</td>
+					<td class="rating-col rating-col-name ">Всего баллов</td>
+			</tr>
+		</thead>
+		<tbody>
+				<tr>
+					<td class="table-separator " colspan="2 "></td>
+				</tr>
+				<tr>
+					<td class="rating-col "><span class="col-number ">1.</span>impas</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td class="rating-col "><span class="col-number ">2.</span>bmikle</td>
+					<td>7</td>
+				</tr>
+				
+				<tr>
+					<td class="rating-col "><span class="col-number ">3.</span>Gaatot</td>
+					<td>6</td>
+				</tr>
+				
+				<tr>
+					<td class="rating-col "><span class="col-number ">4.</span>zmerch2</td>
+					<td>5</td>
+				</tr>
+				
+				<tr>
+					<td class="rating-col "><span class="col-number ">5.</span>Eugeny</td>
+					<td>4</td>
+				</tr>
+				
+				<tr>
+					<td class="rating-col "><span class="col-number ">6.</span>BAS14</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td class="rating-col "><span class="col-number ">7.</span>Breghnev</td>
+					<td>2</td>
+				</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+
+	</div>
+
+<div class="tournament-questions hidden-tasks-wrapper ">
+	<h4 class="title-l color-black bold c-s has-hide-panel ">Сентябрь. Отбор <div class="icon icon-sm "><img src="./tournament/toggle-icon.svg " alt=" " width="24 " height="24 "></div></h4>
+<div class="tasks-wrapper ">
+	<article class="task ">
+		<div id="puzzleInfo " class="puzzle ">
+			<table border="0 " width="100% ">
+				<tbody>
+					<tr>
+						<td valign="top ">
+							<div oncopy="addCopyright() "
+								style="margin-left: 10px; margin-top: 5px; border: solid 0px black; ">
+								<table>
+									<tbody>
+										<tr>
+											<td class="tournament-icon ">
+												<img src="./tournament/raiffeisen-icon.svg " alt=" ">
+											</td>
+											<td><span class="tasktitle ">Отрезки и точки</span></td>
+
+											<td>
+												<div class="ya-share2 ya-share2_inited " data-curtain=" "
+													data-shape="round " data-color-scheme="whiteblack " data-size="s "
+													data-limit="0 " data-copy="first " data-more-button-type="short "
+													data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp,skype "
+													data-title="Задача «Кошелек, кошелек... какой кошелек?» "
+													data-description="В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один из кошельков опустошили, а все монетки из
+                                                него разложили по одной в кошельки с меньшими номерами. В вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать суммарный вес любых выбранных кошельков вместе с их содержимым.
+                                                При этом известно, что копеечная монетка весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно гарантированно узнать номер опустевшего кошелька? "
+													data-image="https://braingames.ru/images/idler/logo.gif "
+													data-url="https://braingames.ru/?path=comments&amp;puzzle=721 "
+													title="Поделиться задачей анонимно ">
+													<div
+														class="ya-share2__container ya-share2__container_size_s ya-share2__container_color-scheme_whiteblack ya-share2__container_shape_round ">
+														<ul
+															class="ya-share2__list ya-share2__list_direction_horizontal ">
+															<li class="ya-share2__item ya-share2__item_more "><a
+																	class="ya-share2__link ya-share2__link_more "
+																	href="javascript:void(0); "><span
+																		class="ya-share2__badge ya-share2__badge_more "><span
+																			class="ya-share2__icon ya-share2__icon_more "></span></span></a>
+																<div
+																	class="ya-share2__popup ya-share2__popup_direction_bottom ya-share2__popup_list-direction_horizontal ">
+																	<ul
+																		class="ya-share2__list ya-share2__list_direction_vertical ">
+																		<li
+																			class="ya-share2__item ya-share2__item_service_messenger ">
+																			<a class="ya-share2__link "
+																				href="https://yandex.ru/chat?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20%0Ahttps%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2#/forward "
+																				rel="nofollow noopener " target="_blank "
+																				title="Я.Мессенджер "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Я.Мессенджер</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_vkontakte ">
+																			<a class="ya-share2__link "
+																				href="https://vk.com/share.php?url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;description=%D0%92%2064%20%D0%BF%D1%80%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B6%D0%B0%D0%BB%D0%B8%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8.%20%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%84%961%20%D0%B1%D1%8B%D0%BB%20%D0%BF%D1%83%D1%81%D1%82%2C%20%D0%B0%20%D0%B2%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%BC%20%D0%BF%D0%BE%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B9%D0%BA%D1%83%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%2C%20%D1%87%D0%B5%D0%BC%20%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B5%D0%BC.%20%D0%97%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B8%D0%BB%D0%B8%2C%20%D0%B0%20%D0%B2%D1%81%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%81%20%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D0%BC%D0%B8%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%92%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%81%D1%8B%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B9%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%81%20%D0%BB%D1%8E%D0%B1%D1%8B%D1%85%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D1%81%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC.%20%D0%9F%D1%80%D0%B8%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%8D%D1%82%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%87%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D1%81%D0%B8%D1%82%201%20%D0%B3%2C%20%D0%B0%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%80%94%20100%20%D0%B3.%20%D0%97%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B5%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%3F%20&amp;image=https%3A%2F%2Fbraingames.ru%2Fimages%2Fidler%2Flogo.gif%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="ВКонтакте "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">ВКонтакте</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_facebook ">
+																			<a class="ya-share2__link "
+																				href="https://www.facebook.com/sharer.php?src=sp&amp;u=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;description=%D0%92%2064%20%D0%BF%D1%80%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B6%D0%B0%D0%BB%D0%B8%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8.%20%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%84%961%20%D0%B1%D1%8B%D0%BB%20%D0%BF%D1%83%D1%81%D1%82%2C%20%D0%B0%20%D0%B2%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%BC%20%D0%BF%D0%BE%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B9%D0%BA%D1%83%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%2C%20%D1%87%D0%B5%D0%BC%20%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B5%D0%BC.%20%D0%97%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B8%D0%BB%D0%B8%2C%20%D0%B0%20%D0%B2%D1%81%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%81%20%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D0%BC%D0%B8%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%92%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%81%D1%8B%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B9%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%81%20%D0%BB%D1%8E%D0%B1%D1%8B%D1%85%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D1%81%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC.%20%D0%9F%D1%80%D0%B8%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%8D%D1%82%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%87%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D1%81%D0%B8%D1%82%201%20%D0%B3%2C%20%D0%B0%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%80%94%20100%20%D0%B3.%20%D0%97%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B5%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%3F%20&amp;picture=https%3A%2F%2Fbraingames.ru%2Fimages%2Fidler%2Flogo.gif%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Facebook "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Facebook</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_odnoklassniki ">
+																			<a class="ya-share2__link "
+																				href="https://connect.ok.ru/offer?url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;description=%D0%92%2064%20%D0%BF%D1%80%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B6%D0%B0%D0%BB%D0%B8%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8.%20%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%84%961%20%D0%B1%D1%8B%D0%BB%20%D0%BF%D1%83%D1%81%D1%82%2C%20%D0%B0%20%D0%B2%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%BC%20%D0%BF%D0%BE%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B9%D0%BA%D1%83%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%2C%20%D1%87%D0%B5%D0%BC%20%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B5%D0%BC.%20%D0%97%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B8%D0%BB%D0%B8%2C%20%D0%B0%20%D0%B2%D1%81%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%81%20%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D0%BC%D0%B8%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%92%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%81%D1%8B%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B9%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%81%20%D0%BB%D1%8E%D0%B1%D1%8B%D1%85%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D1%81%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC.%20%D0%9F%D1%80%D0%B8%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%8D%D1%82%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%87%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D1%81%D0%B8%D1%82%201%20%D0%B3%2C%20%D0%B0%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%80%94%20100%20%D0%B3.%20%D0%97%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B5%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%3F%20&amp;imageUrl=https%3A%2F%2Fbraingames.ru%2Fimages%2Fidler%2Flogo.gif%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Одноклассники "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Одноклассники</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_telegram ">
+																			<a class="ya-share2__link "
+																				href="https://t.me/share/url?url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Telegram "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Telegram</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_twitter ">
+																			<a class="ya-share2__link "
+																				href="https://twitter.com/intent/tweet?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Twitter "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Twitter</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_viber ">
+																			<a class="ya-share2__link "
+																				href="viber://forward?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20%20https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2 "
+																				rel="nofollow " target="_blank "
+																				title="Viber "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Viber</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_whatsapp ">
+																			<a class="ya-share2__link "
+																				href="https://api.whatsapp.com/send?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20%20https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="WhatsApp "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">WhatsApp</span></a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</td>
+
+											<td>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div oncopy="addCopyright() " style="line-height: 150%; margin-left: 10px; ">
+								<span class="taskdescription "><a href="?path=category&amp;catname=weighing "
+										title="Задача относится к категории &quot;Взвешивания&quot; "
+										class="taskcategory ">Взвешивания</a>,&nbsp;<span
+										title="Решение этой задачи принесет вам 1 балл рейтинга ">Вес:
+										<b>1</b></span>,&nbsp;<span title="Задача понравилась 100% решивших ">Симпатии:
+										<b>100%</b></span>,&nbsp;<span
+										title="Игроки поблагодарили нас за задачу, пожертвовав 0.7 Мозгобаксов Вы тоже можете сделать на странице комментариев или обсуждения решения задачи, нажав кнопку &quot;спасибо за задачу&quot; ">Престиж:&nbsp;0.7</span>,&nbsp;<span
+										title="Задача была опубликована 14.03.2021 ">14.03.2021</span></span><span
+									class="rightdescription ">Задачу предложил:<a href="?path=profile&amp;id=12005 "
+										style="color: black; text-decoration: none;font-family:verdana;font-size: 11px "
+										title="Профиль игрока Breghnev ">Breghnev</a></span>
+							</div>
+							<!--- статистика задачи --->
+							<div id="puzzleStatBox_721 " align="center " style="display:none; ">
+							</div>
+							<!--- EOF: статистика задачи  --->
+							<div style="margin-left: 10px; margin-right: 10px; ">
+								<hr border="none " background-color="grey " height="1px ">
+							</div>
+							<div oncopy="addCopyright() " class="with-math "
+								style="margin-left: 10px; margin-right: 10px; border: solid 0px black; font-size:14px; line-height: 140%; ">
+								В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом
+								следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один
+								из
+								кошельков опустошили, а все монетки из него разложили по одной в кошельки с меньшими
+								номерами. В
+								вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать
+								суммарный
+								вес любых выбранных кошельков вместе с их содержимым. При этом известно, что копеечная
+								монетка
+								весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно
+								гарантированно
+								узнать номер опустевшего кошелька?
+							</div>
+							<div class="emptyDiv10 "></div>
+
+							<!-- Нижний левый блок ссылок -->
+							<span style="float: left; margin-left: 10px; margin-bottom: 10px; ">
+								<span class="answerlink cta color-white btn-sm task-unswer "
+									onclick="window.location='/?path=comments&amp;puzzle=721&amp;showRegistrationForm=1' ">
+									зарегистрироваться и проверить ответ
+								</span>
+							</span>
+
+							<!-- Нижний правый блок ссылок -->
+							<span style="float: right; margin-right: 10px; margin-bottom: 10px; ">
+
+								<!-- FAQ задачи. часть 1 -->
+
+								<span style="margin: 5px; ">
+									<a href="?path=comments&amp;puzzle=721 " class="link ">Комментарии: 15</a>
+								</span>
+
+
+
+
+							</span>
+
+							<!-- FAQ задачи. часть 2 -->
+
+
+
+
+							<div id="viewFaqBlock721 "
+								style="float:left; padding: 0; background-color: #EFEFEF; text-align: left; vertical-align: middle; width: 100%; display: none; ">
+								<div id="viewFaq721 "
+									style="border-radius: 0; font-size: 11px; padding: 10px 10px 10px 10px; ">
+									<b>Примечания к условию задачи:</b><br><br>
+								</div>
+							</div>
+
+							<!-- $part == 'display' -->
+							<!-- Форма ответа на задачу -->
+							<div id="721 " style="display:none;margin-bottom:10px; ">
+								<form action="/#scroll721 " method="post " name="form721 " id="form721 "
+									enctype="multipart/form-data ">
+									<input type="hidden " name="MAX_FILE_SIZE " value="102400 ">
+									<input type="hidden " name="ansPuzzleId " value="721 ">
+
+									<table border="0 " cellpadding="1 " cellspacing="1 " width="100% "
+										style="padding: 10px; ">
+
+										<tbody>
+											<tr class="puzzlecolor ">
+												<td class="comments " align="center " width="100% ">
+													<textarea
+														placeholder="Ответ: Не забудьте ответить на поставленный в условии вопрос. Обоснование: Не забудьте обосновать свой ответ. "
+														style="width:100%; heigth:100px;resize: vertical; "
+														name="ansAnswerText " id="ansAnswerText721 " rows="6 "
+														cols="50 "></textarea>
+												</td>
+											</tr>
+											<tr class="puzzlecolor ">
+												<td colspan="2 " class="comments ">Добавить картинку:&nbsp;
+													<input type="file " accept="image/gif,image/png,image/jpeg "
+														name="image " id="image721 "> (Макс. 500x500, 100КБ)
+												</td>
+											</tr>
+
+											<tr class="puzzlecolor ">
+												<td style="text-align: center; " colspan="2 ">
+
+													<input type="image " src="admin/img/answer.gif " name="sendAnswer "
+														onclick="javascript: return AddAnswer( 'ansAnswerText721', 'image721'); ">
+
+												</td>
+
+
+											</tr>
+
+											<tr>
+												<td style="text-align: center; " colspan="2 ">
+													<input type="button " value="Предпросмотр "
+														onclick="make_preview( 'ansAnswerText721', 'tdf721') ">
+													<input type="button " value="Редактор формул LaTex "
+														onclick="latexed(); ">
+												</td>
+											</tr>
+
+
+
+
+											<tr style="padding-left: 50px; ">
+												<td colspan="2 " width="100% " style="margin-left: 20px; ">
+													Для выделения наиболее важной части текста вы можете использовать
+													спецсимволы: [i]<i>для курсива</i>[/i] и [b]<b>для выделения жирным
+														шрифтом</b>[/b].<br>
+													Улучшить отображение формул помогут знаки $$: $$a^3-b^2=c^4$$
+													отобразится
+													как <img src="admin/img/latex.png "><br>
+												</td>
+											</tr>
+
+											<tr>
+												<td colspan="2 " id="tdf721 " class="comments " width="100% ">
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</form>
+							</div>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</article>
+
+	<article class="task task-inprogress ">
+		<div id="puzzleInfo " class="puzzle ">
+			<table border="0 " width="100% ">
+				<tbody>
+					<tr>
+						<td valign="top ">
+							<div oncopy="addCopyright() "
+								style="margin-left: 10px; margin-top: 5px; border: solid 0px black; ">
+								<table>
+									<tbody>
+										<tr>
+											<td class="tournament-icon ">
+												<img src="./tournament/raiffeisen-icon.svg " alt=" ">
+											</td>
+											<td><span class="tasktitle ">Отрезки и точки</span></td>
+
+											<td>
+												<div class="ya-share2 ya-share2_inited " data-curtain=" "
+													data-shape="round " data-color-scheme="whiteblack " data-size="s "
+													data-limit="0 " data-copy="first " data-more-button-type="short "
+													data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp,skype "
+													data-title="Задача «Кошелек, кошелек... какой кошелек?» "
+													data-description="В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один из кошельков опустошили, а все монетки из
+                                                него разложили по одной в кошельки с меньшими номерами. В вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать суммарный вес любых выбранных кошельков вместе с их содержимым.
+                                                При этом известно, что копеечная монетка весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно гарантированно узнать номер опустевшего кошелька? "
+													data-image="https://braingames.ru/images/idler/logo.gif "
+													data-url="https://braingames.ru/?path=comments&amp;puzzle=721 "
+													title="Поделиться задачей анонимно ">
+													<div
+														class="ya-share2__container ya-share2__container_size_s ya-share2__container_color-scheme_whiteblack ya-share2__container_shape_round ">
+														<ul
+															class="ya-share2__list ya-share2__list_direction_horizontal ">
+															<li class="ya-share2__item ya-share2__item_more "><a
+																	class="ya-share2__link ya-share2__link_more "
+																	href="javascript:void(0); "><span
+																		class="ya-share2__badge ya-share2__badge_more "><span
+																			class="ya-share2__icon ya-share2__icon_more "></span></span></a>
+																<div
+																	class="ya-share2__popup ya-share2__popup_direction_bottom ya-share2__popup_list-direction_horizontal ">
+																	<ul
+																		class="ya-share2__list ya-share2__list_direction_vertical ">
+																		<li
+																			class="ya-share2__item ya-share2__item_service_messenger ">
+																			<a class="ya-share2__link "
+																				href="https://yandex.ru/chat?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20%0Ahttps%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2#/forward "
+																				rel="nofollow noopener " target="_blank "
+																				title="Я.Мессенджер "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Я.Мессенджер</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_vkontakte ">
+																			<a class="ya-share2__link "
+																				href="https://vk.com/share.php?url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;description=%D0%92%2064%20%D0%BF%D1%80%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B6%D0%B0%D0%BB%D0%B8%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8.%20%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%84%961%20%D0%B1%D1%8B%D0%BB%20%D0%BF%D1%83%D1%81%D1%82%2C%20%D0%B0%20%D0%B2%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%BC%20%D0%BF%D0%BE%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B9%D0%BA%D1%83%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%2C%20%D1%87%D0%B5%D0%BC%20%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B5%D0%BC.%20%D0%97%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B8%D0%BB%D0%B8%2C%20%D0%B0%20%D0%B2%D1%81%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%81%20%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D0%BC%D0%B8%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%92%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%81%D1%8B%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B9%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%81%20%D0%BB%D1%8E%D0%B1%D1%8B%D1%85%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D1%81%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC.%20%D0%9F%D1%80%D0%B8%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%8D%D1%82%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%87%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D1%81%D0%B8%D1%82%201%20%D0%B3%2C%20%D0%B0%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%80%94%20100%20%D0%B3.%20%D0%97%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B5%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%3F%20&amp;image=https%3A%2F%2Fbraingames.ru%2Fimages%2Fidler%2Flogo.gif%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="ВКонтакте "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">ВКонтакте</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_facebook ">
+																			<a class="ya-share2__link "
+																				href="https://www.facebook.com/sharer.php?src=sp&amp;u=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;description=%D0%92%2064%20%D0%BF%D1%80%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B6%D0%B0%D0%BB%D0%B8%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8.%20%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%84%961%20%D0%B1%D1%8B%D0%BB%20%D0%BF%D1%83%D1%81%D1%82%2C%20%D0%B0%20%D0%B2%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%BC%20%D0%BF%D0%BE%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B9%D0%BA%D1%83%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%2C%20%D1%87%D0%B5%D0%BC%20%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B5%D0%BC.%20%D0%97%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B8%D0%BB%D0%B8%2C%20%D0%B0%20%D0%B2%D1%81%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%81%20%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D0%BC%D0%B8%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%92%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%81%D1%8B%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B9%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%81%20%D0%BB%D1%8E%D0%B1%D1%8B%D1%85%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D1%81%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC.%20%D0%9F%D1%80%D0%B8%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%8D%D1%82%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%87%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D1%81%D0%B8%D1%82%201%20%D0%B3%2C%20%D0%B0%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%80%94%20100%20%D0%B3.%20%D0%97%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B5%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%3F%20&amp;picture=https%3A%2F%2Fbraingames.ru%2Fimages%2Fidler%2Flogo.gif%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Facebook "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Facebook</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_odnoklassniki ">
+																			<a class="ya-share2__link "
+																				href="https://connect.ok.ru/offer?url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;title=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;description=%D0%92%2064%20%D0%BF%D1%80%D0%BE%D0%BD%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%D1%85%20%D0%BB%D0%B5%D0%B6%D0%B0%D0%BB%D0%B8%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8.%20%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%84%961%20%D0%B1%D1%8B%D0%BB%20%D0%BF%D1%83%D1%81%D1%82%2C%20%D0%B0%20%D0%B2%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%BC%20%D0%BF%D0%BE%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B5%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%BD%D0%B0%20%D0%BE%D0%B4%D0%BD%D1%83%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B9%D0%BA%D1%83%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%2C%20%D1%87%D0%B5%D0%BC%20%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D1%8B%D0%B4%D1%83%D1%89%D0%B5%D0%BC.%20%D0%97%D0%B0%D1%82%D0%B5%D0%BC%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B8%D0%BB%D0%B8%2C%20%D0%B0%20%D0%B2%D1%81%D0%B5%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%80%D0%B0%D0%B7%D0%BB%D0%BE%D0%B6%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%20%D1%81%20%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B8%D0%BC%D0%B8%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8.%20%D0%92%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%81%D1%8B%20%D1%81%D0%BE%20%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%BE%D0%B9%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BD%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%83%D0%BC%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B5%D1%81%20%D0%BB%D1%8E%D0%B1%D1%8B%D1%85%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%D1%81%20%D0%B8%D1%85%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D1%8B%D0%BC.%20%D0%9F%D1%80%D0%B8%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%D1%8D%D1%82%D0%BE%D0%BC%20%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%BE%2C%20%D1%87%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BF%D0%B5%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D1%81%D0%B8%D1%82%201%20%D0%B3%2C%20%D0%B0%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%20%E2%80%94%20100%20%D0%B3.%20%D0%97%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BE%D0%BF%D1%83%D1%81%D1%82%D0%B5%D0%B2%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0%3F%20&amp;imageUrl=https%3A%2F%2Fbraingames.ru%2Fimages%2Fidler%2Flogo.gif%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Одноклассники "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Одноклассники</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_telegram ">
+																			<a class="ya-share2__link "
+																				href="https://t.me/share/url?url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Telegram "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Telegram</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_twitter ">
+																			<a class="ya-share2__link "
+																				href="https://twitter.com/intent/tweet?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20&amp;url=https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="Twitter "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Twitter</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_viber ">
+																			<a class="ya-share2__link "
+																				href="viber://forward?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20%20https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2 "
+																				rel="nofollow " target="_blank "
+																				title="Viber "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">Viber</span></a>
+																		</li>
+																		<li
+																			class="ya-share2__item ya-share2__item_service_whatsapp ">
+																			<a class="ya-share2__link "
+																				href="https://api.whatsapp.com/send?text=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%C2%AB%D0%9A%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%2C%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA...%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA%3F%C2%BB%20%20https%3A%2F%2Fbraingames.ru%2F%3Fpath%3Dcomments%26puzzle%3D721%20&amp;utm_source=share2 "
+																				rel="nofollow noopener " target="_blank "
+																				title="WhatsApp "><span
+																					class="ya-share2__badge "><span
+																						class="ya-share2__icon "></span></span><span
+																					class="ya-share2__title ">WhatsApp</span></a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</td>
+
+											<td>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div oncopy="addCopyright() " style="line-height: 150%; margin-left: 10px; ">
+								<span class="taskdescription "><a href="?path=category&amp;catname=weighing "
+										title="Задача относится к категории &quot;Взвешивания&quot; "
+										class="taskcategory ">Взвешивания</a>,&nbsp;<span
+										title="Решение этой задачи принесет вам 1 балл рейтинга ">Вес:
+										<b>1</b></span>,&nbsp;<span title="Задача понравилась 100% решивших ">Симпатии:
+										<b>100%</b></span>,&nbsp;<span
+										title="Игроки поблагодарили нас за задачу, пожертвовав 0.7 Мозгобаксов Вы тоже можете сделать на странице комментариев или обсуждения решения задачи, нажав кнопку &quot;спасибо за задачу&quot; ">Престиж:&nbsp;0.7</span>,&nbsp;<span
+										title="Задача была опубликована 14.03.2021 ">14.03.2021</span></span><span
+									class="rightdescription ">Задачу предложил:<a href="?path=profile&amp;id=12005 "
+										style="color: black; text-decoration: none;font-family:verdana;font-size: 11px "
+										title="Профиль игрока Breghnev ">Breghnev</a></span>
+							</div>
+							<!--- статистика задачи --->
+							<div id="puzzleStatBox_721 " align="center " style="display:none; ">
+							</div>
+							<!--- EOF: статистика задачи  --->
+							<div style="margin-left: 10px; margin-right: 10px; ">
+								<hr border="none " background-color="grey " height="1px ">
+							</div>
+							<div oncopy="addCopyright() " class="with-math "
+								style="margin-left: 10px; margin-right: 10px; border: solid 0px black; font-size:14px; line-height: 140%; ">
+								В 64 пронумерованных кошельках лежали копеечные монетки. Кошелек №1 был пуст, а в каждом
+								следующем по номеру кошельке было на одну копейку больше, чем в предыдущем. Затем один
+								из
+								кошельков опустошили, а все монетки из него разложили по одной в кошельки с меньшими
+								номерами. В
+								вашем распоряжении есть весы со стрелкой, которые позволяют за одно взвешивание узнать
+								суммарный
+								вес любых выбранных кошельков вместе с их содержимым. При этом известно, что копеечная
+								монетка
+								весит 1 г, а пустой кошелек — 100 г. За какое наименьшее число взвешиваний можно
+								гарантированно
+								узнать номер опустевшего кошелька?
+							</div>
+							<div class="emptyDiv10 "></div>
+
+							<!-- Нижний левый блок ссылок -->
+							<span style="float: left; margin-left: 10px; margin-bottom: 10px; ">
+								<span class="answerlink cta color-white btn-sm task-unswer "
+									onclick="window.location='/?path=comments&amp;puzzle=721&amp;showRegistrationForm=1' ">
+									Ответить на задачу
+								</span>
+							</span>
+
+							<!-- Нижний правый блок ссылок -->
+							<span style="float: right; margin-right: 10px; margin-bottom: 10px; ">
+
+								<!-- FAQ задачи. часть 1 -->
+
+								<span style="margin: 5px; ">
+									<a href="?path=comments&amp;puzzle=721 " class="link ">Комментарии: 15</a>
+								</span>
+
+
+
+
+							</span>
+
+							<!-- FAQ задачи. часть 2 -->
+
+
+
+
+							<div id="viewFaqBlock721 "
+								style="float:left; padding: 0; background-color: #EFEFEF; text-align: left; vertical-align: middle; width: 100%; display: none; ">
+								<div id="viewFaq721 "
+									style="border-radius: 0; font-size: 11px; padding: 10px 10px 10px 10px; ">
+									<b>Примечания к условию задачи:</b><br><br>
+								</div>
+							</div>
+
+							<!-- $part == 'display' -->
+							<!-- Форма ответа на задачу -->
+							<div id="721 " style="display:none;margin-bottom:10px; ">
+								<form action="/#scroll721 " method="post " name="form721 " id="form721 "
+									enctype="multipart/form-data ">
+									<input type="hidden " name="MAX_FILE_SIZE " value="102400 ">
+									<input type="hidden " name="ansPuzzleId " value="721 ">
+
+									<table border="0 " cellpadding="1 " cellspacing="1 " width="100% "
+										style="padding: 10px; ">
+
+										<tbody>
+											<tr class="puzzlecolor ">
+												<td class="comments " align="center " width="100% ">
+													<textarea
+														placeholder="Ответ: Не забудьте ответить на поставленный в условии вопрос. Обоснование: Не забудьте обосновать свой ответ. "
+														style="width:100%; heigth:100px;resize: vertical; "
+														name="ansAnswerText " id="ansAnswerText721 " rows="6 "
+														cols="50 "></textarea>
+												</td>
+											</tr>
+											<tr class="puzzlecolor ">
+												<td colspan="2 " class="comments ">Добавить картинку:&nbsp;
+													<input type="file " accept="image/gif,image/png,image/jpeg "
+														name="image " id="image721 "> (Макс. 500x500, 100КБ)
+												</td>
+											</tr>
+
+											<tr class="puzzlecolor ">
+												<td style="text-align: center; " colspan="2 ">
+
+													<input type="image " src="admin/img/answer.gif " name="sendAnswer "
+														onclick="javascript: return AddAnswer( 'ansAnswerText721', 'image721'); ">
+
+												</td>
+
+
+											</tr>
+
+											<tr>
+												<td style="text-align: center; " colspan="2 ">
+													<input type="button " value="Предпросмотр "
+														onclick="make_preview( 'ansAnswerText721', 'tdf721') ">
+													<input type="button " value="Редактор формул LaTex "
+														onclick="latexed(); ">
+												</td>
+											</tr>
+
+
+
+
+											<tr style="padding-left: 50px; ">
+												<td colspan="2 " width="100% " style="margin-left: 20px; ">
+													Для выделения наиболее важной части текста вы можете использовать
+													спецсимволы: [i]<i>для курсива</i>[/i] и [b]<b>для выделения жирным
+														шрифтом</b>[/b].<br>
+													Улучшить отображение формул помогут знаки $$: $$a^3-b^2=c^4$$
+													отобразится
+													как <img src="admin/img/latex.png "><br>
+												</td>
+											</tr>
+
+											<tr>
+												<td colspan="2 " id="tdf721 " class="comments " width="100% ">
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</form>
+							</div>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</article>
+
+	<p class="inprogress-text ">
+		Здесь появится задача 14.09
+	</p>
+
+	<div class="user-rating rating-inprogress ">
+		<table class="rating-table ">
+			<caption class="rating-title title-l ">Рейтинг победителей</caption>
+			<thead>
+				<tr class="rating-name-line ">
+					<td class="rating-col rating-col-name ">Логин</td>
+					<td class="rating-col rating-col-name ">Всего баллов</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="table-separator " colspan="2 "></td>
+				</tr>
+				<tr>
+					<td class="rating-col "><span class="col-number ">1.</span>impas</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td class="rating-col "><span class="col-number ">2.</span>bmikle</td>
+					<td>7</td>
+				</tr>
+
+				<tr>
+					<td class="rating-col "><span class="col-number ">3.</span>Gaatot</td>
+					<td>6</td>
+				</tr>
+
+				<tr>
+					<td class="rating-col "><span class="col-number ">4.</span>zmerch2</td>
+					<td>5</td>
+				</tr>
+
+				<tr>
+					<td class="rating-col "><span class="col-number ">5.</span>Eugeny</td>
+					<td>4</td>
+				</tr>
+
+				<tr>
+					<td class="rating-col "><span class="col-number ">6.</span>BAS14</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td class="rating-col "><span class="col-number ">7.</span>Breghnev</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+</div>
+
+<div class="awards tournament-questions tournament-info ">
+<h4 class="title-l color-black bold ">Награждение</h4>
+	<div class="award-img ">
+		<img src="./tournament/award-img.jpg " alt="Награждение ">
+	</div>
+	<p class=" descr color-black m-0 ">Турнир длится 2 недели и по окончании проводится очное вручение призов:</p>
+	<ul class="common-list m-0 ">
+		<li>существенные призы трем первым победителям,</li>
+		<li>мелкие материальные призы семи следующим,</li>
+		<li>виртуальные призы десяти следующим.</li>
+	</ul>
+	<a href="# " class="common-link ">Подробнее про награждение</a>
+	</div>
+
+
+
+</section>
+
+	</div>
+	</main>
+					<!-- </index> -->
+					<br><br>
+				</td>
+				<!-- EOF :: СОДЕРЖИМОЕ СТРАНИЦЫ -->
+			
+				<!-- ПРАВАЯ КОЛОНКА -->
+				<td style=" width: 235px;padding-left: 10px; " valign=" top " class=" wideScreenDeviceOnly nocertprint ">
+					<!-- Лента активности -->
+<div class=" blockTitle ">Новые сообщения</div>
+	
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=15318.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Sergey.Petrov.1972 ">
+						<b>Sergey.Petrov.1972</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 51 минуту назад</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8847&view=findpost&p=111936 ">Вы привились от коронавируса?</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=26256.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Sheogorath ">
+						<b>Sheogorath</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 56 минут назад</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8854&view=findpost&p=111935 ">Sheogorath</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=43924.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока yadevel ">
+						<b>yadevel</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 2 дня назад</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=730&amp;commentsId=39507.html ">Роботы</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=1.html "
+					   style=" color: #CC3366; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Black ">
+						<b>Black</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 5 дней назад</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8828&view=findpost&p=111903 ">Сертификаты BrainGames.ru</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=57059.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Зеркало ">
+						<b>Зеркало</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 6 дней назад</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=666&amp;commentsId=39504.html ">Делимое без нулей</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=43713.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Megatron ">
+						<b>Megatron</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 6 дней назад</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=2601&view=findpost&p=111892 ">Набор модераторов</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=43713.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Megatron ">
+						<b>Megatron</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 6 дней назад</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8849&view=findpost&p=111889 ">imphoozorro</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=16853.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока UNDEFEAT ">
+						<b>UNDEFEAT</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — неделю назад</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=527&amp;commentsId=39503.html ">Совет директоров — 2</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=21796.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Ed7257 ">
+						<b>Ed7257</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 18 июля</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=527&amp;commentsId=39502.html ">Совет директоров — 2</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=1.html "
+					   style=" color: #CC3366; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Black ">
+						<b>Black</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 17 июля</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8848&view=findpost&p=111856 ">Сниму дом у воды до сентября Мос...</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=17240.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока alan ">
+						<b>alan</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 16 июля</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=279&amp;commentsId=39501.html ">Кофе с пеной</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=49898.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока dvolodya@rambler.ru ">
+						<b><span class=" __cf_email__ " data-cfemail=" 5c382a33303338253d1c2e3d313e30392e722e29 ">[email&#160;protected]</span></b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 16 июля</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=279&amp;commentsId=39500.html ">Кофе с пеной</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=7813.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Breghnev ">
+						<b>Breghnev</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 16 июля</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8836&view=findpost&p=111849 ">Шарик на паруснике</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=13114.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока alan ">
+						<b>alan</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> — 14 июля</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=8412&view=findpost&p=111841 ">Симулятор настольных игр</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=70665.html "
+					   style=" color: #339966; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока OlegSmir7 ">
+						<b>OlegSmir7</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> —  9 июля</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=98&amp;commentsId=39497.html ">Возраст детей — 2</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" index.html@path=profile&amp;id=46798.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Megatron ">
+						<b>Megatron</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> —  8 июля</span>
+			</span>
+			<br>
+
+			<span>
+									добавил комментарий к задаче
+							</span>
+
+							<!-- Временная заглушка из-за наличия старых записей без postId-->
+					<a class=" changeableLink " href=" index.html@path=comments&amp;puzzle=776&amp;commentsId=39496.html ">Окружности и точки</a>
+									</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=43713.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока Megatron ">
+						<b>Megatron</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> —  7 июля</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=2753&view=findpost&p=111822 ">Опубликованы/изменены задачи</a>
+					</div>
+		
+			<div style=" margin-top: 15px;margin-bottom: 15px;margin-left: 5px;margin-right: 5px; ">
+			<span>
+									<a href=" forum/index.php@showuser=13114.html "
+					   style=" color: #999933; text-decoration: none;font-family: verdana; font-size: 11px "
+					   title=" Профиль игрока alan ">
+						<b>alan</b>
+					</a>
+								<span style=" font-family: verdana; font-size: 11px;color: #999999 "> —  1 июля</span>
+			</span>
+			<br>
+
+			<span>
+									написал на форуме в теме
+							</span>
+
+							<a class=" changeableLink " href=" https://braingames.ru/forum/index.php?showtopic=7767&view=findpost&p=111808 ">evgen_sobolev</a>
+					</div>
+	
+<hr/>
+<div class=" blockTitle ">Реклама</div><br/>
+<!-- Yandex.RTB R-A-270597-2 -->
+<div id=" yandex_rtb_R-A-270597-2 "></div>
+<script data-cfasync=" false " src=" cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js "></script><script type=" text/javascript ">
+	(function(w, d, n, s, t) {
+		w[n] = w[n] || [];
+		w[n].push(function() {
+			Ya.Context.AdvManager.render({
+				blockId:" R-A-270597-2 ",
+				renderTo:" yandex_rtb_R-A-270597-2 ",
+				async: true
+			});
+		});
+		t = d.getElementsByTagName(" script ")[0];
+		s = d.createElement(" script ");
+		s.type =" text/javascript ";
+		s.src =" //an.yandex.ru/system/context.js ";
+		s.async = true;
+		t.parentNode.insertBefore(s, t);
+	})(this, this.document," yandexContextAsyncCallbacks ");
+</script>
+				</td>
+				<!-- EOF :: ПРАВАЯ КОЛОНКА -->
+			</tr>
+		</table>
+		
+		<table cellpadding=" 0 " cellspacing=" 0 " border=" 0 " style=" width: 100%; " class=" nocertprint ">
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+
+			<tr>
+				<td style=" background-image:url(images/idler/bottom_line.gif); "><img src=" images/idler/bottom_line.gif " alt=" " border=" 0 "></td>
+			</tr>
+
+			<tr>
+				<td style=" padding: 5px; " width=" 100% ">
+					<table border=" 0 " width=" 100% ">
+					<tr>
+						<td> 							<b>Сейчас на сайте 9:</b>
+							<span class=" commentDate ">(за последние 15 минут)</span>
+							<span class=" group ">
+								<img src=" images/idler/g_admins.gif " alt=" администратор ">&nbsp;-&nbsp;администратор&nbsp;
+								<img src=" images/idler/g_moderators.gif " alt=" модератор ">&nbsp;-&nbsp;модератор&nbsp;
+								<img src=" images/idler/g_VIP.gif " alt=" привилегированный пользователь ">&nbsp;-&nbsp;привилегированный пользователь&nbsp;
+								<img src=" images/idler/g_members.gif " alt=" пользователь ">&nbsp;-&nbsp;пользователь
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td width=" 100% " class=" userinactive "><nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=9689.html' style='color: #339966'><b>Co6oJIb</b></a>  1279 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #999933; ">
+    <a href='index.html@path=profile&amp;id=50324.html' style='color: #999933'><b>evgen_sobolev</b></a>  907 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=71428.html' style='color: #339966'><b>Gamak</b></a>  83 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=10191.html' style='color: #339966'><b>LeonK</b></a>  246 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=71489.html' style='color: #339966'><b>Mormanka</b></a>  1 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=71397.html' style='color: #339966'><b>Nonenull</b></a>  1 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=58205.html' style='color: #339966'><b>Olimpiya</b></a>  323 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=71442.html' style='color: #339966'><b>selivest</b></a>  192 </span>&nbsp;|</nobr>
+<nobr><span style=" color: #339966; ">
+    <a href='index.html@path=profile&amp;id=29610.html' style='color: #339966'><b>Sheogorath</b></a>  1281 </span>&nbsp;|</nobr>
+</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+
+			<tr>
+				<td style=" background-image:url(images/idler/bottom_line.gif); "><img src=" images/idler/bottom_line.gif " alt=" " border=" 0 "></td>
+			</tr>
+
+			<tr>
+				<td align=" center ">
+					<table border=" 0 " cellpadding=" 0 " cellspacing=" 3 ">
+						<tr>
+							<td>
+								<table border=" 0 " cellpadding=" 3 " cellspacing=" 0 ">
+									<tr>
+										<td colspan=" 6 " align=" right ">
+											<a href=" index.html@path=help.html ">Поддержи проект!</a>
+											| Редакторы: <a href=" chess/index.html " target=" _blank ">Шахматный</a>
+											/ <a href=" preferans/preferans.htm " target=" _blank ">Преферансный</a>
+											<span onclick=" location.href='/games/marbl.html' ">|</span>
+											<a href=" https://braingames.ru/forum/index.php?showtopic=2626 " target=" _blank ">Реклама на сайте</a>
+											| <a href=" index.html@path=tournament.html ">Турниры</a>
+											| <a href=" index.html@path=games.html " target=" _blank ">Игры</a>
+											| <a href=" whatsnew.txt " target=" _blank
+                                                ">Что нового?</a>
+											| <nobr><span title='все права на авторские задачи принадлежат авторам задач, задачи впервые опубликованные на braingames.ru без согласования с администраией перепечатывать и использовать в коммерческих целях запрещено.'>&copy;&nbsp;2006-2021</span>&nbsp;<a href=" index.html " class=" comment ">www.braingames.ru</a>.</nobr>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td>&nbsp;</td>
+							<td style=" background-image:url(images/idler/grey_1x1.gif); "><img src=" images/idler/grey_1x1.gif " alt=" " border=" 0 "></td>
+							<td>&nbsp;</td><noindex>
+							<td>
+<!-- Yandex.Metrika informer -->
+<a href=" https://metrika.yandex.ru/stat/?id=11243257&amp;from=informer "
+target=" _blank " rel=" nofollow "><img src=" https://informer.yandex.ru/informer/11243257/3_1_FFFFFFFF_EFEFEFFF_0_pageviews "
+style=" width:88px; height:31px; border:0; " alt=" Яндекс.Метрика " title=" Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители) " class=" ym-advanced-informer " data-cid=" 11243257 " data-lang=" ru " /></a>
+<!-- /Yandex.Metrika informer -->
+
+	<a href=" http://mtw.ru/ "><img src=" images/1-ani.gif " border=" 0 "></a>
+	&nbsp;
+
+	<!--LiveInternet counter--><script type=" text/javascript "><!--
+document.write(" <a href='//www.liveinternet.ru/click' "+
+" target=_blank><img src='//counter.yadro.ru/hit?t14.16;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+" border='0' width='88' height='31'>
+                                            <\ /a>") //-->
+                                                </script>
+                                                <!--/LiveInternet-->
+
+                            </td>
+                            </noindex>
+                        </tr>
+                    </table>
+                    </td>
+                    </tr>
+                    </table>
+                    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"674eac4c1d4619e3","version":"2021.7.0","r":1,"token":"786201510e0549d4be4b6cb300bdbbeb","si":10}'></script>
+
+
+                    <script src="./tournament/app.js"></script>
+</body>
+
+</html>

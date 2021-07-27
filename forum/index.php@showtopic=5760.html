@@ -1,0 +1,3439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>ТУРНИР-3 - Форум Игры разума [braingames]</title>
+<link rel="alternate" type="application/rss+xml" title="BG New posts" href="https://braingames.ru/forum/index.php?act=rssout&amp;id=1" />
+ 
+<style type="text/css">
+	/* 
+ * Cascading Style Sheet(CSS 467), for Invision Power Board 2.1.0
+ * Author: James A. Mathias, admin@leihu.com, http://www.1lotus.com 
+ * Copyright: 2005 Invision Power Services, all rights reserved 
+ *
+ * All style attributes in alpha-numeric order starting from 0
+ *
+ */
+
+/* 
+ * ========================================
+ * global element styles 
+ * ========================================
+ */
+
+html{
+	overflow-x: auto; /* fixes MSIE scrollbar bug DO NOT REMOVE, has no effect in Mozilla, or Opera */
+}
+
+body{ 
+/*	background: #FFF;*/
+	color: #000000;
+	font-family: Verdana, Tahoma, Arial, Trebuchet MS, Sans-Serif, Georgia, Courier, Times New Roman, Serif;
+	font-size: 11px;
+	line-height: 135%;
+	margin: 0px;
+	padding: 0px; /* required for Opera to have 0 margin */
+	text-align: center; /* centers board in MSIE */
+}
+
+/* 
+ * ========================================
+ * Set up IPB table
+ * ========================================
+ */
+ 
+.ipbtable { width:100% }
+
+table.ipbtable,
+tr.ipbtable,
+td.ipbtable
+{ /* required for text in tables, because tables do not inherit from body */
+	background: transparent;
+	color: #222;
+	font-size: 11px;
+	line-height: 135%;
+}
+
+.ipbtable td,
+.divpad{ /* gives all tables faux cellpadding of 5px */
+	padding: 5px;
+}
+
+td.nopad{ /* allows some tables to have no padding on the td */
+	padding: 0;
+}
+
+
+
+form{
+	display: inline;
+	margin: 0; /* removes mystery form tag gapping */
+	padding: 0; /* removes mystery form tag gapping */
+}
+
+img{
+	border: 0; /* makes sure linked images do not have a border */
+	vertical-align: middle;
+}
+
+/* 
+ * ========================================
+ * global hyperlink styles 
+ * ========================================
+ */
+
+a:link,
+a:visited,
+a:active{
+	background: transparent;
+	color: #6F781E;
+	text-decoration: underline;
+}
+
+a:hover{
+	background: transparent;
+/*	color: #34498B;*/
+}
+
+/* 
+ * ========================================
+ * Main wrapper, this controls the overall width of the board in you browser view window. 
+ * ========================================
+ */
+
+#ipbwrapper{ 
+	margin: 20px auto 20px auto; /* centers the box, no matter the overall width, also applies a 20px gap at the top and bottom of the board */
+	text-align: left; /* re_aligns text to left second part of two part MSIE centering workaround */
+	/* EDIT THIS TO CHANGE THE WIDTH OF THE BOARD -> 750px is a common fixed resolution size */
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * styles for pagination links 
+ * ========================================
+ */
+ 
+
+.pagelink,
+.pagelinklast,
+.pagecurrent,
+.minipagelink,
+.minipagelinklast{
+	background: #F8F8EE;
+	border: 1px solid #6F781E;
+	padding: 1px 3px 1px 3px;
+}
+
+.pagelinklast,
+.minipagelinklast{
+	background: #F0F0E0;
+}
+
+
+.pagecurrent{
+	background: #FFC9A5;
+}
+
+.minipagelink,
+.minipagelinklast{
+	border: 1px solid #DEDEC1;
+	font-size: 10px;
+	margin: 0 1px 0 0;
+}
+
+.pagelink a:active,
+.pagelink a:visited,
+.pagelink a:link,
+.pagelinklast a:active,
+.pagelinklast a:visited,
+.pagelinklast a:link,
+.pagecurrent a:active,
+.pagecurrent a:visited,
+.pagecurrent a:link,
+.minipagelink a:active,
+.minipagelink a:visited,
+.minipagelink a:link,
+.minipagelinklast a:active,
+.minipagelinklast a:visited,
+.minipagelinklast a:link{
+	text-decoration: none;
+}
+
+/* fake button effect for some links */
+.fauxbutton{
+	background: #DEDEBE;
+	border: 1px solid #6F781E;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+.fauxbutton a:link,
+.fauxbutton a:visited,
+.fauxbutton a:active{
+	color: #222 !important;
+	text-decoration: none;
+}
+
+.forumdesc,
+.forumdesc a:link,
+.forumdesc a:visited,
+.forumdesc a:active{ 
+	background: transparent;
+	font-size: 10px; 
+	color: #666;
+	line-height: 135%;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+.searchlite {
+	background-color:yellow;
+	font-weight:bold;
+	color: red;
+}
+
+.activeusers{
+	background: #FFF;
+	border: 1px solid #6F781E;
+	color: #000;
+	margin: 0px;
+	padding: 1px;
+}
+
+.activeuserposting a:link,
+.activeuserposting a:visited,
+.activeuserposting a:active,
+.activeuserposting
+{
+	font-style:italic;
+	text-decoration: none;
+	border-bottom:1px dotted black;
+}
+
+fieldset.search{ 
+	line-height: 150%;
+	padding: 6px; 
+}
+
+label{ 
+	cursor: pointer; 
+}
+
+img.attach{ 
+	background: #808080 url(style_images/bg/click2enlarge.gif) no-repeat top right;
+	border: 1px solid #808080;
+	margin: 0 2px 0 0;
+	padding: 11px 2px 2px 2px;
+}
+
+.thumbwrap,
+.thumbwrapp,
+.fullimagewrap{
+	border: 1px solid #6F781E;
+	margin: 2px;
+}
+
+.thumbwrapp{
+	border: 2px solid #660707;
+}
+
+.fullimagewrap{
+	background: #FDFDF4;
+	text-align: center;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+.thumbwrap h4,
+.thumbwrapp h4{	
+	background: #F0F0DB;
+	border: 0 !important;
+	border-bottom: 1px solid #999933 !important;
+	color: #999933; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.thumbwrap p,
+.thumbwrapp p{
+	background: #F7F7EE !important;
+	border: 0 !important;
+	border-top: 1px solid #999933 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrap p.alt,
+.thumbwrapp p.alt{
+	background: #F0F0E0 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrapp p.pin{
+	background: #EFDFDF !important;
+	text-align: center !important;
+}
+	
+.thumbwrap img.galattach,
+.thumbwrapp img.galattach{
+	background: #FFF url(style_images/bg/img_larger.gif) no-repeat bottom right;
+	border: 1px solid #6F781E;
+	margin: 5px;
+	padding: 2px 2px 10px 2px;
+}
+
+li.helprow{ 
+	margin: 0 0 10px 0;
+	padding: 0; 
+}
+
+ul#help{ 
+	padding: 0 0 0 15px; 
+}
+
+.warngood,
+.warnbad{ 
+	color: #0B9500;
+	font-weight: bold;
+}
+
+.warnbad{ 
+	color: #DD0000;
+}
+
+#padandcenter{ 
+	margin: 0 auto 0 auto;
+	padding: 14px 0 14px 0;
+	text-align: center;
+}
+
+#profilename{ 
+	font-size: 28px; 
+	font-weight: bold; 
+}
+
+#photowrap{ 
+	padding: 6px; 
+}
+
+#phototitle{ 
+	border-bottom: 1px solid #000; 
+	font-size: 24px; 
+}
+
+#photoimg{ 
+	margin: 15px 0 0 0;
+	text-align: center; 
+} 
+
+#ucpmenu,
+#ucpcontent{ 
+	background: #FDFDF5;
+	border: 1px solid #878734;
+	line-height: 150%;
+}
+
+#ucpmenu p{ 
+	margin: 0; 
+	padding: 2px 5px 6px 9px;
+}
+
+#ucpmenu a:link, 
+#ucpmenu a:active, 
+#ucpmenu a:visited{ 
+	text-decoration: none; 
+}
+
+#ucpcontent{ 
+	width: auto;
+}
+
+#ucpcontent p{ 
+	margin: 0;
+	padding: 10px;
+}
+
+.activeuserstrip{ 
+	background: #EDEDBD;
+	padding: 6px;
+}
+
+/* Topic View elements */
+.signature{  
+	background: transparent;
+	color: #8F8F30; 
+	font-size: 10px;
+	line-height: 150%;
+}
+
+.postdetails{ 
+	font-size: 10px;
+	line-height:140%;
+}
+
+.postcolor{ 
+	font-size: 12px; 
+	line-height: 160%;
+}
+
+.normalname{ 
+	color: #2E2E00;
+	font-size: 12px; 
+	font-weight: bold; 
+}
+
+.normalname a:link, 
+.normalname a:visited, 
+.normalname a:active{ 
+	font-size: 12px;
+}
+
+.post1,
+.bg1{ 
+	background: #FDFDF5;
+}
+
+.post2,
+.bg3{ 
+	background: #F7F7EE;
+}
+
+.row2shaded,
+.post1shaded { background-color: #E3E3D9 }
+.row4shaded,
+.post2shaded { background-color: #E7E7E0}
+
+.row1{ 
+	background: #EFEFDF; 
+}
+
+.row2{ 
+	background: #F0F0E3; 
+}
+
+.darkrow1{ 
+	background: #EDEDBD;
+	color: #6D6D3B; 
+}
+
+.darkrow3{ 
+	background: #DFDFB9; 
+	color: #6D6D3B; 
+}
+
+/* tableborders gives the white column / row lines effect */
+.plainborder,
+.tablefill,
+.tablepad{ 
+	background: #FDFDF5;
+	border: 1px solid #878734;
+}
+
+.tablefill,
+.tablepad{ 
+	padding: 6px;  
+}
+
+.tablepad{ 
+	border: 0 !important;
+}
+
+.wrapmini{ 
+	float: left;
+	line-height: 1.5em;
+	width: 30%;
+}
+
+.pagelinks{
+	float: left;
+	line-height: 1.2em;
+	width: 35%;
+}
+
+.desc{ 
+	font-size: 11px; 
+	color: #515143;
+}
+
+.lastaction
+{
+	font-size: 10px; 
+	color: #515143;
+}
+
+.edit{ 
+	font-size: 9px;
+}
+
+.thin{ 
+	border: 1px solid #FFF;
+	border-left: 0;
+	border-right: 0;
+	line-height: 150%;
+	margin: 2px 0 2px 0;
+	padding: 6px 0 6px 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+/* 
+ * ========================================
+ * calendar styles 
+ * ========================================
+ */
+	
+.calmonths{ 
+	background: #F8F8EE;
+	border: 1px solid #DEDEC1;
+	font-size: 18px; 
+	font-weight: bold; 
+	margin: 5px 0 5px 0;
+	padding: 8px;
+	text-align: center;
+}
+
+.weekday{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.calmonths a{
+	text-decoration: none;
+}
+
+.calday,
+.calweekday{ 
+	background: #F0F0E0;
+	color: #666;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+	padding: 4px;
+	text-align: right;
+}
+
+.calweekday{
+	border-right: 1px solid #AAA;
+	color: #222;
+	font-size: 14px;
+	padding: 6px;
+	text-align: center;
+}
+
+.celltodayshaded,
+.celldateshaded,
+.cellblank,
+.celldate,
+.celltoday,
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	background: #F7F7EE; 
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+.celltodayshaded,
+.celldateshaded
+{
+	background: #E7E4DF;
+}
+
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	height: auto;
+}
+
+.cellblank,
+.mcellblank{
+	background: #DEDEC1;
+}
+
+.celltoday,
+.celltodayshaded,
+.mcelltoday{
+	border: 2px solid #8B0000;
+}
+
+.calranged
+{
+	border: 2px outset #DEDEC1;
+	background: #DEDEC1;
+	padding:4px;
+}
+
+.calitem
+{
+	border-bottom: 1px dotted #DEDEC1;
+	padding:4px;
+}
+
+/* 
+ * ========================================
+ * form styles 
+ * ========================================
+ */
+
+.input-warn,
+.input-green,
+input,
+textarea,
+select{
+	background: #FFF;
+	border: 1px solid #B5B55F;
+	color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+.input-warn,
+.input-warn-content
+{
+	border: 1px solid #C00;
+}
+
+.input-ok,
+.input-ok-content
+{
+	border: 1px solid #0C0;
+}
+
+.input-warn-content
+{
+	padding: 4px;
+	margin: 4px;
+	background-color: #FCC;
+}
+
+.input-ok-content
+{
+	padding: 4px;
+	margin: 4px;
+	background-color: #CFC;
+}
+
+
+.input-text
+{
+	color: #900;
+}
+
+select{
+	border: 0;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+input.button{
+	margin: 0;
+	width: auto;
+}
+
+optgroup option{
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.codebuttons{ 
+	font-family: Verdana, Helvetica, Sans-Serif; 
+	font-size: 10px; 
+	vertical-align: middle;
+	margin:2px;
+}
+
+.textarea,
+.searchinput,
+.button,
+.gobutton{
+	background: #FFF;
+	border: 1px solid #B5B55F;
+	color: #000;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 11px;
+	padding: 2px;
+	vertical-align: middle;
+}
+	
+.button{
+	background: #F0F0E0;
+}
+
+.gobutton{
+	background: transparent;
+	border: 0;
+	color: #6F781E;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.radiobutton,
+.checkbox,
+.helpbox { 
+	border: 0;
+	vertical-align: middle;
+}
+
+/* 
+ * class.formtable 
+ *
+ * used for tabled forms 
+ * technically tables should not be used for form display 
+ * but, in the case of IPB a table is easier to work with
+ * for the average webmaster, who has little to no CSS knowledge.
+ *
+ */
+
+.formtable{
+	background: transparent;
+}
+
+.formtable td,
+.pformleft,
+.pformleftw,
+.pformright{
+	background:#FDFDF4;
+	border: 1px solid #DEDEC1;
+	border-bottom: 0;
+	border-left: 0;
+	font-weight: bold;
+	margin: 1px 0 0 0;
+	padding: 6px;
+	width: 25%;
+} 
+
+.formtable td.wider,
+.pformleftw,
+.pformright{
+	width: 40%;
+}
+
+.formtable td.formright,
+.pformright{
+	border-right: 0px;
+	font-weight: normal;
+	width: auto;
+} 
+
+.formtable td.formtitle,
+.formsubtitle{
+	background: #DFDFB9;
+	border: 1px solid #D3D39F; 
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+.formsubtitle{ 
+	border: 0;
+	color: #6D6D3B;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.formtable td.formstrip{
+	background: #F0F0DA;
+	border: 1px solid #D2D29E;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+/* 
+ * ========================================
+ * new style quote and code wrappers MATT's DESIGN 
+ * ========================================
+ */
+
+.quotetop{
+	background: #F2F2E6 url(style_images/bg/css_img_quote.gif) no-repeat right;
+	border: 1px dotted #000;
+	border-bottom: 0;
+	border-left: 4px solid #B0B082;
+	color: #000;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 8px auto 0 auto;
+	padding: 3px;
+}
+
+.quotemain{
+	background: #FCFCF8;
+	border: 1px dotted #000;
+	border-left: 4px solid #B0B082;
+	border-top: 0;
+	color: #818145;
+	padding: 4px;
+	margin: 0 auto 8px auto;
+}
+
+.codetop,
+.sqltop,
+.htmltop{
+	background: #FDDBCC url(style_images/bg/css_img_code.gif) no-repeat right;
+	color: #000;
+	font-weight: bold;
+	margin: 0 auto 0 auto;
+	padding: 3px;
+	width: 98%;
+}
+
+.codemain,
+.sqlmain,
+.htmlmain{
+	background: #FEFEFA;
+	border: 1px dotted #000;
+	color: #838346;
+	font-family: Courier, Courier New, Verdana, Arial;
+	margin: 0 auto 0 auto;
+	padding: 2px;
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * old school quote and code styles - backwards compatibility 
+ * ========================================
+ */
+
+#QUOTE,
+#CODE{  
+	background: #FCFCF8; 
+	border: 1px solid #000; 
+	color: #828245; 
+	font-family: Verdana, Arial; 
+	font-size: 11px; 
+	padding: 2px; 
+	white-space: normal;
+}
+
+#CODE{ 
+	font-family: Courier, Courier New, Verdana, Arial;
+}
+
+/* 
+ * ========================================
+ * All New Styles 
+ * ========================================
+ */
+.cleared{
+	clear: both;
+}
+
+.borderwrap,
+.borderwrapm{ /* this will affect the outlining border of all the tables and boxes through-out the skin. */
+	background: #FFF; 
+	border: 1px solid #6F781E;
+	padding: 0px; 
+	margin: 0px; 
+}
+
+.borderwrapm{
+	margin: 5px;
+}
+
+.borderwrap h3,
+.maintitle,
+.maintitlecollapse{
+	background: url(style_images/bg/tile_cat.gif);
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #999933;
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0px;
+	padding: 8px;
+}
+
+.maintitle td {
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+.maintitlecollapse{
+	border: 1px solid #FFF;
+}
+
+.maintitle p,
+.maintitlecollapse p,
+.formsubtitle p{
+	background: transparent !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.maintitle p.expand,
+.maintitle p.goto,
+.maintitlecollapse p.expand,
+.formsubtitle p.members{
+	float: right;
+	width: auto !important;
+}
+
+.maintitle a:link, 
+.maintitle a:visited,
+.maintitlecollapse a:link, 
+.maintitlecollapse a:visited{ 
+	background: transparent;
+	color: #FFF;
+	text-decoration: none; 
+}
+
+.maintitle a:hover, 
+.maintitle a:active,
+.maintitlecollapse a:hover, 
+.maintitlecollapse a:active{ 
+	background: transparent;
+	color: #F1F1F1;
+}
+
+table th,
+.borderwrap table th,
+.subtitle,
+.subtitlediv,
+.postlinksbar{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border-bottom: 1px solid #999933;
+	color: #6D6D3B; 
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+.subtitlediv{
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #999933;
+	text-align: right;
+}
+
+.borderwrap table th a:link,
+.subtitle a:link,
+.subtitlediv a:link,
+.borderwrap table th a:visited,
+.subtitle a:visited, 
+.subtitlediv a:visited, 
+.borderwrap table th a:active,
+.subtitle a:active,
+.subtitlediv a:active,
+.borderwrap table th a:hover,
+.subtitle a:hover,
+.subtitlediv a:hover{ 
+	background: transparent;
+	color: #6B6B39;
+	text-decoration: none; 
+}
+
+.borderwrap h4{
+	background: #F0F0DB;
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #B5B552;
+	border-top: 1px solid #B5B552;
+	color: #B5B552; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.borderwrap p{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	margin: 5px;
+	padding: 10px;
+	text-align: left;
+}
+
+td.formbuttonrow,
+.borderwrap p.formbuttonrow,
+.borderwrap p.formbuttonrow1{
+	background: #EBEBD0 !important; 
+	border: 1px solid #FFF;
+	border-top: 1px solid #B5B552;
+	margin: 0px !important;
+	padding: 5px !important;
+	text-align: center;
+}
+
+td.formbuttonrow{
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+.borderwrap p.formbuttonrow1{
+	background: #F9F9F9 !important;
+	border: 0;
+	border-top: 1px solid #CCC;
+}
+
+.bar,
+.barb,
+.barc{
+	background: #EFEFDE;
+	border: 1px solid #FFF;
+}
+
+.barc{
+	border-bottom: 0;
+}
+
+.bar p,
+.barb p,
+.barc p{
+	background: transparent;
+	border: 0;
+	color: #222;
+	font-size: 11px;
+	margin: 0;
+	padding: 5px;
+	text-align: left;
+}
+
+.barb p{
+	text-align: right;
+}
+
+.bar p.over,
+.bar p.overs,
+.barc p.over,
+.barc p.overs{
+	float: right;
+}
+
+.barb p.over,
+.barb p.overs{
+	float: left;
+}
+
+.bar p.overs,
+.barb p.overs,
+.barc p.overs{
+	position: relative;
+	top: 5px;
+}
+
+.catend{
+	background: #B1B183;
+	color: #000;
+	font-size: 1px;
+	height: 5px;
+}
+
+.newslink{
+	background: #F8F8EF;
+	border: 1px solid #DFDFC2;
+	margin: 0;
+	width: 100%;
+}
+
+.newslink td{
+	color: #222;
+	font-size: 10px;
+	padding: 5px 5px 5px 10px;
+}
+
+.newslink span{
+	background: transparent;
+	color: #666607;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.newslink input{
+	background: #FFF;
+	border: 1px solid #999;
+	color: #676707;
+	font-size: 10px;
+	padding: 3px;
+	vertical-align: middle;
+	width: auto;
+}
+
+.newslink input.button{
+	background: transparent;
+	border: 0;
+	color: #656507;
+	vertical-align: middle;
+}
+
+.fieldwrap{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+	text-align: left;
+}
+
+.fieldwrap h4{
+	background: #EEE;
+	border: 1px solid #CCC;
+	border-left: 0;
+	border-right: 0;
+	color: #444; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap {
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+}
+
+
+.errorwrap h4 {
+	background: #E3C0C0;
+	border: 1px solid #992A2A;
+	border-left: 0;
+	border-right: 0;
+	color: #992A2A; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap p {
+	background: transparent;
+	border: 0;
+	color: #992A2A;
+	margin: 0;
+	padding: 8px;
+}
+
+
+.ruleswrap{
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	color: #992A2A; 
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#redirectwrap{
+	background: #F9F9EF;
+	border: 1px solid #DFDFC2;
+	margin: 200px auto 0 auto;
+	text-align: left;
+	width: 500px;
+}
+
+#redirectwrap h4{
+	background: #EAEAD1;
+	border-bottom: 1px solid #DFDFC2;
+	color: #6B6B39;
+	font-size: 14px;
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p{
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p.redirectfoot{
+	background: #F3F3E2;
+	border-top: 1px solid #DFDFC2;
+	text-align: center;
+}
+
+
+#gfooter{
+	background: #B1B183;
+	margin: 5px 0 5px 0;
+	padding: 0;
+	width: 100%;
+}
+
+#gfooter td{
+	color: #FFF;
+	font-size: 10px;
+	padding: 4px;
+}
+
+#gfooter a:link,
+#gfooter a:visited{
+	color: #FFF;
+}
+
+#logostrip{ 
+/* background: #3860BB url(style_images/bg/tile_back.gif);*/
+ border: 1px solid #FFF;
+/* height: 68px;*/
+ margin: 0;
+ padding: 0;
+}
+
+#logographic{
+	background: transparent url(style_images/bg/logo4.gif) no-repeat left;
+	height: 68px;
+	margin: 0;
+	padding: 0;
+}
+
+#submenu{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border: 1px solid #FFF;
+	border-top: 0;
+	color: #6B6B39; 
+	margin: 0; 
+}
+
+#userlinks,
+#userlinksguest{ 
+	background: #F9F9F0;
+	border: 1px solid #DFDFC2;
+	margin: 5px 0 5px 0;
+	padding: 0 5px 0 5px;
+}
+
+#userlinksguest{ 
+	background: #F4E7EA;
+	border: 1px solid #986265;
+}
+
+#submenu p,
+#userlinks p,
+#userlinksguest p{
+	background: transparent !important;
+	border: 0 !important;
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0 !important;
+	padding: 7px 0 7px 0; 
+	text-align: right;
+}
+
+#userlinks p,
+#userlinksguest p{
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+#submenu p.home,
+#userlinks p.home,
+#userlinksguest p.home{
+	float: left;
+}
+
+#userlinksguest p.pcen{
+	text-align: center;
+}
+
+#submenu a:link, 
+#submenu  a:visited{ 
+	background: transparent; 
+	color: #6B6B39; 
+	padding: 0 6px 0 6px;
+	text-decoration: none;
+}
+
+#submenu a:hover, 
+#submenu a:active{
+	background: transparent; 
+	color: #B5B552; 
+}
+
+#navstrip{ 
+	background: transparent;
+	color: #999;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 14px 0px 8px 0px; 
+}
+
+#navstrip a:link, 
+#navstrip  a:visited{ 
+	background: transparent; 
+	color: #222; 
+	text-decoration: none;
+}
+
+#navstrip a:hover, 
+#navstrip a:active{
+	background: transparent; 
+	color: #B5B552; 
+}
+
+.toplinks{
+	background: transparent;
+	color: #000;
+	margin: 0;
+	padding: 0 0 5px 0;
+	text-align: right;
+}
+
+.toplinks span{
+	background: #F8F8EF;
+	border: 1px solid #DFDFC2;
+	border-bottom: 0;
+	color: #000;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 0 10px 0 0;
+	padding: 5px;
+}
+
+.copyright{ 
+	background: #EEE;
+	font-size: 11px; 
+	margin: 0 0 5px 0;
+	padding: 8px;
+}
+
+/* 
+ * ========================================
+ * print page styles 
+ * ========================================
+ */
+
+#print{
+	margin: 20px auto 20px auto;
+	padding: 0;
+	text-align: left;
+	width: 85%;
+}
+
+#print h1,
+#print h2,
+#print h3,
+#print h4,
+#print p{
+	color: #606000;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	padding: 8px;
+}
+
+#print h2,
+#print h3,
+#print p{
+	border-bottom: 1px solid #999;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#print h3{
+	background: #F5F5F5;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+#print h4{
+	background: #F9F9F9;
+	font-size: 11px;
+}
+
+#print p{
+	margin: 0 0 5px 0;
+	padding: 10px;
+}
+
+#print p.printcopy{
+	border: 0;
+	color: #000;
+	text-align: center;
+}
+
+/* ============================================================== */
+/* RTE STYLES
+/* ============================================================== */
+
+.rteimage {
+	/*background: #D3D3D3;*/
+	/*border: 1px outset transparent*/;
+	cursor: pointer;
+	cursor: hand;
+	padding:1px;
+}
+
+.rteImageRaised {
+	/*background: #D3D3D3;*/
+	border: 1px outset;
+	cursor: pointer;
+	cursor: hand;
+	padding:0px;
+}
+
+.rteImageLowered {
+	/*background: #D3D3D3;*/
+	border: 1px inset;
+	cursor: pointer;
+	cursor: hand;
+	padding:0px;
+}
+
+.rteimage:hover {
+	background: #EBEBEB;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.rteVertSep {
+	margin: 0 4px 0 4px;
+}
+
+.rteBack {
+	background: #D3D3D3;
+	border: 1px outset;
+	letter-spacing: 0;
+	padding: 2px;
+}
+
+/* used in ips_rte.js - do not remove */
+.rtebottombutton
+{
+	font-size:10px;
+	border:1px solid #777;
+	border-top:0px;
+	padding:3px;
+	margin:0px;
+	background-color: #EBEBEB;
+}
+
+/* used in ips_rte.js - do not remove */
+.rtebottombuttonon
+{
+	font-size:10px;
+	border:1px solid #777;
+	border-top:0px;
+	padding:3px;
+	margin:0px;
+	background-color: #D3D3D3;
+}
+
+.rtebuttonbar1 {
+	/*background: #D3D3D3;*/
+	background-image: url(style_images/bg/folder_rte_images/rte_tile.gif);
+	border: 1px solid gray;
+	border-bottom:0px;
+	letter-spacing: 0;
+	padding: 2px;
+	height:26px;
+}
+
+.rtebuttonbar2 {
+	/*background: #D3D3D3;*/
+	background-image: url(style_images/bg/folder_rte_images/rte_tile.gif);
+	border: 1px solid gray;
+	border-top:1px solid gray;
+	letter-spacing: 0;
+	padding: 2px;
+	height:26px;
+}
+
+.rtebuttonbar1 tbody tr td,
+.rtebuttonbar1 tr td,
+.rtebuttonbar2 tbody tr td,
+.rtebuttonbar2 tr td,
+.rteBack tbody tr td,
+.rteBack tr td
+{
+	/*background: #D3D3D3;*/
+	padding: 0;
+}
+
+.rteDiv {
+	display: block;
+	position: relative;
+	padding:0px;
+	margin:0px;
+}
+
+.rteiframe
+{
+	border:1px solid #777;
+	background-color:#FFF;
+}
+
+.rteselectbox
+{
+	font-size:11px;
+}
+
+
+.dny-edit-title
+{
+	border:0px;
+	padding:3px;
+	margin:0px;
+	background: #EBEBD0; 
+	color: #6B6B39; 
+}
+
+
+/* ======================================== */
+/* TABS
+/* ======================================== */
+
+.tabon
+{
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #999;
+	background-color:#FFF;
+	padding:8px;
+	padding-bottom:9px;
+	font-size:10px;
+	float:left;
+	width:auto;
+	margin-top:3px;
+}
+
+.taboff
+{
+	border-top: 1px solid #777;
+	border-left: 1px solid #777;
+	border-right: 1px solid #777;
+	background-color: #D9D9B5;
+	color: #333;
+	padding: 8px;
+	font-size:10px;
+	float: left;
+	width: auto;
+	margin-top:3px;
+}
+
+.tabon a:link, 
+.tabon a:visited, 
+.tabon a:active
+{
+	text-decoration:none;
+	color: #000;
+}
+
+.taboff a:link, 
+.taboff a:visited, 
+.taboff a:active
+{
+	text-decoration:none;
+	color: #333;
+}
+
+.mya-back
+{
+	background: #656507;
+	margin:1px;
+}
+
+.mya-content
+{
+	background: #FFF;
+	padding:8px;
+	margin:1px;
+	border: 1px solid #777;
+}
+
+/* -------------------------------- */
+/* Create PM box defaults           */
+/* -------------------------------- */
+
+.iframeshim
+{
+	position:absolute;
+	display:none;
+	background: #FFF;
+	filter:alpha(opacity=0);
+	border:0px;
+	width:auto;
+	height:auto;
+}
+
+
+
+/* -------------------------------- */
+/* Experimental                     */
+/* -------------------------------- */
+
+.popupmenu
+{
+   background: #F9F9F0;
+   border: 1px solid #6B6B39;
+   text-align:left;
+   font-size:10px;
+   white-space:nowrap;
+   /*padding:3px 5px 3px 3px;*/
+   /*width:300px;*/
+}
+
+.popupmenu-item
+{
+	padding: 5px;
+	/*margin-top:4px;*/
+	white-space: nowrap;
+	border-bottom: 1px solid #DFDFC2;
+}
+
+.popupmenu-item-last
+{
+	padding: 5px;
+	/*margin-top:4px;*/
+	white-space: nowrap;
+}
+
+.popmenubutton
+{
+	width:120px;
+	white-space:nowrap;
+	background-color: #DFDFC2;
+	border:1px solid #6B6B39;
+	color: #6B6B39;
+	font-weight:bold;
+	float:right;
+	height:18px;
+	text-align:center;
+	margin:0px;
+	font-size:11px;
+	padding:3px;
+}
+
+
+.popmenubutton a:link, 
+.popmenubutton a:visited,
+.popupmenu-item a:link, 
+.popupmenu-item a:visited,
+.popupmenu-item-last a:link, 
+.popupmenu-item-last a:visited
+{ 
+	color: #6B6B39; 
+	text-decoration: none;
+}
+
+.popmenubutton a:hover, 
+.popupmenu-item a:hover, 
+.popupmenu-item-last a:hover
+{ 
+	color: #B5B552; 
+	text-decoration: none;
+}
+
+.popupmenu-category
+{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border-top: 1px solid #B5B552;
+	border-bottom: 1px solid #B5B552;
+	color: #6B6B39; 
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+summary {
+	font-weight: bold;
+	outline: none;
+}
+.yt
+{
+	background-color: #ffffff;
+	border: 2px solid #f0f0f0;
+	border-radius: 8px;
+	font-size: 85%;
+	padding: 3px 5px;
+	vertical-align: top;
+	color: #602020;
+	outline: none;
+}
+.yt iframe { padding: 3px; }
+.yt img	{ vertical-align: bottom; }
+#ytplayer	{ width: 600px; height: 400px; }
+
+</style> 
+ 
+</head> 
+<body>
+<div id="ipbwrapper">
+<!--ipb.javascript.start-->
+<script type="text/javascript">
+ //<![CDATA[
+ var ipb_var_st            = "";
+ var ipb_lang_tpl_q1       = "Введите номер страницы: от 1 до";
+ var ipb_var_s             = "";
+ var ipb_var_phpext        = "php";
+ var ipb_var_base_url      = "https://www.braingames.ru/forum/index.php?s=&";
+ var ipb_var_image_url     = "style_images/bg";
+ var ipb_input_f           = "23";
+ var ipb_input_t           = "5760";
+ var ipb_input_p           = "";
+ var ipb_var_cookieid      = "";
+ var ipb_var_cookie_domain = "";
+ var ipb_var_cookie_path   = "/";
+ var ipb_md5_check         = "880ea6a14ea49e853634fbdc5015a024";
+ var ipb_new_msgs          = 0;
+ var use_enhanced_js       = 0;
+ var use_charset       = "windows-1251";
+var ipb_myass_chars_lang = "Недостаточно символов";
+ //]]>
+</script>
+<script type="text/javascript" src='jscripts/ipb_global.js'></script>
+<script type="text/javascript" src='jscripts/ips_menu.js'></script>
+<script type="text/javascript" src='style_images/bg/folder_js_skin/ips_menu_html.js'></script>
+<!--ipb.javascript.end-->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(11243257, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/11243257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->    
+<div class="borderwrap">
+	<div id="logostrip"><table border=0 width=100%><tr><td><a href='https://www.braingames.ru/forum/index.php?'><!--ipb.logo.start--><img src='style_images/logo.gif' style='vertical-align:top' alt='IPB' border='0' /><!--ipb.logo.end--></a></td><td align=right valign=top>
+<!-- Yandex.RTB R-A-270597-1 -->
+<div id="yandex_rtb_R-A-270597-1"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-270597-1",
+                renderTo: "yandex_rtb_R-A-270597-1",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+       
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! здесь был гугл -->
+
+
+</td></tr></table>
+</div>
+	<div id="submenu">
+		<p class="home"><!--ipb.leftlinks.start--><a href="../index.html">Игры разума</a><!--IBF.RULES--><!--ipb.leftlinks.end--></p>
+		<p><!--ipb.rightlinks.start-->	<a href="https://www.braingames.ru/forum/index.php?act=Help">Помощь</a><a href="https://www.braingames.ru/forum/index.php?act=Search&amp;f=23">Поиск</a><a href="https://www.braingames.ru/forum/index.php?act=Members">Пользователи</a><a href="https://www.braingames.ru/forum/index.php?act=calendar">Календарь</a>
+		<!--ipb.rightlinks.end--></p>
+	</div>
+</div><!-- / End board header -->
+<div id="userlinksguest">
+	<p class="pcen"><b>Добро пожаловать, гость</b> ( <a href="https://www.braingames.ru/forum/index.php?act=Login&amp;CODE=00">Вход</a> | <a href="https://www.braingames.ru/forum/index.php?act=Reg&amp;CODE=00">Регистрация</a> )
+
+	</p>
+</div>
+<div id="navstrip"><img src='style_images/bg/nav.gif' border='0'  alt='&gt;' />&nbsp;<a href='https://www.braingames.ru/forum/index.php?act=idx'>Форум Игры разума [braingames]</a>&nbsp;>&nbsp;<a href='https://www.braingames.ru/forum/index.php?showforum=6'>Главный форум</a>&nbsp;>&nbsp;<a href='https://www.braingames.ru/forum/index.php?showforum=23'>Разминка для мозгов</a></div>
+<!--IBF.NEWPMBOX-->
+<script type="text/javascript">
+<!--
+var ipb_lang_tt_prompt = "Вручную скопируйте ссылку в буфер обмена <Ctrl+C>";
+var ipb_lang_js_del_1  = "Вы уверены, что хотите удалить это сообщение?";
+var ipb_lang_js_del_2  = "Ну и не надо >_>";
+var addquotebutton     = "style_images/bg/p_mq_add.gif";
+var removequotebutton  = "style_images/bg/p_mq_remove.gif";
+var unselectedbutton = "style_images/bg/topic_unselected.gif";
+var selectedbutton   = "style_images/bg/topic_selected.gif";
+var lang_gobutton    = "С отмеченными";
+var lang_suredelete  = "Вы уверены, что хотите удалить эти сообщения?";
+var js_error_no_permission = "У вас нет прав на редактирование этого сообщения";
+-->
+</script>
+<script type="text/javascript" src="jscripts/ipb_topic.js"></script>
+<a name="top"></a>
+<!-- Show FAQ/Forum Rules -->
+<div class="borderwrap">
+	<h3><img src='style_images/bg/nav_m.gif' border='0'  alt='&gt;' width='8' height='8' />&nbsp;Правила раздела</h3>
+	<p><strong>Публикующим:</strong><br>
+     1. Задачу можно опубликовать двумя способами:<br>
+          - создав для нее отдельную тему с информативным названием;<br>
+          - добавив задачу в готовый сборник (например «<a href=https://www.braingames.ru/forum/index.php?showtopic=6665>Бескрылки</a>», «<a href=https://www.braingames.ru/forum/index.php?showtopic=1118>Мини-задачи</a>», «<a href=https://www.braingames.ru/forum/index.php?showtopic=6664>Вопросы ЧГК</a>») или создав свой (например, «<a href=https://www.braingames.ru/forum/index.php?showtopic=6028>Загадки от /для Светы</a>»).<br>
+     2. Если вы публикуете задачу, решение которой не знаете, напишите об этом. По умолчанию считается, что вам известен правильный ответ и вы готовы проверять других игроков.<br>
+<strong>Решающим:</strong><br>
+     1. В темах запрещается писать ответы и подсказки, если  возможность открытого обсуждения не оговорена отдельно (в случае открытого обсуждения для текста следует использовать цвет фона или белый, оставляя другим игрокам возможность самостоятельного решения).<br>
+     2. Правильность решения можно проверить, написав личное сообщение автору.<br>
+</p>
+</div>
+<!-- End FAQ/Forum Rules --><table class='ipbtable' cellspacing="0">
+	<tr>
+		<td style='padding-left:0px' width="40%" valign="middle" nowrap="nowrap"><div><span class="pagelink" id='page-jump'>14 Страниц <img src='style_images/bg/menu_action_down.gif' alt='V' title='Открыть меню' border='0' /></span>&nbsp;&nbsp;<span class="pagecurrent">1</span>&nbsp;<span class="pagelink"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=20" title="2">2</a></span>&nbsp;<span class="pagelink"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=40" title="3">3</a></span>&nbsp;<span class="pagelink"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=20" title="Следущая страница">&gt;</a></span>&nbsp;<span class="pagelinklast"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=260" title="На последнюю страницу">&raquo;</a></span>&nbsp;
+<script type="text/javascript">
+//<![CDATA[
+ipb_pages_shown++;
+var pgjmp = document.getElementById( 'page-jump' );
+pgjmp.id  = 'page-jump-'+ipb_pages_shown;
+ipb_pages_array[ ipb_pages_shown ] = new Array( 'https://www.braingames.ru/forum/index.php?showtopic=5760', 20, 268 );
+menu_build_menu(
+	pgjmp.id,
+	new Array(  "--NODIV--<div onmouseover='pages_st_focus("+ipb_pages_shown+")' class='popupmenu-category' align='center'>На страницу</div>",
+				"<input type='text' size='5' name='st' id='st-"+ipb_pages_shown+"' /> <input type='button' class='button' onclick='do_multi_page_jump("+ipb_pages_shown+");' value='ОК' />" ) );
+//]]>
+</script>&nbsp;<!--
+	( <a href="https://www.braingames.ru/forum/index.php?act=ST&amp;f=23&amp;t=5760&amp;view=getnewpost">Перейти к первому непрочитанному сообщению</a> )
+--></div></td>
+		<td class='nopad' style='padding:0px 0px 5px 0px' align="right" width="60%" valign="middle"><a href="https://www.braingames.ru/forum/index.php?act=post&amp;do=reply_post&amp;f=23&amp;t=5760"><img src='style_images/bg/t_reply.gif' border='0'  alt='Ответить в эту тему' /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=00&amp;f=23" title="Новая тема"><img src='style_images/bg/t_new.gif' border='0'  alt='Открыть новую тему' /></a></td>
+	</tr>
+</table>
+
+<div class="borderwrap">
+	<div class="maintitle" style='padding:4px'>
+	<!-- TABLE FIX FOR MOZILLA WRAPPING-->
+	<table width='100%' style='padding:0px' cellspacing='0' cellpadding='0'>
+	<tr>
+	 <td width='99%' style='word-wrap:break-word;''><div><img src='style_images/bg/nav_m.gif' border='0'  alt='&gt;' width='8' height='8' />&nbsp;<b>ТУРНИР-3</b></div></td>
+	 <td width='1%' align='right' nowrap='nowrap'>
+	    <div class='popmenubutton' id='topicmenu-options'><a href='index.php@showtopic=5760.html#topicoptions'>Опции</a> <img src='style_images/bg/menu_action_down.gif' alt='V' title='Открыть меню' border='0' /></div>
+	 </td>
+	 <td width='1%' align='right' nowrap='nowrap'><div class='popmenubutton'>Рейтинг &nbsp;<img src='style_images/bg/rating_4.gif' border='0' alt='4' /></div>
+
+         </td>
+	</tr>
+  </table>
+	 
+ </div>
+ <!--{IBF.POLL}-->
+<script type="text/javascript">
+  menu_build_menu(
+  "topicmenu-options",
+  new Array( img_item + " <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=topic&amp;tid=5760'>Подписаться на тему</a>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?act=Forward&amp;f=23&amp;t=5760'>Послать тему по E-mail</a>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?act=Print&amp;client=printer&amp;f=23&amp;t=5760'>Распечатать тему</a>",
+                         img_item + " <a href='https://www.braingames.ru/forum/index.php?act=Print&amp;client=choose&amp;f=23&amp;t=5760'>Скачать эту тему</a>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=forum&amp;fid=23'>Подписаться на этот раздел</a>",
+  			 "--NODIV--<div class='popupmenu-category' align='center'>Стили отображения</div>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?showtopic=5760&amp;mode=threaded'>Переключить: Каскадный</a>",
+  			 img_item + " <strong><em><a href='https://www.braingames.ru/forum/index.php?showtopic=5760&amp;mode=linear'>Стандартный</a></em></strong>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?showtopic=5760&amp;mode=linearplus'>Переключить: Линейный</a>"
+		    ) );
+ </script><!--Begin Msg Number 62279-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62279"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 4.10.2012, 19:24</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62279); return false;">#1</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62279'>
+			<!-- THE POST 62279 -->
+			<div class="postcolor" id='post-62279'>14 октября в 18:00 будут опубликованы задания.</div>
+			<!--IBF.ATTACHMENT_62279-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62279); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62279" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62279" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62279',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62279&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62279, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62569-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62569"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 17:00</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62569); return false;">#2</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62569'>
+			<!-- THE POST 62569 -->
+			<div class="postcolor" id='post-62569'>Правила:<br />1. Не пишем в теме мыслей по решению, только вопросы по условию.<br />2. Ответы отправляем мне в личку до 4 ноября включительно. Присылать можно задачи по отдельности. Можно многократно отвечать на ту же задачу, но при этом я учту ТОЛЬКО ПОСЛЕДНЕЕ решение. Если хотите внести изменение в предыдущее решение, то отправьте полностью исправленное решение, а не указание, что и где заменить и т.д.<br />3. Обсуждения не будет- это турнир. Поэтому настоятельно прошу максимально подробно и аргументированно отвечать на вопросы задач. Я оставляю за собой право задавать уточняющие вопросы по вашему решению, но исправить/изменить присланный вариант нельзя в любом случае.<br />4. Не торопитесь. В нескольких задачах из представленных очевидный ответ не является верным, либо оптимальным.<br />5. По многим задачам обязательно возникнут вопросы. Я не стал добавлять уточнения в некоторых условиях, чтобы не &quot;утопить&quot; их. Не стесняйтесь уточнять.<br />6. ПРИЗЫ:<br />1-е место- 100 мозгобаксов<br />2-е место- 50 мозгобаксов<br />3-е место- 10 мозгобаксов<br />4-10 места- 1 месяц ВИП-статуса<br />Отдельный приз победителю Морского боя- 10 мозгобаксов &#33;<br />7. Во всех задачах необходимо обоснование, кроме «Морского боя», разумеется.<br />8. Модераторы принимают участие на общих основаниях, только призы (в случае победы, естественно) для них предусмотрены другие.<br /><br />Благодарности: спасибо marzelik&#96;у и Ischo_Tatian&#96;е за идеи и условия. Спасибо  UNDEFEAT&#96;у за помощь в корректировке условий. <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> <br /><br />Условия:<br /><br />1.Почта Мозголяндии.<br /><br />Почта Мозголяндии ввела ограничения на размер посылок. Теперь сумма длины посылки и периметра сечения, перпендикулярного длине, не должна превышать 100 см. Все посылки являются прямоугольными параллелепипедами. Для облегчения проверки посылок на соответствие требуется изготовить жесткую квадратную рамку, через которую должны проходить все «правильные» посылки. Найдите минимальную длину ребра такой рамки.<br /><br />2. Самолет.<br /><br />По замкнутому маршруту, не меняя высоты, летает самолет. Линейная скорость, развиваемая двигателем самолета, постоянна. В каком случае он совершит один круг быстрее: в безветренную погоду или при постоянном по направлению и скорости ветре? <br /><br />3.  Спутник-шпион.<br /><br />Оккупанты запустили спутник-шпион для слежки за мегамозгами Земли. В  08:00 этот спутник был замечен над Магаданом (59 гр. сев.ш., 150 гр. вост. д.), а в 16:00 над Санкт-Петербургом (59 гр. сев.ш., 30 гр. вост. д.). Над какой точкой  следует ожидать этот спутник в полночь? <br /><br />4. Сыр и мыши. <br /><br />Один фермер сварил сыр в виде неправильной семиугольной призмы, а другой &#8211; в виде правильной четырёхугольной пирамиды, высота которой в два раза меньше стороны основания. Ночью мыши отъели от всех вершин призмы все частицы сыра, которые находились на расстоянии не больше 1 см от соответствующей вершины, а в пирамиде -  2 см. У съеденных кусков сыра не было общих частиц. Какой из фермеров понёс больший ущерб?<br /><br />5. Студенты.<br /><br />Студенты ММГУ часто устраивают коллективные походы в кино, собираясь компаниями. В результате каждого такого похода все присутствующие ругаются между собой до такой степени, что больше не могут находиться в одной компании. В конце семестра оказалось, что теперь в кино им суждено ходить строго в одиночестве. Общее число коллективных походов за семестр было больше 1. Найти минимально возможное количество коллективных походов за семестр, если число студентов ММГУ равно n.<br /><br />6. Детский сад.<br /><br />Каждый день добрый воспитатель детсада №34 рассаживает N детей за общим круглым столом и кормит их кашей. У воспитателя следующая договоренность с детишками: в любой день (кроме самого первого) двое детей, сидящих рядом, могут меняться местами в случае, если в первый день они соседями не были. Такие перестановки можно производить неограниченное число раз. Если детям удастся повторить порядок рассадки любого предыдущего дня, то принудительное поедание каши прекратится. Порядок, получающийся из другого поворотом, считается таким же. Дети стремятся избавиться от поедания каши, воспитатель же прилагает все усилия, чтобы не лишать детей вкусной и здоровой пищи. Найдите максимальное количество дней, которое детям придется есть кашу, при оптимальных действиях сторон.  <br /><br />7. Темница.<br /><br />Подлые оккупанты бросили мегамозга в темницу, повесив на дубовую дверь n замков. Для охраны мегамозга выделили 100 самых подлых оккупантов со связками ключей. При этом любые 5 из этой сотни могут открыть дверь, а вот любых четверых недостаточно. Найдите минимальное количество замков n, при  котором такое возможно.<br /><br />8. Кубики.<br /><br /> Через диагонали кубиков количеством n^3 со стороной 1 просверлены отверстия. Через полученные таким образом бусинки продели нить. После этого нить &quot;замкнули&quot;. При любых ли n бусы можно упаковать в кубическую коробку со стороной n?<br /><br />9.  Космофлот.<br /><br />Космофлоту Мозголяндии необходимо перевезти с одной базы на другую один бак горючего и вернуться назад. Между этими базами 15 недель полета. На прямой  между ними расположены другие базы космофлота. Между любыми двумя ближайшими базами- неделя перелета. В полете любой корабль расходует один бак в неделю, а нести может максимум три бака. На любой базе можно оставлять, потом забирать баки. Найдите минимальное количество баков, которое необходимо израсходовать космофлоту, чтобы выполнить это задание.<br /> <br />10. Экономный мегамозг.<br /><br />Мегамозг вырезал развертку, и сложил из неё правильный тетраэдр, склеив все места соприкосновения. Сколько дефицитного клея ему придется потратить, если на склейку одного ребра уходит один грамм клея?<br /><br />11. Морской бой.<br /><br />На поле для игры в «Морской бой» разместите 5 однопалубных кораблей и произведите 10 выстрелов. Форма ответа: Корабли: координаты, Выстрелы: координаты. Размер поля 10х10, горизонтали от 1 до 10, вертикали- от «а» до «к», корабли не имеют ни одной общей точки, при этом могут касаться границ. Цель: поразить максимальное количество чужих кораблей, потеряв минимальное количество своих.<br /><br />Успехов&#33;<br /><br /><span class='edit'>Сообщение было отредактировано <b>Sunday</b>: 16.10.2012, 10:33</span></div>
+			<!--IBF.ATTACHMENT_62569-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62569); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62569" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62569" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62569',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62569&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62569, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62570-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62570"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=20304'>De_Bill</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"><img src="style_images/bg/folder_post_icons/icon12.gif" alt="" /> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:01</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62570); return false;">#3</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 538<br />
+        		Регистрация: 24.7.2010<br />
+        		
+        		Пользователь №: 20 304<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62570'>
+			<!-- THE POST 62570 -->
+			<div class="postcolor" id='post-62570'>Задачи неплохие, мне нравятся. Извините за занудство, но я не очень-то люблю не понимать условия, так что у меня возникла парочка вопросов:<br /><br />1. что такое &quot;длина параллелепипеда&quot;? <br />1. верно ли, что посылка проходит через рамку тогда и только тогда когда она &quot;правильная&quot;?<br />2. вообще ничего не понятно. почему бы самолету не летать по кругу радиуса 1см? что понимается под одним кругом если самолет не описывает окружность? или он ее описывает? что если самолет все время сносится ветром и летает по такой циклоиде?<br /><br />3. у спутника есть турбины или другие способы влиять на свою скорость? это угадайка?<br /><br />4. намекните мне что такое неправильная призма и правильная пирамида, а то меня в школе научили, что все люди называют этими словами разные предметы. меня интересуют вопросы того, насколько призма прямая и насколько оставшаяся вершина пирамиды висит над точкой пересечения диагоналей<br /><br />5. после похода в кино любые двое из них не могут находиться в одной компании или только всем скопом?<br /><br />7. у каждого оккупанта ровно один ключ? или несколько? или они вообще могут открыть дверь --- имеется в виду разбежавшись и навалившись впятером...<br /><br />9. Верно ли, что базы расположены в точках (1,2,3,4,5,...,15)? Или они могут быть в точках (1 2 14 15)?<br />11. допустим я поразил 7 кораблей а потерял 3, а Zerocool поразил 4 корабля а потерял 1. Кто из нас получит 10 мозгобаксов?</div>
+			<!--IBF.ATTACHMENT_62570-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=20304','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=20304"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!--<a href="https://www.braingames.ru/forum/index.php?act=Mail&amp;CODE=00&amp;MID=20304"><img src='style_images/bg/p_email.gif' border='0'  alt='Отправить письмо на e-mail' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62570); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62570" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62570" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62570',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62570&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62570, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62571-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62571"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=1766'>VvV</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"><img src="style_images/bg/folder_post_icons/icon1.gif" alt="" /> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:01</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62571); return false;">#4</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Новичок<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 8<br />
+        		Регистрация: 9.7.2007<br />
+        		
+        		Пользователь №: 1 766<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62571'>
+			<!-- THE POST 62571 -->
+			<div class="postcolor" id='post-62571'>У меня вопросы по задачам:<br />1. Послыка должна проходить через квадратную рамку хотя бы в одной ориентации, или в любой, как мы её ни покрутим?<br />3. Спутник летит на малой высоте (радиус Земли)?<br />9. Нести максимум 3 бака кроме того, который расходуется или вместе с ним?<br />10. Непонятен вопрос. М.б. Какое минимальное количество клея придётся потратить мегамозгу и как вырезать соотв. развёртку?</div>
+			<!--IBF.ATTACHMENT_62571-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=1766','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=1766"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62571); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62571" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62571" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62571',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62571&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62571, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62572-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62572"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:06</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62572); return false;">#5</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62572'>
+			<!-- THE POST 62572 -->
+			<div class="postcolor" id='post-62572'><!--quoteo(post=62571:date=14.10.2012, 18&#58;01:name=VvV)--><div class='quotetop'>QUOTE(VvV &#064; 14.10.2012, 18&#58;01) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62571"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />У меня вопросы по задачам:<br />1. Послыка должна проходить через квадратную рамку хотя бы в одной ориентации, или в любой, как мы её ни покрутим?<br />3. Спутник летит на малой высоте (радиус Земли)?<br />9. Нести максимум 3 бака кроме того, который расходуется или вместе с ним?<br />10. Непонятен вопрос. М.б. Какое минимальное количество клея придётся потратить мегамозгу и как вырезать соотв. развёртку?<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />1. Хотя бы в одной.<br />3. Высота неизвестна. У спутника нет двигателя. Все остальные данные о спутниках и высотах Вам предоставит великий гугл. <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> <br />9. 3 бака всего, вместе с расходуемым.<br />10. Безусловно имеется ввиду минимальное количество клея, мм ведь экономный.</div>
+			<!--IBF.ATTACHMENT_62572-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62572); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62572" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62572" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62572',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62572&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62572, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62573-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62573"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=35913'>r_</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:19</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62573); return false;">#6</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Новичок<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 9<br />
+        		Регистрация: 11.6.2012<br />
+        		
+        		Пользователь №: 35 913<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62573'>
+			<!-- THE POST 62573 -->
+			<div class="postcolor" id='post-62573'>1. Длина рамки, это должно быть вещественное или целочисленное число?</div>
+			<!--IBF.ATTACHMENT_62573-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=35913','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=35913"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62573); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62573" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62573" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62573',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62573&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62573, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62574-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62574"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:24</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62574); return false;">#7</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62574'>
+			<!-- THE POST 62574 -->
+			<div class="postcolor" id='post-62574'><!--quoteo(post=62573:date=14.10.2012, 18&#58;19:name=r_)--><div class='quotetop'>QUOTE(r_ &#064; 14.10.2012, 18&#58;19) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62573"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />1. Длина рамки, это должно быть вещественное или целочисленное число?<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Если нет требования целочисленности, значит может быть нецелочисленным. Еще: рамку считаем нулевой толщины (на всякий случай).</div>
+			<!--IBF.ATTACHMENT_62574-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62574); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62574" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62574" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62574',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62574&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62574, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62575-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62575"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=35913'>r_</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:28</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62575); return false;">#8</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Новичок<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 9<br />
+        		Регистрация: 11.6.2012<br />
+        		
+        		Пользователь №: 35 913<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62575'>
+			<!-- THE POST 62575 -->
+			<div class="postcolor" id='post-62575'><!--quoteo(post=62574:date=14.10.2012, 18&#58;24:name=Крантец)--><div class='quotetop'>QUOTE(Крантец &#064; 14.10.2012, 18&#58;24) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62574"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />Если нет требования целочисленности, значит может быть нецелочисленным. Еще: рамку считаем нулевой толщины (на всякий случай).<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />А проверка решений происходит только после 4го? Сразу узнать правильно ли ответил или нет нельзя?</div>
+			<!--IBF.ATTACHMENT_62575-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=35913','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=35913"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62575); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62575" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62575" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62575',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62575&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62575, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62576-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62576"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=20304'>De_Bill</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:32</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62576); return false;">#9</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 538<br />
+        		Регистрация: 24.7.2010<br />
+        		
+        		Пользователь №: 20 304<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62576'>
+			<!-- THE POST 62576 -->
+			<div class="postcolor" id='post-62576'>А мои вопросы будут проигнорированы или просто остались незамеченными?</div>
+			<!--IBF.ATTACHMENT_62576-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=20304','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=20304"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!--<a href="https://www.braingames.ru/forum/index.php?act=Mail&amp;CODE=00&amp;MID=20304"><img src='style_images/bg/p_email.gif' border='0'  alt='Отправить письмо на e-mail' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62576); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62576" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62576" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62576',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62576&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62576, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62577-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62577"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:34</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62577); return false;">#10</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62577'>
+			<!-- THE POST 62577 -->
+			<div class="postcolor" id='post-62577'><!--quoteo(post=62575:date=14.10.2012, 18&#58;28:name=r_)--><div class='quotetop'>QUOTE(r_ &#064; 14.10.2012, 18&#58;28) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62575"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />А проверка решений происходит только после 4го? Сразу узнать правильно ли ответил или нет нельзя?<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Проверка может происходить и сразу, но узнать результаты можно только после 4-го. При этом общие результаты публиковать не буду, потому что как минимум одна задача из этого турнира будет точно опубликована на сайте. Мне бы не хотелось заранее выдавать верный ответ на нее. По окончании данного турнира постараюсь отослать вердикт по решениям ВСЕМ участникам турнира в личку, как делал это в предыдущих. <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /></div>
+			<!--IBF.ATTACHMENT_62577-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62577); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62577" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62577" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62577',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62577&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62577, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62579-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62579"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 18:56</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62579); return false;">#11</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62579'>
+			<!-- THE POST 62579 -->
+			<div class="postcolor" id='post-62579'><!--quoteo(post=62576:date=14.10.2012, 18&#58;32:name=De_Bill)--><div class='quotetop'>QUOTE(De_Bill &#064; 14.10.2012, 18&#58;32) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62576"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />А мои вопросы будут проигнорированы или просто остались незамеченными?<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Дык не видел просто. <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> <br />1. Длина параллелепипеда? Не понял вопроса. Длина посылки- один из линейных размеров параллелепипеда. Что не так?<br />1. Да, верно. Любая посылка, не соответствующая &quot;ГОСТам&quot;, не пройдет.<br />2. Траектория полета неизвестна. Она является некоей замкнутой кривой на плоскости. Под кругом понимается периметр данной замкнутой кривой. Самолет все время сносится ветром в одном из случаев.<br />3. Спутник вполне обычный. Траектория полета спутника- окружность. Никакой угадайки. Задача строгая, поверьте мне. Если я дополню условие некоторыми данными, то задача исчезнет. Никаких спецзнаний для решения не требуется. Я же смог ее решить <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> <br />4. Неправильная призма- призма, основаниями которой являются произвольные 7-угольники(в данном случае). Призма вполне может не быть прямой. Пирамида: основание- квадрат, основание высоты совпадает с точкой пересечения диагоналей квадрата.<br />5. Любые двое. Если бы не было ограничения &quot;Общее число коллективных походов за семестр было больше 1&quot;, то первое посещение стало бы и последним.<br />7. Количество ключей у каждого оккупанта- неизвестно, к сожалению. Навалившись не могут, только ключами. <br />9. Точки: 1,...,16. Условие задачи подразумевает 15 равных промежутков. 1 2 14 15 - не понял вообще..<br />11. Здесь буду исходить из пропорции: 2 балла за потерю, 1 балл за попадание. Поясню: выстрелов в 2 раза больше. <br /><br />З.Ы. Zerocool  вряд ли примет участие в турнире, к моему глубочайшему сожалению <img src="style_emoticons/default/cool.gif" style="vertical-align:middle" emoid="B)" border="0" alt="cool.gif" /><br /><br /><span class='edit'>Сообщение было отредактировано <b>Крантец</b>: 14.10.2012, 19:00</span></div>
+			<!--IBF.ATTACHMENT_62579-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62579); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62579" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62579" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62579',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62579&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62579, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62581-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62581"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=20304'>De_Bill</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"><img src="style_images/bg/folder_post_icons/icon12.gif" alt="" /> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 19:55</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62581); return false;">#12</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 538<br />
+        		Регистрация: 24.7.2010<br />
+        		
+        		Пользователь №: 20 304<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62581'>
+			<!-- THE POST 62581 -->
+			<div class="postcolor" id='post-62581'>Ага,спасибо. <br /><br /><!--quoteo(post=62579:date=14.10.2012, 19&#58;56:name=Крантец)--><div class='quotetop'>QUOTE(Крантец &#064; 14.10.2012, 19&#58;56) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62579"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />2. Траектория полета неизвестна. Она является некоей замкнутой кривой на плоскости. Под кругом понимается периметр данной замкнутой кривой. Самолет все время сносится ветром в одном из случаев.<br />9. Точки: 1,...,16. Условие задачи подразумевает 15 равных промежутков. 1 2 14 15 - не понял вообще..<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />2. Однако это одна и та же замкнутая кривая в случае с ветром или без, да?<br /><br />9. Условие я понял. А в примере имелось в виду, что 1 и 2 ближайшие, 14 и 15 ближайшие, так что расстояние между любыми двумя ближайшими равно 1м</div>
+			<!--IBF.ATTACHMENT_62581-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=20304','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=20304"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!--<a href="https://www.braingames.ru/forum/index.php?act=Mail&amp;CODE=00&amp;MID=20304"><img src='style_images/bg/p_email.gif' border='0'  alt='Отправить письмо на e-mail' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62581); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62581" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62581" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62581',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62581&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62581, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62582-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62582"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=20304'>De_Bill</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:09</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62582); return false;">#13</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 538<br />
+        		Регистрация: 24.7.2010<br />
+        		
+        		Пользователь №: 20 304<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62582'>
+			<!-- THE POST 62582 -->
+			<div class="postcolor" id='post-62582'><!--quoteo--><div class='quotetop'>QUOTE</div><div class='quotemain'><!--quotec-->1. Длина параллелепипеда? Не понял вопроса. Длина посылки- один из линейных размеров параллелепипеда. Что не так?<!--QuoteEnd--></div><!--QuoteEEnd--><br />У меня был вариант что это длина диагонали, например.<br /><br />А вообще мне опять непонятно: который из линейных размеров? самый большой? самый маленький? случайный? допустим, посылка длины 15 и ширины 20 и высоты 25 подойдет? Казалось бы, 15+(20+25)*2=105, но с другой стороны если сказать что у нее длина 25 а высота 15, то 25+(15+20)*2=95. Короче, кто определяет где у посылки длина: слепой случай или тот кто очень хочет ее отправить?<br /><br /><span class='edit'>Сообщение было отредактировано <b>De_Bill</b>: 14.10.2012, 20:09</span></div>
+			<!--IBF.ATTACHMENT_62582-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=20304','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=20304"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!--<a href="https://www.braingames.ru/forum/index.php?act=Mail&amp;CODE=00&amp;MID=20304"><img src='style_images/bg/p_email.gif' border='0'  alt='Отправить письмо на e-mail' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62582); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62582" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62582" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62582',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62582&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62582, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62583-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62583"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:13</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62583); return false;">#14</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62583'>
+			<!-- THE POST 62583 -->
+			<div class="postcolor" id='post-62583'>2. Одна и та же, конечно.<br />9. 1 и2 - рас-е 1, 2 и 3- рас-е 1,..., 15 и 16- рас-е 1. Или я недопонимаю?<br /><br /><!--quoteo(post=62582:date=14.10.2012, 20&#58;09:name=De_Bill)--><div class='quotetop'>QUOTE(De_Bill &#064; 14.10.2012, 20&#58;09) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62582"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />У меня был вариант что это длина диагонали, например.<br /><br />А вообще мне опять непонятно: который из линейных размеров? самый большой? самый маленький? случайный? допустим, посылка длины 15 и ширины 20 и высоты 25 подойдет? Казалось бы, 15+(20+25)*2=105, но с другой стороны если сказать что у нее длина 25 а высота 15, то 25+(15+20)*2=95. Короче, кто определяет где у посылки длина: слепой случай или тот кто очень хочет ее отправить?<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Случайный. Рассматриваем посылку: а,в,с длины сторон. Так вот, сумма одного из этих параметров с удвоенной суммой двух других ограничена условием.</div>
+			<!--IBF.ATTACHMENT_62583-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62583); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62583" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62583" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62583',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62583&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62583, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62584-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62584"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=20304'>De_Bill</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:24</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62584); return false;">#15</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 538<br />
+        		Регистрация: 24.7.2010<br />
+        		
+        		Пользователь №: 20 304<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62584'>
+			<!-- THE POST 62584 -->
+			<div class="postcolor" id='post-62584'>ОК, кажется, я все понял. Видимо, на каждой посылке уже написано, где у нее длина.<br /><br />Подождите, ничего я не понял. Я кое что не прочитал:<br /><!--quoteo--><div class='quotetop'>QUOTE</div><div class='quotemain'><!--quotec-->1. Да, верно. Любая посылка, не соответствующая &quot;ГОСТам&quot;, не пройдет.<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Это же бред.<br />Предположим, что ответ это квадратная рамка с ребром а. Тогда рассмотрим посылку с длиной 100000000000, шириной a/4 и высотой a/4. Очевидно, она не соответствует гостам, очевидно, она пройдет через рамку. Если бы в условии спрашивали &quot;возможно ли такое&quot;, то написанное мной было бы мыслями по решению, но там спрашивают минимальное a, так что, видимо, я не понимаю условие до сих пор<br /><br /><br />2. Предлагается считать, что скорость ветра много меньше скорости самолета?</div>
+			<!--IBF.ATTACHMENT_62584-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=20304','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=20304"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!--<a href="https://www.braingames.ru/forum/index.php?act=Mail&amp;CODE=00&amp;MID=20304"><img src='style_images/bg/p_email.gif' border='0'  alt='Отправить письмо на e-mail' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62584); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62584" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62584" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62584',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62584&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62584, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62585-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62585"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:26</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62585); return false;">#16</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62585'>
+			<!-- THE POST 62585 -->
+			<div class="postcolor" id='post-62585'><!--quoteo(post=62584:date=14.10.2012, 20&#58;22:name=De_Bill)--><div class='quotetop'>QUOTE(De_Bill &#064; 14.10.2012, 20&#58;22) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62584"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />ОК, кажется, я все понял. Видимо, на каждой посылке уже написано, где у нее длина.<br /><br />Подождите, ничего я не понял. Я кое что не прочитал:<br /><br />Это же бред.<br />Предположим, что ответ это квадратная рамка с ребром а. Тогда рассмотрим посылку с длиной 100000000000, шириной a/4 и высотой a/4. Очевидно, она не соответствует гостам, очевидно, она пройдет через рамку. Если бы в условии спрашивали &quot;возможно ли такое&quot;, то написанное мной было бы мыслями по решению, но там спрашивают минимальное a, так что, видимо, я не понимаю условие до сих пор<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Да, Вы меня запутали немного. Самое интересное, что при формулировке задачи этот вопрос возникал у меня. Резюмирую: неправильные посылки тоже могут пройти, нам же важно, чтобы все БЕЗ ИСКЛЮЧЕНИЯ правильные прошли. <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> Прошу прощения, моя оплошность.<br />2. Скорость ветра: ничего не предполагается. Если ответ зависит от входных данных, то исследуйте все варианты.<br /><br /><span class='edit'>Сообщение было отредактировано <b>Крантец</b>: 14.10.2012, 20:28</span></div>
+			<!--IBF.ATTACHMENT_62585-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62585); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62585" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62585" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62585',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62585&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62585, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62587-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62587"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=6125'>nik_vic</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:34</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62587); return false;">#17</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 753<br />
+        		Регистрация: 22.1.2008<br />
+        		
+        		Пользователь №: 6 125<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62587'>
+			<!-- THE POST 62587 -->
+			<div class="postcolor" id='post-62587'><!--quoteo(post=62579:date=14.10.2012, 19&#58;56:name=Крантец)--><div class='quotetop'>QUOTE(Крантец &#064; 14.10.2012, 19&#58;56) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62579"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />4. Неправильная призма- призма, основаниями которой являются произвольные 7-угольники(в данном случае).<!--QuoteEnd--></div><!--QuoteEEnd--><br /><br />В том числе и невыпуклые?</div>
+			<!--IBF.ATTACHMENT_62587-->
+			<br /><br />--------------------<br />
+<div class="signature">Где это видано?</div>
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=6125','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=6125"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62587); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62587" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62587" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62587',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62587&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62587, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62588-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62588"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:35</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62588); return false;">#18</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62588'>
+			<!-- THE POST 62588 -->
+			<div class="postcolor" id='post-62588'><!--quoteo(post=62587:date=14.10.2012, 20&#58;34:name=nik_vic)--><div class='quotetop'>QUOTE(nik_vic &#064; 14.10.2012, 20&#58;34) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62587"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />В том числе и невыпуклые?<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Что характерно, да.</div>
+			<!--IBF.ATTACHMENT_62588-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62588); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62588" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62588" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62588',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62588&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62588, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62589-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62589"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=20304'>De_Bill</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:36</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62589); return false;">#19</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<br /><br />
+        		Активный участник<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 538<br />
+        		Регистрация: 24.7.2010<br />
+        		
+        		Пользователь №: 20 304<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-62589'>
+			<!-- THE POST 62589 -->
+			<div class="postcolor" id='post-62589'>При некоторых входных данных самолет просто не сможет описывать никакую замкнутую траекторию и условие будет некорректно</div>
+			<!--IBF.ATTACHMENT_62589-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=20304','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=20304"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!--<a href="https://www.braingames.ru/forum/index.php?act=Mail&amp;CODE=00&amp;MID=20304"><img src='style_images/bg/p_email.gif' border='0'  alt='Отправить письмо на e-mail' /></a>--></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62589); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62589" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62589" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62589',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62589&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62589, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!--Begin Msg Number 62590-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry62590"></a><span class="normalname"><a href='https://www.braingames.ru/forum/index.php?showuser=19950'>Крантец</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 14.10.2012, 20:40</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=5760.html#" onclick="link_to_post(62590); return false;">#20</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post1">
+        	<span class="postdetails">
+        		<br /><br />
+        		Kорифей<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Пользователи Braingames<br />
+        		Сообщений: 1 937<br />
+        		Регистрация: 25.3.2010<br />
+        		
+        		Пользователь №: 19 950<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post1" id='post-main-62590'>
+			<!-- THE POST 62590 -->
+			<div class="postcolor" id='post-62590'><!--quoteo(post=62589:date=14.10.2012, 20&#58;36:name=De_Bill)--><div class='quotetop'>QUOTE(De_Bill &#064; 14.10.2012, 20&#58;36) <a href="https://www.braingames.ru/forum/index.php?act=findpost&amp;pid=62589"><img src='style_images/bg/post_snapback.gif' alt='*' border='0' /></a></div><div class='quotemain'><!--quotec--><br />При некоторых входных данных самолет просто не сможет описывать никакую замкнутую траекторию и условие будет некорректно<br /><!--QuoteEnd--></div><!--QuoteEEnd--><br />Учитываем и описываем все варианты. С обоснованием.</div>
+			<!--IBF.ATTACHMENT_62590-->
+			
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=19950','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=19950"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=5760.html#" onclick="multiquote_add(62590); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_62590" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=23&amp;t=5760&amp;qpid=62590" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-62590',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=23&amp;t=5760&amp;p=62590&amp;st='>Полное</a>",
+				img_item + " <a href='index.php@showtopic=5760.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(62590, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!-- END TABLE -->
+
+<!-- TABLE FOOTER -->
+<div class="barc">
+	<div style="float: right; padding: 5px 5px 0 0;"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;view=old" style='text-decoration:none'>&laquo; Предыдущая тема</a>
+	&middot; <a href="https://www.braingames.ru/forum/index.php?showforum=23" style='font-weight: bold;text-decoration:none'>Разминка для мозгов</a>
+	&middot; <a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;view=new" style='text-decoration:none'>Следующая тема &raquo;</a></div>
+	<div>
+		<form action="https://www.braingames.ru/forum/index.php?" method="post" name="search">
+			<input type="hidden" name="forums" value="23" />
+			<input type="hidden" name="topic" value="5760" />
+			<input type="hidden" name="act" value="Search" />
+			<input type="hidden" name="CODE" value="searchtopic" />
+			<input type="text" size="25" name="keywords" class="searchinput" value="Введите слова для поиска" onfocus="this.value = '';" />&nbsp;
+			<input type="submit" value="Искать по теме" class="button" />
+		</form>
+	</div>
+</div>
+</div>
+<br />
+
+<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td style='padding-left:0px' width="30%" nowrap="nowrap" valign="middle"><div><span class="pagelink" id='page-jump'>14 Страниц <img src='style_images/bg/menu_action_down.gif' alt='V' title='Открыть меню' border='0' /></span>&nbsp;&nbsp;<span class="pagecurrent">1</span>&nbsp;<span class="pagelink"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=20" title="2">2</a></span>&nbsp;<span class="pagelink"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=40" title="3">3</a></span>&nbsp;<span class="pagelink"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=20" title="Следущая страница">&gt;</a></span>&nbsp;<span class="pagelinklast"><a href="https://www.braingames.ru/forum/index.php?showtopic=5760&amp;st=260" title="На последнюю страницу">&raquo;</a></span>&nbsp;
+<script type="text/javascript">
+//<![CDATA[
+ipb_pages_shown++;
+var pgjmp = document.getElementById( 'page-jump' );
+pgjmp.id  = 'page-jump-'+ipb_pages_shown;
+ipb_pages_array[ ipb_pages_shown ] = new Array( 'https://www.braingames.ru/forum/index.php?showtopic=5760', 20, 268 );
+menu_build_menu(
+	pgjmp.id,
+	new Array(  "--NODIV--<div onmouseover='pages_st_focus("+ipb_pages_shown+")' class='popupmenu-category' align='center'>На страницу</div>",
+				"<input type='text' size='5' name='st' id='st-"+ipb_pages_shown+"' /> <input type='button' class='button' onclick='do_multi_page_jump("+ipb_pages_shown+");' value='ОК' />" ) );
+//]]>
+</script></div></td>
+		<td class='nopad' style='padding:5px 0px 5px 0px' align="right" width="70%"><!--IBF.QUICK_REPLY_CLOSED--><a href="https://www.braingames.ru/forum/index.php?act=post&amp;do=reply_post&amp;f=23&amp;t=5760"><img src='style_images/bg/t_reply.gif' border='0'  alt='Ответить в эту тему' /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=00&amp;f=23" title="Новая тема"><img src='style_images/bg/t_new.gif' border='0'  alt='Открыть новую тему' /></a><!----></td>
+	</tr>
+</table>
+<div class="borderwrap" style='padding-bottom:1px;'>
+	<div class="formsubtitle" style="padding: 4px;">1 чел. читают эту тему (гостей: <b>1</b>, скрытых пользователей: <b>0</b>)</div>
+	<div class="row1" style="padding: 4px;">Пользователей: <b>0 - </b> </div>
+</div>
+
+<!--IBF.QUICK_REPLY_OPEN-->
+<br />
+<div class="borderwrap">
+	<div class="row2" style="padding: 5px;">
+		
+		<div align="right"><form onsubmit="if(document.jumpmenu.f.value == -1){return false;}" action='https://www.braingames.ru/forum/index.php?act=SF' method='get' name='jumpmenu'>
+			             <input type='hidden' name='act' value='SF' />
+<input type='hidden' name='s' value='' />
+			             <select name='f' onchange="if(this.options[this.selectedIndex].value != -1){ document.jumpmenu.submit() }" class='dropdown'>
+			             <optgroup label="Перейти на сайт">
+			              <option value='sj_home'>Главная страница форума</option>
+			              <option value='sj_search'>Поиск по форуму</option>
+			              <option value='sj_help'>Помощь</option>
+			             </optgroup>
+			             <optgroup label="Переход по форуму"><option value="6">Главный форум</option>
+<option value="8">&nbsp;&nbsp;&#0124;-- Обсуждаем сайт «Игры разума»</option>
+<option value="23" selected="selected">&nbsp;&nbsp;&#0124;-- Разминка для мозгов</option>
+<option value="59">&nbsp;&nbsp;&#0124;---- Kоммерческие задачи</option>
+<option value="24">&nbsp;&nbsp;&#0124;-- Поиграем&#33;</option>
+<option value="31">&nbsp;&nbsp;&#0124;-- Kлуб мегамозгов</option>
+<option value="18">&nbsp;&nbsp;&#0124;---- Игроки о себе</option>
+<option value="39">&nbsp;&nbsp;&#0124;---- Модераторы о себе</option>
+<option value="60">&nbsp;&nbsp;&#0124;---- Поздравления</option>
+<option value="52">&nbsp;&nbsp;&#0124;-- Свободное общение</option>
+<option value="57">&nbsp;&nbsp;&#0124;---- Юмор</option>
+<option value="58">&nbsp;&nbsp;&#0124;---- Личные объявления</option>
+<option value="29">Приемная администратора</option>
+<option value="17">&nbsp;&nbsp;&#0124;-- Рассудите, кто прав</option>
+<option value="66">&nbsp;&nbsp;&#0124;---- Архив</option>
+<option value="22">&nbsp;&nbsp;&#0124;-- Ваши вопросы</option>
+<option value="30">&nbsp;&nbsp;&#0124;-- Объявления администрации</option>
+<option value="42">&nbsp;&nbsp;&#0124;-- Ошибки на сайте и предложения по улучшению</option>
+<option value="45">&nbsp;&nbsp;&#0124;---- Предложения по улучшению</option>
+<option value="73">&nbsp;&nbsp;&#0124;---- Проблемы с форумом</option>
+<option value="61">&nbsp;&nbsp;&#0124;-- Новости разработки</option>
+</optgroup>
+</select>&nbsp;<input type='submit' value='ОК' class='button' /></form></div>
+	</div>
+</div>
+<br />
+<!-- NON JS STUFF -->
+<div id='topicoptionsjs'>
+ <a name='topicdisplay'></a>
+ <div class='borderwrap'>
+  <div class="bar" style="padding: 5px;text-align:center">
+  <strong>Стиль отображения:</strong> <strong><em><a href='https://www.braingames.ru/forum/index.php?showtopic=5760&amp;mode=linear'>Стандартный</a></em></strong> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?showtopic=5760&amp;mode=linearplus'>Переключить: Линейный</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?showtopic=5760&amp;mode=threaded'>Переключить: Каскадный</a>
+  </div>
+ </div>
+ <br />
+ <a name='topicoptions'></a>
+ <div class='borderwrap'>
+  <div class="bar" style="padding: 5px;text-align:center">
+  <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=topic&amp;tid=5760'>Подписаться на тему</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?act=Forward&amp;f=23&amp;t=5760'>Послать тему по E-mail</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?act=Print&amp;client=printer&amp;f=23&amp;t=5760'>Распечатать тему</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=forum&amp;fid=23'>Подписаться на этот раздел</a>
+  </div>
+ </div>
+ <br />
+
+</div>
+<script type='text/javascript'>
+//<![CDATA[
+ document.getElementById('topicoptionsjs').style.display = 'none';
+ 
+ // Scroll to PID?
+ topic_scroll_to_post( parseInt("") );
+//]]>
+</script><!--TASK--><img src='index.php@act=task' border='0' height='1' width='1' alt='' /><!--ETASK-->
+<table cellspacing="0" id="gfooter">
+	<tr>
+		<td width="45%"><img id="rsssyndication" src='style_images/bg/rss.png' border='0' alt='-' class='ipd' />
+<script type="text/javascript">
+//<![CDATA[
+  menu_build_menu(
+  "rsssyndication",
+  new Array( "<a href='https://braingames.ru/forum/index.php?act=rssout&amp;id=1' style='color:black'>BG New posts</a>"
+           ) );
+//]]>
+</script> </td>
+		<td width="10%" align="center" nowrap="nowrap"><a href="https://www.braingames.ru/forum/lofiversion/index.php/t5760.html"><b>Упрощённая версия</b></a></td>
+		<td width="45%" align="right" nowrap="nowrap">Сейчас: 26.7.2021, 18:33</td>
+	</tr>
+</table>
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=11243257&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/11243257/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="11243257" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<script type='text/javascript'>
+//<![CDATA[
+menu_do_global_init();//]]>
+</script>
+ 
+<!-- Copyright Information -->
+        				  <div align='center' class='copyright'>
+        				  	Invision Power Board
+        				  	v2.1.4 &copy; 2021 &nbsp;IPS, Inc.
+        				  </div>
+		<!-- / Copyright -->
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"674eaf3d086219e3","version":"2021.7.0","r":1,"token":"786201510e0549d4be4b6cb300bdbbeb","si":10}'></script>
+</body> 
+</html>

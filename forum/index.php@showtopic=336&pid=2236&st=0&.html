@@ -1,0 +1,2032 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>FAQ - Форум Игры разума [braingames]</title>
+<link rel="alternate" type="application/rss+xml" title="BG New posts" href="https://braingames.ru/forum/index.php?act=rssout&amp;id=1" />
+ 
+<style type="text/css">
+	/* 
+ * Cascading Style Sheet(CSS 467), for Invision Power Board 2.1.0
+ * Author: James A. Mathias, admin@leihu.com, http://www.1lotus.com 
+ * Copyright: 2005 Invision Power Services, all rights reserved 
+ *
+ * All style attributes in alpha-numeric order starting from 0
+ *
+ */
+
+/* 
+ * ========================================
+ * global element styles 
+ * ========================================
+ */
+
+html{
+	overflow-x: auto; /* fixes MSIE scrollbar bug DO NOT REMOVE, has no effect in Mozilla, or Opera */
+}
+
+body{ 
+/*	background: #FFF;*/
+	color: #000000;
+	font-family: Verdana, Tahoma, Arial, Trebuchet MS, Sans-Serif, Georgia, Courier, Times New Roman, Serif;
+	font-size: 11px;
+	line-height: 135%;
+	margin: 0px;
+	padding: 0px; /* required for Opera to have 0 margin */
+	text-align: center; /* centers board in MSIE */
+}
+
+/* 
+ * ========================================
+ * Set up IPB table
+ * ========================================
+ */
+ 
+.ipbtable { width:100% }
+
+table.ipbtable,
+tr.ipbtable,
+td.ipbtable
+{ /* required for text in tables, because tables do not inherit from body */
+	background: transparent;
+	color: #222;
+	font-size: 11px;
+	line-height: 135%;
+}
+
+.ipbtable td,
+.divpad{ /* gives all tables faux cellpadding of 5px */
+	padding: 5px;
+}
+
+td.nopad{ /* allows some tables to have no padding on the td */
+	padding: 0;
+}
+
+
+
+form{
+	display: inline;
+	margin: 0; /* removes mystery form tag gapping */
+	padding: 0; /* removes mystery form tag gapping */
+}
+
+img{
+	border: 0; /* makes sure linked images do not have a border */
+	vertical-align: middle;
+}
+
+/* 
+ * ========================================
+ * global hyperlink styles 
+ * ========================================
+ */
+
+a:link,
+a:visited,
+a:active{
+	background: transparent;
+	color: #6F781E;
+	text-decoration: underline;
+}
+
+a:hover{
+	background: transparent;
+/*	color: #34498B;*/
+}
+
+/* 
+ * ========================================
+ * Main wrapper, this controls the overall width of the board in you browser view window. 
+ * ========================================
+ */
+
+#ipbwrapper{ 
+	margin: 20px auto 20px auto; /* centers the box, no matter the overall width, also applies a 20px gap at the top and bottom of the board */
+	text-align: left; /* re_aligns text to left second part of two part MSIE centering workaround */
+	/* EDIT THIS TO CHANGE THE WIDTH OF THE BOARD -> 750px is a common fixed resolution size */
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * styles for pagination links 
+ * ========================================
+ */
+ 
+
+.pagelink,
+.pagelinklast,
+.pagecurrent,
+.minipagelink,
+.minipagelinklast{
+	background: #F8F8EE;
+	border: 1px solid #6F781E;
+	padding: 1px 3px 1px 3px;
+}
+
+.pagelinklast,
+.minipagelinklast{
+	background: #F0F0E0;
+}
+
+
+.pagecurrent{
+	background: #FFC9A5;
+}
+
+.minipagelink,
+.minipagelinklast{
+	border: 1px solid #DEDEC1;
+	font-size: 10px;
+	margin: 0 1px 0 0;
+}
+
+.pagelink a:active,
+.pagelink a:visited,
+.pagelink a:link,
+.pagelinklast a:active,
+.pagelinklast a:visited,
+.pagelinklast a:link,
+.pagecurrent a:active,
+.pagecurrent a:visited,
+.pagecurrent a:link,
+.minipagelink a:active,
+.minipagelink a:visited,
+.minipagelink a:link,
+.minipagelinklast a:active,
+.minipagelinklast a:visited,
+.minipagelinklast a:link{
+	text-decoration: none;
+}
+
+/* fake button effect for some links */
+.fauxbutton{
+	background: #DEDEBE;
+	border: 1px solid #6F781E;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+.fauxbutton a:link,
+.fauxbutton a:visited,
+.fauxbutton a:active{
+	color: #222 !important;
+	text-decoration: none;
+}
+
+.forumdesc,
+.forumdesc a:link,
+.forumdesc a:visited,
+.forumdesc a:active{ 
+	background: transparent;
+	font-size: 10px; 
+	color: #666;
+	line-height: 135%;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+.searchlite {
+	background-color:yellow;
+	font-weight:bold;
+	color: red;
+}
+
+.activeusers{
+	background: #FFF;
+	border: 1px solid #6F781E;
+	color: #000;
+	margin: 0px;
+	padding: 1px;
+}
+
+.activeuserposting a:link,
+.activeuserposting a:visited,
+.activeuserposting a:active,
+.activeuserposting
+{
+	font-style:italic;
+	text-decoration: none;
+	border-bottom:1px dotted black;
+}
+
+fieldset.search{ 
+	line-height: 150%;
+	padding: 6px; 
+}
+
+label{ 
+	cursor: pointer; 
+}
+
+img.attach{ 
+	background: #808080 url(style_images/bg/click2enlarge.gif) no-repeat top right;
+	border: 1px solid #808080;
+	margin: 0 2px 0 0;
+	padding: 11px 2px 2px 2px;
+}
+
+.thumbwrap,
+.thumbwrapp,
+.fullimagewrap{
+	border: 1px solid #6F781E;
+	margin: 2px;
+}
+
+.thumbwrapp{
+	border: 2px solid #660707;
+}
+
+.fullimagewrap{
+	background: #FDFDF4;
+	text-align: center;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+.thumbwrap h4,
+.thumbwrapp h4{	
+	background: #F0F0DB;
+	border: 0 !important;
+	border-bottom: 1px solid #999933 !important;
+	color: #999933; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.thumbwrap p,
+.thumbwrapp p{
+	background: #F7F7EE !important;
+	border: 0 !important;
+	border-top: 1px solid #999933 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrap p.alt,
+.thumbwrapp p.alt{
+	background: #F0F0E0 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrapp p.pin{
+	background: #EFDFDF !important;
+	text-align: center !important;
+}
+	
+.thumbwrap img.galattach,
+.thumbwrapp img.galattach{
+	background: #FFF url(style_images/bg/img_larger.gif) no-repeat bottom right;
+	border: 1px solid #6F781E;
+	margin: 5px;
+	padding: 2px 2px 10px 2px;
+}
+
+li.helprow{ 
+	margin: 0 0 10px 0;
+	padding: 0; 
+}
+
+ul#help{ 
+	padding: 0 0 0 15px; 
+}
+
+.warngood,
+.warnbad{ 
+	color: #0B9500;
+	font-weight: bold;
+}
+
+.warnbad{ 
+	color: #DD0000;
+}
+
+#padandcenter{ 
+	margin: 0 auto 0 auto;
+	padding: 14px 0 14px 0;
+	text-align: center;
+}
+
+#profilename{ 
+	font-size: 28px; 
+	font-weight: bold; 
+}
+
+#photowrap{ 
+	padding: 6px; 
+}
+
+#phototitle{ 
+	border-bottom: 1px solid #000; 
+	font-size: 24px; 
+}
+
+#photoimg{ 
+	margin: 15px 0 0 0;
+	text-align: center; 
+} 
+
+#ucpmenu,
+#ucpcontent{ 
+	background: #FDFDF5;
+	border: 1px solid #878734;
+	line-height: 150%;
+}
+
+#ucpmenu p{ 
+	margin: 0; 
+	padding: 2px 5px 6px 9px;
+}
+
+#ucpmenu a:link, 
+#ucpmenu a:active, 
+#ucpmenu a:visited{ 
+	text-decoration: none; 
+}
+
+#ucpcontent{ 
+	width: auto;
+}
+
+#ucpcontent p{ 
+	margin: 0;
+	padding: 10px;
+}
+
+.activeuserstrip{ 
+	background: #EDEDBD;
+	padding: 6px;
+}
+
+/* Topic View elements */
+.signature{  
+	background: transparent;
+	color: #8F8F30; 
+	font-size: 10px;
+	line-height: 150%;
+}
+
+.postdetails{ 
+	font-size: 10px;
+	line-height:140%;
+}
+
+.postcolor{ 
+	font-size: 12px; 
+	line-height: 160%;
+}
+
+.normalname{ 
+	color: #2E2E00;
+	font-size: 12px; 
+	font-weight: bold; 
+}
+
+.normalname a:link, 
+.normalname a:visited, 
+.normalname a:active{ 
+	font-size: 12px;
+}
+
+.post1,
+.bg1{ 
+	background: #FDFDF5;
+}
+
+.post2,
+.bg3{ 
+	background: #F7F7EE;
+}
+
+.row2shaded,
+.post1shaded { background-color: #E3E3D9 }
+.row4shaded,
+.post2shaded { background-color: #E7E7E0}
+
+.row1{ 
+	background: #EFEFDF; 
+}
+
+.row2{ 
+	background: #F0F0E3; 
+}
+
+.darkrow1{ 
+	background: #EDEDBD;
+	color: #6D6D3B; 
+}
+
+.darkrow3{ 
+	background: #DFDFB9; 
+	color: #6D6D3B; 
+}
+
+/* tableborders gives the white column / row lines effect */
+.plainborder,
+.tablefill,
+.tablepad{ 
+	background: #FDFDF5;
+	border: 1px solid #878734;
+}
+
+.tablefill,
+.tablepad{ 
+	padding: 6px;  
+}
+
+.tablepad{ 
+	border: 0 !important;
+}
+
+.wrapmini{ 
+	float: left;
+	line-height: 1.5em;
+	width: 30%;
+}
+
+.pagelinks{
+	float: left;
+	line-height: 1.2em;
+	width: 35%;
+}
+
+.desc{ 
+	font-size: 11px; 
+	color: #515143;
+}
+
+.lastaction
+{
+	font-size: 10px; 
+	color: #515143;
+}
+
+.edit{ 
+	font-size: 9px;
+}
+
+.thin{ 
+	border: 1px solid #FFF;
+	border-left: 0;
+	border-right: 0;
+	line-height: 150%;
+	margin: 2px 0 2px 0;
+	padding: 6px 0 6px 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+/* 
+ * ========================================
+ * calendar styles 
+ * ========================================
+ */
+	
+.calmonths{ 
+	background: #F8F8EE;
+	border: 1px solid #DEDEC1;
+	font-size: 18px; 
+	font-weight: bold; 
+	margin: 5px 0 5px 0;
+	padding: 8px;
+	text-align: center;
+}
+
+.weekday{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.calmonths a{
+	text-decoration: none;
+}
+
+.calday,
+.calweekday{ 
+	background: #F0F0E0;
+	color: #666;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+	padding: 4px;
+	text-align: right;
+}
+
+.calweekday{
+	border-right: 1px solid #AAA;
+	color: #222;
+	font-size: 14px;
+	padding: 6px;
+	text-align: center;
+}
+
+.celltodayshaded,
+.celldateshaded,
+.cellblank,
+.celldate,
+.celltoday,
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	background: #F7F7EE; 
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+.celltodayshaded,
+.celldateshaded
+{
+	background: #E7E4DF;
+}
+
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	height: auto;
+}
+
+.cellblank,
+.mcellblank{
+	background: #DEDEC1;
+}
+
+.celltoday,
+.celltodayshaded,
+.mcelltoday{
+	border: 2px solid #8B0000;
+}
+
+.calranged
+{
+	border: 2px outset #DEDEC1;
+	background: #DEDEC1;
+	padding:4px;
+}
+
+.calitem
+{
+	border-bottom: 1px dotted #DEDEC1;
+	padding:4px;
+}
+
+/* 
+ * ========================================
+ * form styles 
+ * ========================================
+ */
+
+.input-warn,
+.input-green,
+input,
+textarea,
+select{
+	background: #FFF;
+	border: 1px solid #B5B55F;
+	color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+.input-warn,
+.input-warn-content
+{
+	border: 1px solid #C00;
+}
+
+.input-ok,
+.input-ok-content
+{
+	border: 1px solid #0C0;
+}
+
+.input-warn-content
+{
+	padding: 4px;
+	margin: 4px;
+	background-color: #FCC;
+}
+
+.input-ok-content
+{
+	padding: 4px;
+	margin: 4px;
+	background-color: #CFC;
+}
+
+
+.input-text
+{
+	color: #900;
+}
+
+select{
+	border: 0;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+input.button{
+	margin: 0;
+	width: auto;
+}
+
+optgroup option{
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.codebuttons{ 
+	font-family: Verdana, Helvetica, Sans-Serif; 
+	font-size: 10px; 
+	vertical-align: middle;
+	margin:2px;
+}
+
+.textarea,
+.searchinput,
+.button,
+.gobutton{
+	background: #FFF;
+	border: 1px solid #B5B55F;
+	color: #000;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 11px;
+	padding: 2px;
+	vertical-align: middle;
+}
+	
+.button{
+	background: #F0F0E0;
+}
+
+.gobutton{
+	background: transparent;
+	border: 0;
+	color: #6F781E;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.radiobutton,
+.checkbox,
+.helpbox { 
+	border: 0;
+	vertical-align: middle;
+}
+
+/* 
+ * class.formtable 
+ *
+ * used for tabled forms 
+ * technically tables should not be used for form display 
+ * but, in the case of IPB a table is easier to work with
+ * for the average webmaster, who has little to no CSS knowledge.
+ *
+ */
+
+.formtable{
+	background: transparent;
+}
+
+.formtable td,
+.pformleft,
+.pformleftw,
+.pformright{
+	background:#FDFDF4;
+	border: 1px solid #DEDEC1;
+	border-bottom: 0;
+	border-left: 0;
+	font-weight: bold;
+	margin: 1px 0 0 0;
+	padding: 6px;
+	width: 25%;
+} 
+
+.formtable td.wider,
+.pformleftw,
+.pformright{
+	width: 40%;
+}
+
+.formtable td.formright,
+.pformright{
+	border-right: 0px;
+	font-weight: normal;
+	width: auto;
+} 
+
+.formtable td.formtitle,
+.formsubtitle{
+	background: #DFDFB9;
+	border: 1px solid #D3D39F; 
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+.formsubtitle{ 
+	border: 0;
+	color: #6D6D3B;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.formtable td.formstrip{
+	background: #F0F0DA;
+	border: 1px solid #D2D29E;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+/* 
+ * ========================================
+ * new style quote and code wrappers MATT's DESIGN 
+ * ========================================
+ */
+
+.quotetop{
+	background: #F2F2E6 url(style_images/bg/css_img_quote.gif) no-repeat right;
+	border: 1px dotted #000;
+	border-bottom: 0;
+	border-left: 4px solid #B0B082;
+	color: #000;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 8px auto 0 auto;
+	padding: 3px;
+}
+
+.quotemain{
+	background: #FCFCF8;
+	border: 1px dotted #000;
+	border-left: 4px solid #B0B082;
+	border-top: 0;
+	color: #818145;
+	padding: 4px;
+	margin: 0 auto 8px auto;
+}
+
+.codetop,
+.sqltop,
+.htmltop{
+	background: #FDDBCC url(style_images/bg/css_img_code.gif) no-repeat right;
+	color: #000;
+	font-weight: bold;
+	margin: 0 auto 0 auto;
+	padding: 3px;
+	width: 98%;
+}
+
+.codemain,
+.sqlmain,
+.htmlmain{
+	background: #FEFEFA;
+	border: 1px dotted #000;
+	color: #838346;
+	font-family: Courier, Courier New, Verdana, Arial;
+	margin: 0 auto 0 auto;
+	padding: 2px;
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * old school quote and code styles - backwards compatibility 
+ * ========================================
+ */
+
+#QUOTE,
+#CODE{  
+	background: #FCFCF8; 
+	border: 1px solid #000; 
+	color: #828245; 
+	font-family: Verdana, Arial; 
+	font-size: 11px; 
+	padding: 2px; 
+	white-space: normal;
+}
+
+#CODE{ 
+	font-family: Courier, Courier New, Verdana, Arial;
+}
+
+/* 
+ * ========================================
+ * All New Styles 
+ * ========================================
+ */
+.cleared{
+	clear: both;
+}
+
+.borderwrap,
+.borderwrapm{ /* this will affect the outlining border of all the tables and boxes through-out the skin. */
+	background: #FFF; 
+	border: 1px solid #6F781E;
+	padding: 0px; 
+	margin: 0px; 
+}
+
+.borderwrapm{
+	margin: 5px;
+}
+
+.borderwrap h3,
+.maintitle,
+.maintitlecollapse{
+	background: url(style_images/bg/tile_cat.gif);
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #999933;
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0px;
+	padding: 8px;
+}
+
+.maintitle td {
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+.maintitlecollapse{
+	border: 1px solid #FFF;
+}
+
+.maintitle p,
+.maintitlecollapse p,
+.formsubtitle p{
+	background: transparent !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.maintitle p.expand,
+.maintitle p.goto,
+.maintitlecollapse p.expand,
+.formsubtitle p.members{
+	float: right;
+	width: auto !important;
+}
+
+.maintitle a:link, 
+.maintitle a:visited,
+.maintitlecollapse a:link, 
+.maintitlecollapse a:visited{ 
+	background: transparent;
+	color: #FFF;
+	text-decoration: none; 
+}
+
+.maintitle a:hover, 
+.maintitle a:active,
+.maintitlecollapse a:hover, 
+.maintitlecollapse a:active{ 
+	background: transparent;
+	color: #F1F1F1;
+}
+
+table th,
+.borderwrap table th,
+.subtitle,
+.subtitlediv,
+.postlinksbar{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border-bottom: 1px solid #999933;
+	color: #6D6D3B; 
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+.subtitlediv{
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #999933;
+	text-align: right;
+}
+
+.borderwrap table th a:link,
+.subtitle a:link,
+.subtitlediv a:link,
+.borderwrap table th a:visited,
+.subtitle a:visited, 
+.subtitlediv a:visited, 
+.borderwrap table th a:active,
+.subtitle a:active,
+.subtitlediv a:active,
+.borderwrap table th a:hover,
+.subtitle a:hover,
+.subtitlediv a:hover{ 
+	background: transparent;
+	color: #6B6B39;
+	text-decoration: none; 
+}
+
+.borderwrap h4{
+	background: #F0F0DB;
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #B5B552;
+	border-top: 1px solid #B5B552;
+	color: #B5B552; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.borderwrap p{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	margin: 5px;
+	padding: 10px;
+	text-align: left;
+}
+
+td.formbuttonrow,
+.borderwrap p.formbuttonrow,
+.borderwrap p.formbuttonrow1{
+	background: #EBEBD0 !important; 
+	border: 1px solid #FFF;
+	border-top: 1px solid #B5B552;
+	margin: 0px !important;
+	padding: 5px !important;
+	text-align: center;
+}
+
+td.formbuttonrow{
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+.borderwrap p.formbuttonrow1{
+	background: #F9F9F9 !important;
+	border: 0;
+	border-top: 1px solid #CCC;
+}
+
+.bar,
+.barb,
+.barc{
+	background: #EFEFDE;
+	border: 1px solid #FFF;
+}
+
+.barc{
+	border-bottom: 0;
+}
+
+.bar p,
+.barb p,
+.barc p{
+	background: transparent;
+	border: 0;
+	color: #222;
+	font-size: 11px;
+	margin: 0;
+	padding: 5px;
+	text-align: left;
+}
+
+.barb p{
+	text-align: right;
+}
+
+.bar p.over,
+.bar p.overs,
+.barc p.over,
+.barc p.overs{
+	float: right;
+}
+
+.barb p.over,
+.barb p.overs{
+	float: left;
+}
+
+.bar p.overs,
+.barb p.overs,
+.barc p.overs{
+	position: relative;
+	top: 5px;
+}
+
+.catend{
+	background: #B1B183;
+	color: #000;
+	font-size: 1px;
+	height: 5px;
+}
+
+.newslink{
+	background: #F8F8EF;
+	border: 1px solid #DFDFC2;
+	margin: 0;
+	width: 100%;
+}
+
+.newslink td{
+	color: #222;
+	font-size: 10px;
+	padding: 5px 5px 5px 10px;
+}
+
+.newslink span{
+	background: transparent;
+	color: #666607;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.newslink input{
+	background: #FFF;
+	border: 1px solid #999;
+	color: #676707;
+	font-size: 10px;
+	padding: 3px;
+	vertical-align: middle;
+	width: auto;
+}
+
+.newslink input.button{
+	background: transparent;
+	border: 0;
+	color: #656507;
+	vertical-align: middle;
+}
+
+.fieldwrap{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+	text-align: left;
+}
+
+.fieldwrap h4{
+	background: #EEE;
+	border: 1px solid #CCC;
+	border-left: 0;
+	border-right: 0;
+	color: #444; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap {
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+}
+
+
+.errorwrap h4 {
+	background: #E3C0C0;
+	border: 1px solid #992A2A;
+	border-left: 0;
+	border-right: 0;
+	color: #992A2A; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap p {
+	background: transparent;
+	border: 0;
+	color: #992A2A;
+	margin: 0;
+	padding: 8px;
+}
+
+
+.ruleswrap{
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	color: #992A2A; 
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#redirectwrap{
+	background: #F9F9EF;
+	border: 1px solid #DFDFC2;
+	margin: 200px auto 0 auto;
+	text-align: left;
+	width: 500px;
+}
+
+#redirectwrap h4{
+	background: #EAEAD1;
+	border-bottom: 1px solid #DFDFC2;
+	color: #6B6B39;
+	font-size: 14px;
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p{
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p.redirectfoot{
+	background: #F3F3E2;
+	border-top: 1px solid #DFDFC2;
+	text-align: center;
+}
+
+
+#gfooter{
+	background: #B1B183;
+	margin: 5px 0 5px 0;
+	padding: 0;
+	width: 100%;
+}
+
+#gfooter td{
+	color: #FFF;
+	font-size: 10px;
+	padding: 4px;
+}
+
+#gfooter a:link,
+#gfooter a:visited{
+	color: #FFF;
+}
+
+#logostrip{ 
+/* background: #3860BB url(style_images/bg/tile_back.gif);*/
+ border: 1px solid #FFF;
+/* height: 68px;*/
+ margin: 0;
+ padding: 0;
+}
+
+#logographic{
+	background: transparent url(style_images/bg/logo4.gif) no-repeat left;
+	height: 68px;
+	margin: 0;
+	padding: 0;
+}
+
+#submenu{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border: 1px solid #FFF;
+	border-top: 0;
+	color: #6B6B39; 
+	margin: 0; 
+}
+
+#userlinks,
+#userlinksguest{ 
+	background: #F9F9F0;
+	border: 1px solid #DFDFC2;
+	margin: 5px 0 5px 0;
+	padding: 0 5px 0 5px;
+}
+
+#userlinksguest{ 
+	background: #F4E7EA;
+	border: 1px solid #986265;
+}
+
+#submenu p,
+#userlinks p,
+#userlinksguest p{
+	background: transparent !important;
+	border: 0 !important;
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0 !important;
+	padding: 7px 0 7px 0; 
+	text-align: right;
+}
+
+#userlinks p,
+#userlinksguest p{
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+#submenu p.home,
+#userlinks p.home,
+#userlinksguest p.home{
+	float: left;
+}
+
+#userlinksguest p.pcen{
+	text-align: center;
+}
+
+#submenu a:link, 
+#submenu  a:visited{ 
+	background: transparent; 
+	color: #6B6B39; 
+	padding: 0 6px 0 6px;
+	text-decoration: none;
+}
+
+#submenu a:hover, 
+#submenu a:active{
+	background: transparent; 
+	color: #B5B552; 
+}
+
+#navstrip{ 
+	background: transparent;
+	color: #999;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 14px 0px 8px 0px; 
+}
+
+#navstrip a:link, 
+#navstrip  a:visited{ 
+	background: transparent; 
+	color: #222; 
+	text-decoration: none;
+}
+
+#navstrip a:hover, 
+#navstrip a:active{
+	background: transparent; 
+	color: #B5B552; 
+}
+
+.toplinks{
+	background: transparent;
+	color: #000;
+	margin: 0;
+	padding: 0 0 5px 0;
+	text-align: right;
+}
+
+.toplinks span{
+	background: #F8F8EF;
+	border: 1px solid #DFDFC2;
+	border-bottom: 0;
+	color: #000;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 0 10px 0 0;
+	padding: 5px;
+}
+
+.copyright{ 
+	background: #EEE;
+	font-size: 11px; 
+	margin: 0 0 5px 0;
+	padding: 8px;
+}
+
+/* 
+ * ========================================
+ * print page styles 
+ * ========================================
+ */
+
+#print{
+	margin: 20px auto 20px auto;
+	padding: 0;
+	text-align: left;
+	width: 85%;
+}
+
+#print h1,
+#print h2,
+#print h3,
+#print h4,
+#print p{
+	color: #606000;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	padding: 8px;
+}
+
+#print h2,
+#print h3,
+#print p{
+	border-bottom: 1px solid #999;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#print h3{
+	background: #F5F5F5;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+#print h4{
+	background: #F9F9F9;
+	font-size: 11px;
+}
+
+#print p{
+	margin: 0 0 5px 0;
+	padding: 10px;
+}
+
+#print p.printcopy{
+	border: 0;
+	color: #000;
+	text-align: center;
+}
+
+/* ============================================================== */
+/* RTE STYLES
+/* ============================================================== */
+
+.rteimage {
+	/*background: #D3D3D3;*/
+	/*border: 1px outset transparent*/;
+	cursor: pointer;
+	cursor: hand;
+	padding:1px;
+}
+
+.rteImageRaised {
+	/*background: #D3D3D3;*/
+	border: 1px outset;
+	cursor: pointer;
+	cursor: hand;
+	padding:0px;
+}
+
+.rteImageLowered {
+	/*background: #D3D3D3;*/
+	border: 1px inset;
+	cursor: pointer;
+	cursor: hand;
+	padding:0px;
+}
+
+.rteimage:hover {
+	background: #EBEBEB;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.rteVertSep {
+	margin: 0 4px 0 4px;
+}
+
+.rteBack {
+	background: #D3D3D3;
+	border: 1px outset;
+	letter-spacing: 0;
+	padding: 2px;
+}
+
+/* used in ips_rte.js - do not remove */
+.rtebottombutton
+{
+	font-size:10px;
+	border:1px solid #777;
+	border-top:0px;
+	padding:3px;
+	margin:0px;
+	background-color: #EBEBEB;
+}
+
+/* used in ips_rte.js - do not remove */
+.rtebottombuttonon
+{
+	font-size:10px;
+	border:1px solid #777;
+	border-top:0px;
+	padding:3px;
+	margin:0px;
+	background-color: #D3D3D3;
+}
+
+.rtebuttonbar1 {
+	/*background: #D3D3D3;*/
+	background-image: url(style_images/bg/folder_rte_images/rte_tile.gif);
+	border: 1px solid gray;
+	border-bottom:0px;
+	letter-spacing: 0;
+	padding: 2px;
+	height:26px;
+}
+
+.rtebuttonbar2 {
+	/*background: #D3D3D3;*/
+	background-image: url(style_images/bg/folder_rte_images/rte_tile.gif);
+	border: 1px solid gray;
+	border-top:1px solid gray;
+	letter-spacing: 0;
+	padding: 2px;
+	height:26px;
+}
+
+.rtebuttonbar1 tbody tr td,
+.rtebuttonbar1 tr td,
+.rtebuttonbar2 tbody tr td,
+.rtebuttonbar2 tr td,
+.rteBack tbody tr td,
+.rteBack tr td
+{
+	/*background: #D3D3D3;*/
+	padding: 0;
+}
+
+.rteDiv {
+	display: block;
+	position: relative;
+	padding:0px;
+	margin:0px;
+}
+
+.rteiframe
+{
+	border:1px solid #777;
+	background-color:#FFF;
+}
+
+.rteselectbox
+{
+	font-size:11px;
+}
+
+
+.dny-edit-title
+{
+	border:0px;
+	padding:3px;
+	margin:0px;
+	background: #EBEBD0; 
+	color: #6B6B39; 
+}
+
+
+/* ======================================== */
+/* TABS
+/* ======================================== */
+
+.tabon
+{
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #999;
+	background-color:#FFF;
+	padding:8px;
+	padding-bottom:9px;
+	font-size:10px;
+	float:left;
+	width:auto;
+	margin-top:3px;
+}
+
+.taboff
+{
+	border-top: 1px solid #777;
+	border-left: 1px solid #777;
+	border-right: 1px solid #777;
+	background-color: #D9D9B5;
+	color: #333;
+	padding: 8px;
+	font-size:10px;
+	float: left;
+	width: auto;
+	margin-top:3px;
+}
+
+.tabon a:link, 
+.tabon a:visited, 
+.tabon a:active
+{
+	text-decoration:none;
+	color: #000;
+}
+
+.taboff a:link, 
+.taboff a:visited, 
+.taboff a:active
+{
+	text-decoration:none;
+	color: #333;
+}
+
+.mya-back
+{
+	background: #656507;
+	margin:1px;
+}
+
+.mya-content
+{
+	background: #FFF;
+	padding:8px;
+	margin:1px;
+	border: 1px solid #777;
+}
+
+/* -------------------------------- */
+/* Create PM box defaults           */
+/* -------------------------------- */
+
+.iframeshim
+{
+	position:absolute;
+	display:none;
+	background: #FFF;
+	filter:alpha(opacity=0);
+	border:0px;
+	width:auto;
+	height:auto;
+}
+
+
+
+/* -------------------------------- */
+/* Experimental                     */
+/* -------------------------------- */
+
+.popupmenu
+{
+   background: #F9F9F0;
+   border: 1px solid #6B6B39;
+   text-align:left;
+   font-size:10px;
+   white-space:nowrap;
+   /*padding:3px 5px 3px 3px;*/
+   /*width:300px;*/
+}
+
+.popupmenu-item
+{
+	padding: 5px;
+	/*margin-top:4px;*/
+	white-space: nowrap;
+	border-bottom: 1px solid #DFDFC2;
+}
+
+.popupmenu-item-last
+{
+	padding: 5px;
+	/*margin-top:4px;*/
+	white-space: nowrap;
+}
+
+.popmenubutton
+{
+	width:120px;
+	white-space:nowrap;
+	background-color: #DFDFC2;
+	border:1px solid #6B6B39;
+	color: #6B6B39;
+	font-weight:bold;
+	float:right;
+	height:18px;
+	text-align:center;
+	margin:0px;
+	font-size:11px;
+	padding:3px;
+}
+
+
+.popmenubutton a:link, 
+.popmenubutton a:visited,
+.popupmenu-item a:link, 
+.popupmenu-item a:visited,
+.popupmenu-item-last a:link, 
+.popupmenu-item-last a:visited
+{ 
+	color: #6B6B39; 
+	text-decoration: none;
+}
+
+.popmenubutton a:hover, 
+.popupmenu-item a:hover, 
+.popupmenu-item-last a:hover
+{ 
+	color: #B5B552; 
+	text-decoration: none;
+}
+
+.popupmenu-category
+{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border-top: 1px solid #B5B552;
+	border-bottom: 1px solid #B5B552;
+	color: #6B6B39; 
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+summary {
+	font-weight: bold;
+	outline: none;
+}
+.yt
+{
+	background-color: #ffffff;
+	border: 2px solid #f0f0f0;
+	border-radius: 8px;
+	font-size: 85%;
+	padding: 3px 5px;
+	vertical-align: top;
+	color: #602020;
+	outline: none;
+}
+.yt iframe { padding: 3px; }
+.yt img	{ vertical-align: bottom; }
+#ytplayer	{ width: 600px; height: 400px; }
+
+</style> 
+ 
+</head> 
+<body>
+<div id="ipbwrapper">
+<!--ipb.javascript.start-->
+<script type="text/javascript">
+ //<![CDATA[
+ var ipb_var_st            = "0";
+ var ipb_lang_tpl_q1       = "Введите номер страницы: от 1 до";
+ var ipb_var_s             = "";
+ var ipb_var_phpext        = "php";
+ var ipb_var_base_url      = "https://www.braingames.ru/forum/index.php?s=&";
+ var ipb_var_image_url     = "style_images/bg";
+ var ipb_input_f           = "30";
+ var ipb_input_t           = "336";
+ var ipb_input_p           = "";
+ var ipb_var_cookieid      = "";
+ var ipb_var_cookie_domain = "";
+ var ipb_var_cookie_path   = "/";
+ var ipb_md5_check         = "880ea6a14ea49e853634fbdc5015a024";
+ var ipb_new_msgs          = 0;
+ var use_enhanced_js       = 0;
+ var use_charset       = "windows-1251";
+var ipb_myass_chars_lang = "Недостаточно символов";
+ //]]>
+</script>
+<script type="text/javascript" src='jscripts/ipb_global.js'></script>
+<script type="text/javascript" src='jscripts/ips_menu.js'></script>
+<script type="text/javascript" src='style_images/bg/folder_js_skin/ips_menu_html.js'></script>
+<!--ipb.javascript.end-->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(11243257, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/11243257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->    
+<div class="borderwrap">
+	<div id="logostrip"><table border=0 width=100%><tr><td><a href='https://www.braingames.ru/forum/index.php?'><!--ipb.logo.start--><img src='style_images/logo.gif' style='vertical-align:top' alt='IPB' border='0' /><!--ipb.logo.end--></a></td><td align=right valign=top>
+<!-- Yandex.RTB R-A-270597-1 -->
+<div id="yandex_rtb_R-A-270597-1"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-270597-1",
+                renderTo: "yandex_rtb_R-A-270597-1",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+       
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! здесь был гугл -->
+
+
+</td></tr></table>
+</div>
+	<div id="submenu">
+		<p class="home"><!--ipb.leftlinks.start--><a href="../index.html">Игры разума</a><!--IBF.RULES--><!--ipb.leftlinks.end--></p>
+		<p><!--ipb.rightlinks.start-->	<a href="https://www.braingames.ru/forum/index.php?act=Help">Помощь</a><a href="https://www.braingames.ru/forum/index.php?act=Search&amp;f=30">Поиск</a><a href="https://www.braingames.ru/forum/index.php?act=Members">Пользователи</a><a href="https://www.braingames.ru/forum/index.php?act=calendar">Календарь</a>
+		<!--ipb.rightlinks.end--></p>
+	</div>
+</div><!-- / End board header -->
+<div id="userlinksguest">
+	<p class="pcen"><b>Добро пожаловать, гость</b> ( <a href="https://www.braingames.ru/forum/index.php?act=Login&amp;CODE=00">Вход</a> | <a href="https://www.braingames.ru/forum/index.php?act=Reg&amp;CODE=00">Регистрация</a> )
+
+	</p>
+</div>
+<div id="navstrip"><img src='style_images/bg/nav.gif' border='0'  alt='&gt;' />&nbsp;<a href='https://www.braingames.ru/forum/index.php?act=idx'>Форум Игры разума [braingames]</a>&nbsp;>&nbsp;<a href='https://www.braingames.ru/forum/index.php?showforum=29'>Приемная администратора</a>&nbsp;>&nbsp;<a href='https://www.braingames.ru/forum/index.php?showforum=30'>Объявления администрации</a></div>
+<!--IBF.NEWPMBOX-->
+<script type="text/javascript">
+<!--
+var ipb_lang_tt_prompt = "Вручную скопируйте ссылку в буфер обмена <Ctrl+C>";
+var ipb_lang_js_del_1  = "Вы уверены, что хотите удалить это сообщение?";
+var ipb_lang_js_del_2  = "Ну и не надо >_>";
+var addquotebutton     = "style_images/bg/p_mq_add.gif";
+var removequotebutton  = "style_images/bg/p_mq_remove.gif";
+var unselectedbutton = "style_images/bg/topic_unselected.gif";
+var selectedbutton   = "style_images/bg/topic_selected.gif";
+var lang_gobutton    = "С отмеченными";
+var lang_suredelete  = "Вы уверены, что хотите удалить эти сообщения?";
+var js_error_no_permission = "У вас нет прав на редактирование этого сообщения";
+-->
+</script>
+<script type="text/javascript" src="jscripts/ipb_topic.js"></script>
+<a name="top"></a>
+<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td style='padding-left:0px' width="40%" valign="middle" nowrap="nowrap"><div>&nbsp;</div></td>
+		<td class='nopad' style='padding:0px 0px 5px 0px' align="right" width="60%" valign="middle"><a href="https://www.braingames.ru/forum/index.php?act=post&amp;do=reply_post&amp;f=30&amp;t=336"><img src='style_images/bg/t_reply.gif' border='0'  alt='Ответить в эту тему' /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=00&amp;f=30" title="Новая тема"><img src='style_images/bg/t_new.gif' border='0'  alt='Открыть новую тему' /></a></td>
+	</tr>
+</table>
+
+<div class="borderwrap">
+	<div class="maintitle" style='padding:4px'>
+	<!-- TABLE FIX FOR MOZILLA WRAPPING-->
+	<table width='100%' style='padding:0px' cellspacing='0' cellpadding='0'>
+	<tr>
+	 <td width='99%' style='word-wrap:break-word;''><div><img src='style_images/bg/nav_m.gif' border='0'  alt='&gt;' width='8' height='8' />&nbsp;<b>FAQ</b>, Все, что вы хотели знать</div></td>
+	 <td width='1%' align='right' nowrap='nowrap'>
+	    <div class='popmenubutton' id='topicmenu-options'><a href='index.php@showtopic=336&amp;pid=2236&amp;st=0&amp;.html#topicoptions'>Опции</a> <img src='style_images/bg/menu_action_down.gif' alt='V' title='Открыть меню' border='0' /></div>
+	 </td>
+	 <td width='1%' align='right' nowrap='nowrap'>
+
+         </td>
+	</tr>
+  </table>
+	 
+ </div>
+ <!--{IBF.POLL}-->
+<script type="text/javascript">
+  menu_build_menu(
+  "topicmenu-options",
+  new Array( img_item + " <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=topic&amp;tid=336'>Подписаться на тему</a>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?act=Forward&amp;f=30&amp;t=336'>Послать тему по E-mail</a>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?act=Print&amp;client=printer&amp;f=30&amp;t=336'>Распечатать тему</a>",
+                         img_item + " <a href='https://www.braingames.ru/forum/index.php?act=Print&amp;client=choose&amp;f=30&amp;t=336'>Скачать эту тему</a>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=forum&amp;fid=30'>Подписаться на этот раздел</a>",
+  			 "--NODIV--<div class='popupmenu-category' align='center'>Стили отображения</div>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?showtopic=336&amp;mode=threaded&amp;pid=2236'>Переключить: Каскадный</a>",
+  			 img_item + " <strong><em><a href='https://www.braingames.ru/forum/index.php?showtopic=336&amp;mode=linear&amp;view=findpost&amp;p=2236'>Стандартный</a></em></strong>",
+  			 img_item + " <a href='https://www.braingames.ru/forum/index.php?showtopic=336&amp;mode=linearplus&amp;view=findpost&amp;p=2236'>Переключить: Линейный</a>"
+		    ) );
+ </script><!--Begin Msg Number 2236-->
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<td valign="middle" class="row2" width="1%"><a name="entry2236"></a><span class="normalname"><a href='index.php@showuser=1.html'>Black</a></span></td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails"> <img src='style_images/bg/to_post_off.gif' alt='' border='0' style='padding-bottom:2px' /> 15.3.2007, 10:40</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				<span class="postdetails"> Сообщение
+					<a title="Показать ссылку на это сообщение" href="index.php@showtopic=336&amp;pid=2236&amp;st=0&amp;.html#" onclick="link_to_post(2236); return false;">#1</a>
+
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="post2">
+        	<span class="postdetails">
+        		<img src='uploads/av-1.jpg' border='0' width='60' height='50' alt='' /><br /><br />
+        		Администратор<br />
+        		<img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><img src='style_images/bg/pip.gif' border='0'  alt='*' /><br /><br />
+        		Группа: Главные администраторы<br />
+        		Сообщений: 2 262<br />
+        		Регистрация: 24.11.2006<br />
+        		Из: Москва<br />
+        		Пользователь №: 1<br />
+
+<br />
+        		 
+        	</span><br />
+        	<img src="style_images/bg/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="post2" id='post-main-2236'>
+			<!-- THE POST 2236 -->
+			<div class="postcolor" id='post-2236'><b>Администрация сайта «Игры разума» считает посетителей www.braingames.ru людьми взрослыми и ответственными, которые соблюдают <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D1%8D%D1%82%D0%B8%D0%BA%D0%B5%D1%82" target="_blank">сетевой этикет</a> в общении, относятся друг к другу уважительно, избегая оскорбительных (и тем более нецензурных) выражений, не провоцируют конфликты и не нарушают законы Российской Федерации. Администрация выражает признательность пользователям, которые ссылаются на сайт «Игры разума», публикуя задачи www.braingames.ru на других сайтах, и не пишут ответы в открытом доступе.</b><br /><br />Краткие правила нашего сайта:<br />Мы стараемся не ругаться, уважать друг друга и доверять модераторам.<br />Здесь не сообщают ответы на задачи, их можно только проверить.<br />Ответ на задачу вида &quot;5&quot; у нас не считается достаточным. Нужно объяснить, почему 5. Но не увлекайтесь, длинные и сложно сформулированные ответы проверяют дольше.<br />Каждый брейнгеймер может помочь сайту, получив статус VIP. А еще привилегированных пользователей быстрее проверяют, они видят еще не опубликованные задачи, и вообще, честь им и хвала. Подробнее читайте тут: <a href="https://www.braingames.ru/forum/index.php?showtopic=2804" target="_blank">https://www.braingames.ru/forum/index.php?showtopic=2804</a><br /><br />Мы соревнуемся между собой на сайте - у каждого игрока есть рейтинг, который складывается из весов решенных им задач. /Вес задачи - это ее сложность./<br />Мы общаемся на форуме, и не только на тему задач. Логин и пароль для входа те же, что и на сайте. Присоединяйтесь&#33;<br /><br /><br />Правила ответа на задачу:<br />1. Ответ на задачу всегда необходимо обосновать. Причем так, что бы в верности обоснования и ответа мог без труда убедиться другой человек (модератор).<br />Исключением являются загадки, &quot;угадайки&quot; и задачи на определение закономерности в последовательности, а так же задачи, в условии которых написано, что обоснование не требуется.<br />2. Проверьте/обдумайте свой ответ перед публикацией (по ответам видно, что минимум 25% игроков не умеют считать до 6:), и странно видеть фразу &quot;я меняю ответ...&quot; после реплики модератора &quot;Обоснуйте ответ, пожалуйста.&quot; ).<br />3. Старайтесь формулировать ответ структурированно и достаточно подробно. Сложные для понимания ответы проверяются намного медленнее.<br />4. Модератор по ходу ведения задачи может уточнять условие и задавать различные вопросы.<br />5. Не стоит спорить с модератором, вы не первый у кого он проверяет задачу, в подавляющем числе случаев модератор окажется прав. Хотя и он может ошибаться (вначале постарайтесь решить проблему с ним, потом попросите другого модератора проверить ваше обсуждение, ну и в крайнем случае &quot;Форум/Рассудите кто прав&quot;).<br />6. Если вас просят что-то обосновать/уточнить &quot;очевидное&quot;, это не из-за того что модераторы тупые, а из-за того что &quot;очевидное&quot; чаще всего неверно или есть куча неверных обоснований &quot;очевидности&quot;.<br />7. Извиняться за неверные ответы, писать, что был неправ, буду думать... и прочее не стоит. Эти сообщения являются новыми ответами, которые модераторы должны проверить.<br />8. Так называемые &quot;оригинальные ответы&quot; не являются эталонами, по которым модераторы проверяют ответы (за исключением ряда почемучек/отгадаек).<br />9. Первой строкой пишите, пожалуйста, сам ответ (а затем уже обоснование), чтобы не выискивать его в длинном обосновании.<br /><br />Кто такие модераторы:<br />1. Это обычные игроки.<br />2. Они могут засчитывать задачи, на которые ответили.<br />3. Редактировать комментарии к задачам (в основном, удалять ответы и подсказки).<br />4. Обсуждать новые задачи.<br /><br />Q0: Как зарегистрироваться на форуме?<br />A: Когда вы зарегистрируетесь на сайте <a href="../index.html" target="_blank">www.braingames.ru</a>, для вас автоматически создастся учётная запись на форуме с теми же логином и паролем. Прямой регистрации на форуме нет. <br /><br />Q1: Что делать, если модератор отказывается засчитать решение, а оно точно правильное? Кому жаловаться на модератора?<br />А: Неофициально - вы можете попросить в личном сообщении любого другого модератора проверить ваше решение. Официально - для таких случаев существует раздел <a href="https://www.braingames.ru/forum/index.php?showforum=17" target="_blank">Рассудите кто прав</a>. Для начала внимательно почитайте инструкции в шапке раздела, попробуйте им последовать. Затем вы можете написать в разделе о своей просьбе другим модераторам посмотреть задачу.<br /><br />Q2: В условии задачи ошибка/неточность.<br />А: Пишите pm любому модератору или уточняйте в обсуждении [или, опять же, форум?]<br /><br />Q3: Я написал решение, нажал &quot;отправить&quot;, а оно сказало, что у меня нет доступа. Решение пропало.<br />А: Сделайте следующее: <br />1) откройте еще 1 окно браузера и в нем авторизуйтесь на braingames;<br />2) в окне, где Вы писали ответ, нажмите рефреш.<br />На всякий случай, прежде чем нажимать &quot;отправить&quot;, заберите текст решения в буфер обмена. На всякий случай.<br /><br />Q4: а как рисовать картинки (в задачах вроде «Свет на лестнице» и «Треугольник»)?<br />А: Нарисуйте картинку в любом графическом редакторе и сохраните её в формате GIF, JPG или BMP. Размер картинки по высоте и ширине должен быть не более 500 пикселов, размер файла — не более 100 кбайт. Картинку можно прикрепить к ответу, нажав кнопку &quot;Обзор&quot; под полем ввода текста ответа.<br /><br />Q5: Надо ли обосновывать ответ там, где в условии не указано, что ответ надо обосновать?<br />А: Ответ на задачу нужно обосновать всегда, если в условии явно не сказано, что обоснование не нужно. Исключением являются загадки, угадайки и задачи на определение закономерности в последовательности.<br /><br />Q6: Надо ли приводить программный код в задачах &quot;программистам&quot;?<br />А: Нет, достаточно словесного описания алгоритма. Если модератору будет что-то непонятно - он попросит уточнить.<br /><br />Q7: Должно ли решение совпадать с вашим эталонным?<br />А: Ответы на загадки — «<a href="https://www.braingames.ru/index.php?path=comments&puzzle=225" target="_blank">Ужин</a>», «<a href="https://www.braingames.ru/index.php?path=comments&puzzle=85" target="_blank">Две реки</a>»&quot; и т. п. — надо угадать. В задачах, где спрашивается &quot;почему?&quot; — &quot;<a href="https://www.braingames.ru/index.php?path=comments&puzzle=75" target="_blank">Люки</a>&quot;, &quot;<a href="https://www.braingames.ru/index.php?path=comments&puzzle=59" target="_blank">Как поезд трогается с места</a>&quot; — надо назвать причину, которая автором задачи считается основной, или доказать, что названная вами причина важнее. В остальных случаях, если ответ соответствует условию задачи и здравому смыслу — он будет зачтен (не забудьте, что модератор может уточнять условие).<br /><br />Q8: Как узнать правильный ответ, если уже ответил или не хочу отвечать?<br />А: Если вы ответили, то ваш ответ проверит модератор и скажет, верен он или нет. По-другому правильный ответ узнать нельзя.<br /><br />Q9: Как начисляют (снимают) очки за ответы?<br />А: Когда модератор проверил ваш ответ и зачел его, вам начисляется то количество очков, которое стоит в весе задачи. Вес задачи может измениться, тогда рейтинг пересчитается автоматически.<br /><br />Q10: Что означает вес задачи?<br />А: см. Q: Как начисляют (снимают) очки за ответы?<br />Вес задачи -- на сколько увеличится рейтинг пользователя после успешного решения задачи. Больше вес -- сложнее задача. <br />Вес задачи определяется тем, как часто правильно отвечают на задачу, а именно - отношением числа решивших к числу видевших задачу. Вот так: 100% &gt;= вес 1 &gt;= 8% &gt; вес 2 &gt;= 4% &gt; вес 3 &gt;= 2% &gt; вес 4 &gt;= 1% &gt; вес 5 &gt;= 0%. При этом видевшими задачу считаются все, кто заходил на сайт после публикации задачи.<br />Вес 0 означает что задача вне рейтинга, это возможно в двух случаях: а) если для решения задачи нужны специальные знания (например, задачи раздел Программистам); б) ответ нужно просто угадать (например, задачи в разделе Загадки). <br />Ненулевые задачи публикуются с начальным весом 1.<br />Веса задач периодически (примерно раз в месяц) пересчитываются (в этот момент рейтинги игроков могут изменяться как в положительную, так и в отрицательную сторону).<br /><br />Q11: Что означает рейтинг задачи? <br />А: В данный момент -- сумма рейтингов, за которые проголосовали пользователи. Этакий &quot;спорящий приз зрительских симпатий&quot;.<br /><br />Q12: Что означает рейтинг пользователей?<br />А: Рейтинг пользователя -- сумма весов зачтенных задач. Чем больше рейтинг, тем больше задач пользователь уже решил.<br /><br />Q13: Как пользователь изменяет свой рейтинг?<br />А: см. Q: Что означает вес задачи? <br /><br />Q14: Что означают цифры в списках TOP справа от имен?<br />А: Рейтинг пользователей, попавших в этот TOP-10.<br /><br />Q15: Какой максимальный вес, рейтинг?<br />А: Максимальный вес задачи -- 5. Максимальный рейтинг, который может набрать пользователь, -- сумма весов всех задач на сайте.<br /><br />Q16: Почему у этой задачи такой маленький&#092;большой рейтинг?<br />А: Вес задачи очень сложно оценить: есть сложные, но известные задачи, есть специализированные (для физика легко, для математика сложно, и наоборот) задачи. Ну, и часто этот вопрос задают, решив задачу неправильно <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> <br /><br />Q17: Можно ли отвечать на задачу дважды (влияет ли это на рейтинг)?<br />А: Отвечать можно сколько угодно раз (кол-во ответов на рейтинг не влияет), но не стоит этим злоупотреблять.<br /><br />Q18: Что делать, если модератор, который ведет мой ответ, пропал?<br />А: Если модератор не появляется на сайте или просто не находит времени на проверку нового ответа по задаче в течении двух недель, то он будет сброшен с обсуждения автоматически, и задачу сможет взять какой-нибудь другой модератор.<br /><br />Q19: Я неправильно ответил. Можно ли ответить еще раз или поправить ответ?<br />А: Личный кабинет -&gt; Мои ответы на задачи -&gt; Обсуждаемые. <br />Выбираете задачу и добавляете свои комментарии/замечания/исправления.<br /><br />Q20: Но вот тут хоть когда-то дают ответы? Тут-то просто, а вот на некоторые задачки интересно узнать правильный ответ, так как отделом иногда спорим.<br />А: Ответов не дают. Если спорите &quot;отделом&quot;, то каждому по аккаунту, или один на всех, и правильный зачтут (после зачёта можете обсудить задачу с модератором).<br /><br />Q21: Кто такие мегамозги, минимозги и оккупанты, и откуда они взялись? Ответьте, если не секрет.<br />А: Мегамозг — это положительный персонаж в наших задачах. Предполагается, что он добр, бесконечно умен и наделен разными сверхспособностями в зависимости от задачи. Минимозг — тоже положительный, но далеко не бесконечно умный. Оккупанты — отрицательные персонажи, желающие смерти мегамозгам и минимозгам. <img src="style_emoticons/default/smile.gif" style="vertical-align:middle" emoid=":)" border="0" alt="smile.gif" /> <br /><br />Q22: Как задачи попадают на сайт? Могу ли я предложить новую задачу?<br />Если вам известна интересная, нестандартная задача, которой еще нет на сайте, отправьте ее текст (без ответа&#33;) личным сообщением любому модератору. В сообщении укажите источник, из которого вы узнали о задаче, а также оригинальное условие (в том случае, если предлагаете условие с собственными доработками/переделками). Обязательно напишите, известен ли вам ответ на задачу. Если да, модераторы будут проверять свое решение у вас.<br /><br />Дальнейшее от вас не зависит: модератор опубликует задачу в закрытой части форума и откроет по ней голосование, на котором будет решаться вопрос о публикации задачи на сайте. В случае положительного исхода условие будет доработано и опубликовано.<br /><br />Q23: Когда приходит сообщение от модератора о правильном или неправильном ответе?<br />А: Как такового сообщения нет. Если модератор зачел задачу, она переходит в раздел зачтенные, и начисляются баллы. Если ответ неверный, модератор начинает обсуждение. Сроки зависят от конкретной задачи, формулировки ответа и количества модераторов на данный момент. В среднем день-два, но могут доходить и до нескольких недель.<br /><br />Q24: Как можно поменять пароль на вашем сайте?<br />А: Для самостоятельной смены пароля нужно вначале попробовать авторизоваться с неверными данными. После неудачной попытки у вас появится ссылка «забыли пароль?» под формой авторизации. При переходе по ссылке вас попросят указать имя вашей учётной записи и адрес электронной почты, указанный при регистрации. Если введённые данные будут верные, вам на почту должно прийти письмо с необходимой информацией <br />Аналогичная процедура для восстановления пароля на форуме.<br /><br />Q25: Я не могу ни на одну задачу написать ответ. Неактивно &quot;Ответить на задачу&quot;.<br />А: Возможно, запрещены скрипты в настройках безопасности ИЕ.<br /><br />Q26: Куда писать ответ на задачу?<br />А: Зарегистрируйтесь. Войдите на сайт. Под задачей появилась ссылка &quot;ответить на задачу&quot;. Нажмите на нее. В появившейся форме введите ответ. Ответы нельзя писать ни в каком другом месте. Ни на форуме, ни в общих комментариях, ни по почте.<br /><br />Q27: Как стать модератором?<br />А: См. тему «<a href="https://www.braingames.ru/forum/index.php?showtopic=2601" target="_blank">Набор модераторов</a>».<br /><br />Q28: Что делать, если я дал ответ на задачу, и мне уже неделю никто не отвечает?<br />а: Для начала не паниковать. Модераторы знают о Вашем ответе, и о том, как давно он дан. Нужно набраться терпения и подождать пока очередь дойдет до Вас. Также может помочь замена ответа на более ясный и понятный.<br /><br />Q29: Как записывать формулы в ответах?<br />а: Обычно хватает стандартных знаков арифметических операций (+-/*^=) для представления уравнений и тождеств, и дополнительно символов &#39;&lt;&gt;&#39; для неравенств. <br />Также можно использовать ТЕХ:<br />Блоки Tex начинаются и заканчиваются знаками &quot;&#036;&#036;&quot;. Команды начинаются знаком &quot;&#092;&quot;. Если команда относится к нескольким символам, их необходимо заключать в фигурные скобки {...}. Не поддерживается кириллица.<br />Некоторые часто употребляемые команды: <br />&#092;sqrt - знак квадратного корня. Например: &#092;sqrt{25}=5; &#092;sqrt3<br />^ - надстрочный текст (знак степени). Употребляется без символа &quot;&#092;&quot;. Например: 2^2,  x^{32}. В последнем примере фигурные скобки обязательны, иначе x^32 отобразится как x в кубе с приписанной справа двойкой. <br />_ - подстрочный текст. Употребляется без символа &quot;&#092;&quot;. Пример: а_1...а_{2k+1}<br />&#092;frac - вертикальная дробь. Например: &#092;frac{3}{4}=0.75; tg2а=&#092;frac{2tga}{1-tg^2a}<br />&#092;approx - знак &#39;примерно равно&#39;. Например: &#092;frac{22}{7}&#092;approx &#092;pi<br />&#092;sum - знак суммы. Например: &#092;sum_{i=0}^{&#092;infty} &#092;frac{1}{2^i}=2. Где &#092;infty - знак бесконечности.<br />Посмотреть расширенный список команд и протестировать написанное можно, к примеру, здесь: <a href="http://www.forkosh.com/mimetextutorial.html" target="_blank">http://www.forkosh.com/mimetextutorial.html</a><br /><br />Q30: Я уже видел такую задачу&#33; Только там были не яблоки, а абрикосы&#33; Давайте я вам кину ссылку, а вы почитаете и мне зачтете задачку&#33;<br />А: То, что вы где-то видели такую или подобную задачу не значит, что вы понимаете то, что там написано и что это подобная задача. Если вы знаете данную задачу - кратко сформируйте свое решение и получите свой &quot;зачет&quot;. Мы хотим сохранить ваш ответ так долго, как существует этот сайт. За существование информации на сторонних ресурсах мы никак не отвечаем, поэтому через некоторое время может получиться так, что ссылка будет уже нерабочей и никто не сможет узнать, как же вы ответили на задачу. К тому же часто бывает так, что модератор, переходящий по ссылке, случайно натыкается на ответы к другим задачам на том же сайте, которые он мог и не решить.<br /><br />Q31: Что означает &quot;вклад&quot; пользователя? <br />А: Вклад пользователя равен сумме баллы за определенные действия: а) баллы за проверку задач, б) баллы за предложение задач на сайт, в) баллы за участие в голосовании симпатий пользователей.<br />а) За каждую взятую на проверку задачу дается балл срочности, равный 1 + число дней, которое задача провисела без модератора. За ответы Випов и модераторов дается в 5 раз больший бал. Однако: 1) Балл срочности не может быть больше 100; 2) Балл срочности равен 1, если модератор зачел задачу раньше 2012-ого и не оставил ни одного сообщения в дискуссии (т.к. информация о дате зачета до 2012 не сохранялась).<br />б) за каждую задачу, находящуюся на основном сайте дается 1000 баллов.<br />в) за каждую решенную и проголосованную (&quot;нравится&#092;не нравится&quot;) задачу дается 10 баллов.<br /><br />Q32: Кто такой &quot;автор&quot; задачи?<br />A: Автором называется человек спровоцировавший появление задачи на сайт. Чаще всего это человек предложивший задачу модераторам для публикации на сайт.<br />Важно понимать, что &quot;автор&quot; не обязан лично придумать идею задачи. Опубликованное на сайте условие может иметь принципиальные отличия с условием, предложенным &quot;автором&quot;.<br /><br />Q33: Что такое привилегированный пользователь?<br />A: Пользователь с дополнительными платными возможностями. Подробнее читайте тут: <a href="https://www.braingames.ru/forum/index.php?showtopic=2804" target="_blank">https://www.braingames.ru/forum/index.php?showtopic=2804</a><br /><br />Q34: Случайно отослал ответ на одну задачу в форму для ответа на другую задачу. Что делать?<br />A: Ничего страшного. Просто пошлите ответ еще раз в правильное место.<br /><br />Q35: Что делать, если долго не проверяют решение?<br />А: В среднем ответы проверяется в течении двух дней, но иногда проверка задерживается и до нескольких недель. Сроки зависят от конкретной задачи, формулировки ответа и количества модераторов на данный момент. Чтобы ускорить проверку стоит писать ответ в соответствии с правилами, приведенными в начале этого сообщения: максимально полно, по сути и структурированно. Представьте себя на месте проверяющего модератора и пишите ответ, по, котором вам было бы максимально просто и быстро убедиться, что отвечающий полностью разобрался с задачей.<br /><br />Q36: Является ли программа, выдающая ответ на задачу в качестве своего результата, обоснованием этого ответа?<br />А: Не является, так как в программе могут быть труднонаходимые (непроверяемые) ошибки, так и компилятор/интерпретатор может работать с ошибками.</div>
+			<!--IBF.ATTACHMENT_2236-->
+			<br /><br />--------------------<br />
+<div class="signature"><a href="https://ddt79.livejournal.com" target="_blank">ЖЖ</a>, <a href="https://vk.com/id3449606" target="_blank">контакт</a>, <a href="https://www.facebook.com/profile.php?id=100000504818402" target="_blank">фейсбук</a>, <a href="https://www.instagram.com/mskrescue/" target="_blank">instagram</a><br />пожалуйста, пишите <a href="https://www.braingames.ru/cdn-cgi/l/email-protection#7c15121a133c1e0e1d15121b1d11190f520e09"><span class="__cf_email__" data-cfemail="31585f575e71534350585f56505c54421f4344">[email&#160;protected]</span></a>, звоните, вотсапьте, телеграмьте +7 (926) 301-09-21, Skype allwishes</div>
+			<!-- THE POST -->		
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><img src='style_images/bg/p_offline.gif' border='0'  alt='Пользователь в офлайне' /><a href="javascript:PopUp('https://www.braingames.ru/forum/index.php?act=Profile&amp;CODE=showcard&amp;MID=1','AddressCard','600','300','0','1','1','1')" title="Показать визитную карточку"><img src='style_images/bg/p_card.gif' border='0'  alt='Карточка пользователя' /></a><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=04&amp;MID=1"><img src='style_images/bg/p_pm.gif' border='0'  alt='Отправить личное сообщение' /></a><!----></div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				<a href="javascript:scroll(0,0);"><img src='style_images/bg/p_up.gif' border='0'  alt='Вернуться в начало страницы' /></a>
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+         		<a href="index.php@showtopic=336&amp;pid=2236&amp;st=0&amp;.html#" onclick="multiquote_add(2236); return false;" title="Добавить цитату"><img src="style_images/bg/p_mq_add.gif" name="mad_2236" alt="+" /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=02&amp;f=30&amp;t=336&amp;qpid=2236" title="Ответить на это сообщение"><img src='style_images/bg/p_quote.gif' border='0'  alt='Ответить с цитированием данного сообщения' /></a>
+         	</div>
+         </td>
+	</tr><tr>
+	<td class="catend" colspan="2">
+	<!-- no content -->
+	</td>
+</tr>
+</table>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type='text/javascript'>
+//<![CDATA[
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-2236',
+	new Array(  img_item + " <a title='Отредактировать со всеми опциями' href='https://www.braingames.ru/forum/index.php?act=post&amp;do=edit_post&amp;f=30&amp;t=336&amp;p=2236&amp;st=0'>Полное</a>",
+				img_item + " <a href='index.php@showtopic=336&amp;pid=2236&amp;st=0&amp;.html#' title='Отредактировать прямо здесь' onclick='return ajax_prep_for_edit(2236, event);'>Быстрое</a>" ) );
+}
+//]]>
+</script><!-- END TABLE -->
+
+<!-- TABLE FOOTER -->
+<div class="barc">
+	<div style="float: right; padding: 5px 5px 0 0;"><a href="https://www.braingames.ru/forum/index.php?showtopic=336&amp;view=old" style='text-decoration:none'>&laquo; Предыдущая тема</a>
+	&middot; <a href="https://www.braingames.ru/forum/index.php?showforum=30" style='font-weight: bold;text-decoration:none'>Объявления администрации</a>
+	&middot; <a href="https://www.braingames.ru/forum/index.php?showtopic=336&amp;view=new" style='text-decoration:none'>Следующая тема &raquo;</a></div>
+	<div>
+		<form action="https://www.braingames.ru/forum/index.php?" method="post" name="search">
+			<input type="hidden" name="forums" value="30" />
+			<input type="hidden" name="topic" value="336" />
+			<input type="hidden" name="act" value="Search" />
+			<input type="hidden" name="CODE" value="searchtopic" />
+			<input type="text" size="25" name="keywords" class="searchinput" value="Введите слова для поиска" onfocus="this.value = '';" />&nbsp;
+			<input type="submit" value="Искать по теме" class="button" />
+		</form>
+	</div>
+</div>
+</div>
+<br />
+
+<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td style='padding-left:0px' width="30%" nowrap="nowrap" valign="middle"><div></div></td>
+		<td class='nopad' style='padding:5px 0px 5px 0px' align="right" width="70%"><!--IBF.QUICK_REPLY_CLOSED--><a href="https://www.braingames.ru/forum/index.php?act=post&amp;do=reply_post&amp;f=30&amp;t=336"><img src='style_images/bg/t_reply.gif' border='0'  alt='Ответить в эту тему' /></a><a href="https://www.braingames.ru/forum/index.php?act=Post&amp;CODE=00&amp;f=30" title="Новая тема"><img src='style_images/bg/t_new.gif' border='0'  alt='Открыть новую тему' /></a><!----></td>
+	</tr>
+</table>
+<div class="borderwrap" style='padding-bottom:1px;'>
+	<div class="formsubtitle" style="padding: 4px;">1 чел. читают эту тему (гостей: <b>1</b>, скрытых пользователей: <b>0</b>)</div>
+	<div class="row1" style="padding: 4px;">Пользователей: <b>0 - </b> </div>
+</div>
+
+<!--IBF.QUICK_REPLY_OPEN-->
+<br />
+<div class="borderwrap">
+	<div class="row2" style="padding: 5px;">
+		
+		<div align="right"><form onsubmit="if(document.jumpmenu.f.value == -1){return false;}" action='https://www.braingames.ru/forum/index.php?act=SF' method='get' name='jumpmenu'>
+			             <input type='hidden' name='act' value='SF' />
+<input type='hidden' name='s' value='' />
+			             <select name='f' onchange="if(this.options[this.selectedIndex].value != -1){ document.jumpmenu.submit() }" class='dropdown'>
+			             <optgroup label="Перейти на сайт">
+			              <option value='sj_home'>Главная страница форума</option>
+			              <option value='sj_search'>Поиск по форуму</option>
+			              <option value='sj_help'>Помощь</option>
+			             </optgroup>
+			             <optgroup label="Переход по форуму"><option value="6">Главный форум</option>
+<option value="8">&nbsp;&nbsp;&#0124;-- Обсуждаем сайт «Игры разума»</option>
+<option value="23">&nbsp;&nbsp;&#0124;-- Разминка для мозгов</option>
+<option value="59">&nbsp;&nbsp;&#0124;---- Kоммерческие задачи</option>
+<option value="24">&nbsp;&nbsp;&#0124;-- Поиграем&#33;</option>
+<option value="31">&nbsp;&nbsp;&#0124;-- Kлуб мегамозгов</option>
+<option value="18">&nbsp;&nbsp;&#0124;---- Игроки о себе</option>
+<option value="39">&nbsp;&nbsp;&#0124;---- Модераторы о себе</option>
+<option value="60">&nbsp;&nbsp;&#0124;---- Поздравления</option>
+<option value="52">&nbsp;&nbsp;&#0124;-- Свободное общение</option>
+<option value="57">&nbsp;&nbsp;&#0124;---- Юмор</option>
+<option value="58">&nbsp;&nbsp;&#0124;---- Личные объявления</option>
+<option value="29">Приемная администратора</option>
+<option value="17">&nbsp;&nbsp;&#0124;-- Рассудите, кто прав</option>
+<option value="66">&nbsp;&nbsp;&#0124;---- Архив</option>
+<option value="22">&nbsp;&nbsp;&#0124;-- Ваши вопросы</option>
+<option value="30" selected="selected">&nbsp;&nbsp;&#0124;-- Объявления администрации</option>
+<option value="42">&nbsp;&nbsp;&#0124;-- Ошибки на сайте и предложения по улучшению</option>
+<option value="45">&nbsp;&nbsp;&#0124;---- Предложения по улучшению</option>
+<option value="73">&nbsp;&nbsp;&#0124;---- Проблемы с форумом</option>
+<option value="61">&nbsp;&nbsp;&#0124;-- Новости разработки</option>
+</optgroup>
+</select>&nbsp;<input type='submit' value='ОК' class='button' /></form></div>
+	</div>
+</div>
+<br />
+<!-- NON JS STUFF -->
+<div id='topicoptionsjs'>
+ <a name='topicdisplay'></a>
+ <div class='borderwrap'>
+  <div class="bar" style="padding: 5px;text-align:center">
+  <strong>Стиль отображения:</strong> <strong><em><a href='https://www.braingames.ru/forum/index.php?showtopic=336&amp;mode=linear&amp;view=findpost&amp;p=2236'>Стандартный</a></em></strong> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?showtopic=336&amp;mode=linearplus&amp;view=findpost&amp;p=2236'>Переключить: Линейный</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?showtopic=336&amp;mode=threaded&amp;pid=2236'>Переключить: Каскадный</a>
+  </div>
+ </div>
+ <br />
+ <a name='topicoptions'></a>
+ <div class='borderwrap'>
+  <div class="bar" style="padding: 5px;text-align:center">
+  <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=topic&amp;tid=336'>Подписаться на тему</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?act=Forward&amp;f=30&amp;t=336'>Послать тему по E-mail</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?act=Print&amp;client=printer&amp;f=30&amp;t=336'>Распечатать тему</a> &middot;
+  <a href='https://www.braingames.ru/forum/index.php?act=usercp&amp;CODE=start_subs&amp;method=forum&amp;fid=30'>Подписаться на этот раздел</a>
+  </div>
+ </div>
+ <br />
+
+</div>
+<script type='text/javascript'>
+//<![CDATA[
+ document.getElementById('topicoptionsjs').style.display = 'none';
+ 
+ // Scroll to PID?
+ topic_scroll_to_post( parseInt("") );
+//]]>
+</script>
+<table cellspacing="0" id="gfooter">
+	<tr>
+		<td width="45%"><img id="rsssyndication" src='style_images/bg/rss.png' border='0' alt='-' class='ipd' />
+<script type="text/javascript">
+//<![CDATA[
+  menu_build_menu(
+  "rsssyndication",
+  new Array( "<a href='https://braingames.ru/forum/index.php?act=rssout&amp;id=1' style='color:black'>BG New posts</a>"
+           ) );
+//]]>
+</script> </td>
+		<td width="10%" align="center" nowrap="nowrap"><a href="https://www.braingames.ru/forum/lofiversion/index.php/t336.html"><b>Упрощённая версия</b></a></td>
+		<td width="45%" align="right" nowrap="nowrap">Сейчас: 26.7.2021, 18:31</td>
+	</tr>
+</table>
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=11243257&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/11243257/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="11243257" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<script type='text/javascript'>
+//<![CDATA[
+menu_do_global_init();//]]>
+</script>
+ 
+<!-- Copyright Information -->
+        				  <div align='center' class='copyright'>
+        				  	Invision Power Board
+        				  	v2.1.4 &copy; 2021 &nbsp;IPS, Inc.
+        				  </div>
+		<!-- / Copyright -->
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"674eacfdb8bc19e3","version":"2021.7.0","r":1,"token":"786201510e0549d4be4b6cb300bdbbeb","si":10}'></script>
+</body> 
+</html>

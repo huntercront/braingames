@@ -1,0 +1,771 @@
+@media screen and (max-width: 1000px) {
+	.wideScreenDeviceOnly  { display: none; }
+}
+
+						#tooltip{
+								font: 8pt verdana;
+								width: 117px;
+								position: absolute;
+								top: 2px; left: 2px;
+								text-align: center;
+								opacity:.7; filter:alpha(opacity=70);              
+						}
+												
+						#tooltip .content{
+								background: url(../../images/bg.gif) repeat-y;
+								padding: 0 1px;
+						}         
+						
+						#tooltip .top, #tooltip .bottom{                
+								height: 5px;
+						}
+						
+						#tooltip-tail{
+								width: 15px; height: 6px;
+								background: url(../../images/tail.gif) no-repeat left top;
+								position: absolute;
+								top: 29px; left: 117px;                
+						}
+BODY, TABLE, TD 
+{
+ font-size: 11px; 
+ /*color: #828282;*/
+ color: #000000;
+ font-family: Verdana, Tahoma; 
+}
+BODY
+{
+ margin: 0px; 
+}
+a
+{
+	font-family:Tahoma;
+	color:#999933;
+	text-decoration: underline;
+}
+/*
+td
+{
+vertical-align:top;
+}
+*/
+td.topmenu
+{
+	padding-left: 10px;
+	vertical-align: middle;
+	border-left: #cccccc 1px solid;
+	padding-right: 10px;
+}
+td.icons
+{
+	padding-left: 10px;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+td.comments
+{
+	padding: 3px;
+}
+
+hr
+{
+	color: #cccccc;
+	height: 1px;
+}
+a.topmenu
+{
+color:#999933;
+text-decoration:underline;
+font-weight:bold; 
+font-size: 11px;
+}
+a.redtopmenu
+{
+color:#FF0000;
+text-decoration:underline;
+font-weight:bold; 
+font-size: 12px;
+}
+.topmenu
+{
+color:#999933;
+text-decoration:underline;
+font-weight:bold; 
+font-size: 11px;
+}
+
+td.topform
+{
+
+height:40px;
+vertical-align:middle;
+padding-left: 8px;
+padding-right: 8px; 
+}
+td.braingames
+{
+background-image:url(../../images/idler/bg_topform.gif);
+height:40px;
+vertical-align: buttom;
+width: 161px;
+}
+input.txt 
+{
+font-size: 10px; 
+vertical-align: middle;
+color: #000000;
+border: none;
+font-family: Verdana, Tahoma;
+height: 20px;
+padding-top:4px;
+padding-left:8px;
+margin-right: 10px;
+}
+input.bigtxt 
+{
+font-size: 15px; 
+vertical-align: middle;
+color: #000000;
+border: none;
+font-family: Verdana, Tahoma;
+height: 40px;
+padding-top:4px;
+padding-left:8px;
+margin-right: 10px;
+}
+input.btn 
+{
+background-color:#828282;
+color:#FFFFFF;
+font-size: 13px;
+/*font-weight: bold;*/
+border:none;
+height:20px;
+vertical-align:middle;
+}
+input.btnNeat
+{
+cursor: pointer;
+font-size: 13px;
+border:none;
+height:20px;
+width:20px;
+border-radius: 2px;
+vertical-align:middle;
+text-align:middle;
+}
+input.loginbtn 
+{
+cursor: pointer;
+background-color:white;
+border-width: 2px;
+border-style: solid;
+border-color: #bdbd4d;
+color:#444444;
+font-weight:bold;
+font-size:15px;
+height:32px;
+width:130px;
+border-radius: 10px;
+vertical-align:middle;
+}
+button
+{
+background-color:#828282;
+color:#FFFFFF;
+font:bold 10px;
+border:none;
+height:20px;
+vertical-align:middle;
+}
+input.errorBorder
+{
+	border-color: #FF0000;
+	border-style: solid;
+	border-width: 2px;
+}
+input.error
+{
+	border-color: #FF0000;
+	border-style: solid;
+	border-width: 2px;
+}
+.error
+{
+font-family: Verdana, Tahoma;
+color: #FF0000;
+font-weight:bold;
+}
+.msg
+{
+color: #FF0000;
+font-family: Verdana, Tahoma;
+font-size: 12px;
+font-weight: bold;
+}
+input.checkbox
+{
+vertical-align:middle;
+align: left;
+}
+h1
+{
+color:#999933;
+font-weight:bold; 
+font-size: 18px;
+font-family:Tahoma;
+}
+.loginTitle
+{
+font-weight:bold;
+color:#999933;
+font-size: 14px;
+font-family:Tahoma;
+padding-left: 20px;
+}
+.loginTitle2
+{
+font-weight:bold;
+color:#828282;
+font-size: 14px;
+font-family:Tahoma;
+}
+td.login
+{
+padding-left: 0px;
+}
+li.gif
+{
+	list-style-image: url(../../images/idler/li.gif);
+}
+ol.top10
+{
+	color: #828282;
+}
+.scoretopusers
+{
+color: #BD1615;
+}
+.score
+{
+font-family:Arial, Helvetica, sans-serif;
+color: #BD1615;
+font-size:10px;
+}
+.contributiontopusers {
+		color: #886A08;
+		margin-right: 10px;
+}
+.contribution
+{
+font-family:Arial, Helvetica, sans-serif;
+color: #886A08;
+font-size:10px;
+}
+.group
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+}
+
+.tasktitle
+{
+		border: solid 0px black;
+	font-family: Verdana, Tahoma;
+	color:#585858;
+	font-size: 18pt;
+	valign: middle;
+	text-align: left;
+	margin: 5px;
+}
+.title {
+		font-family:verdana;
+		color:#999944;
+		font-size:12px;
+		text-align:center;
+}
+.outblocktitle {
+		font-family: verdana;
+		color: #000000;
+		font-size: 12px;
+		text-align: center;
+}
+.taskdescription
+{
+	font-family: Verdana, Tahoma;
+	color:#585858;
+	font-size: 7pt;
+		margin:0px;
+		height: 40px;
+}
+.rightdescription
+{
+	font-family: Verdana, Tahoma;
+	color:#585858;
+	font-size: 7pt;
+		position: absolute;
+		right: 10px;
+		text-align: right;
+		margin-right: 10px;
+}
+.rbdescription
+{
+	font-family: Verdana, Tahoma;
+	color:#585858;
+	font-size: 7pt;
+	text-align: right;
+	position: absolute;
+	right: 10px;
+		bottom: 10px;
+		margin-bottom: 5px;
+		border: solid 0px black;
+}
+.rtdescription
+{
+	font-family: Verdana, Tahoma;
+	color:#585858;
+	font-size: 7pt;
+	text-align: right;
+		position: absolute;
+		right: 10px;
+		top: 15px;
+		margin-right: 10px;
+		valign: bottom;
+}
+.description
+{
+	font-family: Verdana, Tahoma;
+	color:#585858;
+	font-size: 7pt;
+	text-align: left;
+		margin: 10px;
+		valign: bottom;
+}
+.emptyDiv {
+		 height: 18px;
+		 border: solid 0px black;
+		 position: relative;
+		 bottom: 0;
+		 border: solid 0px black;
+}
+.emptyDiv10 {
+		 height: 10px;
+		 border: solid 0px black;
+		 position: relative;
+		 bottom: 0;
+		 border: solid 0px black;
+}
+.right {
+		position: relative;
+		right: -10px;
+		padding: 0px;
+
+		text-align: right;
+		font-family: Verdana, Tahoma;
+		color:#585858;
+		font-size: 7pt;
+}
+.taskves
+{
+	font-family:Tahoma;
+	color:#BD1615;
+	font-size: 8pt;
+}
+.taskcategory
+{
+	font-family:Tahoma;
+	color:#999933;
+	font-size: 9pt;
+}
+
+.answer
+{
+	font-family:Tahoma;
+	color:#999933;
+	font-size: 8pt;
+}
+
+.answertitle
+{
+	font-family:Tahoma;
+	color:#000000;
+	font-size: 8pt;
+}
+.comment
+{
+	font-family:Tahoma;
+	color:#999933;
+	font-size: 8pt;
+	text-decoration: underline;
+}
+.link
+{
+	font-family:Tahoma;
+	color:#999933;
+	font-size: 8pt;
+	text-decoration: underline;
+}
+.clickedLink
+{
+	font-family:Tahoma;
+	font-size: 8pt;
+}
+.dropdownlink
+{
+	cursor: pointer; 
+	border-bottom: 1px dashed;
+}
+
+
+/* пїЅпїЅ-пїЅпїЅ background */
+
+.tableR th:first-child {
+	border-top-left-radius: 10px;
+}
+.tableR th:last-child {
+	border-top-right-radius: 10px;
+}
+.rating
+{
+	font-family:Tahoma;
+	color:#666666;
+	font-size: 8pt;
+}
+.adminmenu
+{
+	color: #000000;
+	font-family: Verdana, Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+}
+.activeadminmenu
+{
+	color: #FFFFFF;
+	font-family: Verdana, Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.adminsubmenu
+{
+	color: #000000;
+	font-family: Verdana, Tahoma;
+	font-size: 10px;
+	font-weight: bold;
+}
+.activeadminsubmenu
+{
+	color: #FFFFFF;
+	font-family: Verdana, Tahoma;
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.quoteDiv
+{
+	background-color: #FFFFFF;
+	padding: 1px;
+}
+.quoteDiv1
+{
+	background-color: #F0F0DD;
+	border-width: 0;
+	padding: 3px;
+}
+.quoteDiv2
+{
+
+	background-color: #F0F0F0;
+	border-top-style: solid;
+	border-color: #D6D6D6;
+	border-width: 0;
+	padding: 5px;
+}
+a.changeableLink
+{
+	font-family: verdana;
+	font-size: 11px;
+		text-decoration: underline;
+		color:#3399CC;
+	white-space: nowrap;
+}
+a:visited.changeableLink
+{
+		font-family: verdana;
+		font-size: 11px;
+	text-decoration: underline;
+		color:#660099;
+	white-space: nowrap;
+}
+a:hover.answerlink
+{
+	color:#000000;
+	text-decoration:none;
+	font-family: Verdana, Tahoma;
+}
+a.answerlink
+{
+	color:#000000;
+	text-decoration:underline;
+	font-family: Verdana, Tahoma;
+}
+.answerlinkOver
+{
+	color:#000000;
+	text-decoration:none;
+	cursor:help;
+	font-family: Verdana, Tahoma;
+}
+.answerlink
+{
+	color:#000000;
+	text-decoration:none;
+	cursor:pointer;
+	margin: 5px;
+}
+
+.commentDate
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+padding: 3px;
+color:#CCCCCC;
+}
+td.userinactive
+{
+font-family: Verdana, Tahoma;
+font-size:9px;
+}
+
+a:hover.finduser
+{
+	color:#000000;
+	text-decoration:none;
+	font-family: Verdana, Tahoma;
+}
+a.finduser
+{
+	color:#000000;
+	text-decoration:underline;
+	font-family: Verdana, Tahoma;
+}
+.puzzlecolor
+{
+background:#EFEFEF;
+}
+.puzzle
+{
+		/* background: #e6e6e6; */
+		background: #EFEFEF;
+		border-radius: 10px;
+		border: solid 0px black;
+		align: left;
+		position:  relative;
+		margin: 0 auto;
+		width: 100%;
+}
+.block
+{
+		background: #EFEFEF;
+		border-radius: 10px;
+		border: solid 0px black;
+		align: left;
+		position:  relative;
+		margin: 5px;
+	padding: 5px;
+}
+.whiteBlock
+{
+		background: #FFFFFF;
+		border-radius: 10px;
+		border: solid 0px black;
+		align: left;
+		position:  relative;
+		margin: 0 auto;
+		margin-left: 0px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 100%;
+}
+.blockTitle {
+		font-family:verdana;
+		color:#808080;
+		font-size:12px;
+		text-align:center;
+}
+.blockText {
+		font-family:verdana;
+		color: #000000;
+		font-size:12px;
+		text-align:left;
+		margin: 10px;
+}
+.blockRect
+{
+	background: #FFFFFF;
+	border: solid 0px black;
+	position:  relative;
+}
+.blockRect:hover,
+.blockRect:focus {
+	background: #f7f7f7;
+}
+.blockRectActive
+{
+	background: #EFEFEF;
+	border: solid 0px black;
+	position:  relative;
+}
+
+.fb-like-box {
+background:#fafafa;
+color: #fff;
+width:80%;
+padding:0 0px;
+margin:10px 0;
+border:solid 0px #c7c7c7;
+-webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.30);
+-moz-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.30);
+box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.30);
+}
+.comments pre
+{
+	background-color: #f8f8f8;
+	border: 1px solid #f0f0f0;
+	border-radius: 2px;
+	padding: 3px 10px;
+	margin: 0.5em 3em 0.5em 1.5em;
+}
+
+table.ratings
+{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #777;
+}
+table.ratings th
+{
+	background-color: #F8F8F0;
+	font-weight: bold;
+	height: 3.5ex;
+}
+table.ratings th.sorted
+{
+	background-color: #BBB;
+}
+table.ratings tr
+{
+	background-color: white;
+}
+table.ratings tr.hoverable:hover
+{
+	background-color: #EEE;
+}
+table.ratings td
+{
+	text-align: center;
+	height: 3ex;
+}
+table.ratings td a
+{
+	text-decoration: none;
+}
+table.ratings td a:hover
+{
+	text-decoration: underline;
+}
+
+.spoiler
+{
+	padding: 0;
+	border-radius: 5px;
+	border: solid 1px #D0D0D0;
+	background-color: #EFEFEF;
+	text-align: left;
+	vertical-align: middle;
+	border-width: 1px 1px 1px 10px;
+}
+.spoiler-head
+{
+	margin: 5px 10px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #505030;
+}
+.spoiler-body
+{
+	border-radius: 0 0 5px 5px;
+	background-color: #FFF;
+	padding: 5px 10px;
+}
+.spoilersupport
+{
+	/*Класс-маркер для поддержки bb-кода spoiler*/
+}
+.puzzleimage:hover .imagePreview {
+	display: inline-block;
+	max-height: 120px;
+	max-width: 120px;
+	border: 2px solid #AAA;
+	z-index: 9999;
+}
+.imagePreview {
+	display: none;
+	position: absolute;
+}
+
+a.button {
+	background: #298cad;
+	color: #ffffff;
+	font-size: 18px;
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+	line-height: 46px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+ }
+
+div.selector{
+}
+
+.tab-content {
+	border-left: 2px solid #dadada;
+	padding: 15px;
+	border-radius: 0 6px 6px 6px;
+	display: none;
+}
+
+label.tab {
+	border-left: 2px solid #dadada;
+	border-top: 2px solid #dadada;
+	color: #8a8a8a;
+	font-weight: bold;
+	font-size:larger; 
+	padding: 15px;
+	display: inline-block;
+	border-radius: 6px 0 0 0;
+	margin-bottom: -1px;
+	margin-right: -6px;
+	cursor: pointer;
+}
+label.tab:hover,
+label.tab:focus {
+	background-color: #fafafa;
+	color: #999933;
+}
+
+label.active {
+	color: #000000;
+}
+
+.active {
+	background-color: #EFEFEF;
+	display: block;
+}
+
+.red {
+	color: red;
+}
+

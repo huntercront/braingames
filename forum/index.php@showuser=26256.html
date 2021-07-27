@@ -1,0 +1,1947 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>Просмотр профиля</title>
+<link rel="alternate" type="application/rss+xml" title="BG New posts" href="https://braingames.ru/forum/index.php?act=rssout&amp;id=1" />
+ 
+<style type="text/css">
+	/* 
+ * Cascading Style Sheet(CSS 467), for Invision Power Board 2.1.0
+ * Author: James A. Mathias, admin@leihu.com, http://www.1lotus.com 
+ * Copyright: 2005 Invision Power Services, all rights reserved 
+ *
+ * All style attributes in alpha-numeric order starting from 0
+ *
+ */
+
+/* 
+ * ========================================
+ * global element styles 
+ * ========================================
+ */
+
+html{
+	overflow-x: auto; /* fixes MSIE scrollbar bug DO NOT REMOVE, has no effect in Mozilla, or Opera */
+}
+
+body{ 
+/*	background: #FFF;*/
+	color: #000000;
+	font-family: Verdana, Tahoma, Arial, Trebuchet MS, Sans-Serif, Georgia, Courier, Times New Roman, Serif;
+	font-size: 11px;
+	line-height: 135%;
+	margin: 0px;
+	padding: 0px; /* required for Opera to have 0 margin */
+	text-align: center; /* centers board in MSIE */
+}
+
+/* 
+ * ========================================
+ * Set up IPB table
+ * ========================================
+ */
+ 
+.ipbtable { width:100% }
+
+table.ipbtable,
+tr.ipbtable,
+td.ipbtable
+{ /* required for text in tables, because tables do not inherit from body */
+	background: transparent;
+	color: #222;
+	font-size: 11px;
+	line-height: 135%;
+}
+
+.ipbtable td,
+.divpad{ /* gives all tables faux cellpadding of 5px */
+	padding: 5px;
+}
+
+td.nopad{ /* allows some tables to have no padding on the td */
+	padding: 0;
+}
+
+
+
+form{
+	display: inline;
+	margin: 0; /* removes mystery form tag gapping */
+	padding: 0; /* removes mystery form tag gapping */
+}
+
+img{
+	border: 0; /* makes sure linked images do not have a border */
+	vertical-align: middle;
+}
+
+/* 
+ * ========================================
+ * global hyperlink styles 
+ * ========================================
+ */
+
+a:link,
+a:visited,
+a:active{
+	background: transparent;
+	color: #6F781E;
+	text-decoration: underline;
+}
+
+a:hover{
+	background: transparent;
+/*	color: #34498B;*/
+}
+
+/* 
+ * ========================================
+ * Main wrapper, this controls the overall width of the board in you browser view window. 
+ * ========================================
+ */
+
+#ipbwrapper{ 
+	margin: 20px auto 20px auto; /* centers the box, no matter the overall width, also applies a 20px gap at the top and bottom of the board */
+	text-align: left; /* re_aligns text to left second part of two part MSIE centering workaround */
+	/* EDIT THIS TO CHANGE THE WIDTH OF THE BOARD -> 750px is a common fixed resolution size */
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * styles for pagination links 
+ * ========================================
+ */
+ 
+
+.pagelink,
+.pagelinklast,
+.pagecurrent,
+.minipagelink,
+.minipagelinklast{
+	background: #F8F8EE;
+	border: 1px solid #6F781E;
+	padding: 1px 3px 1px 3px;
+}
+
+.pagelinklast,
+.minipagelinklast{
+	background: #F0F0E0;
+}
+
+
+.pagecurrent{
+	background: #FFC9A5;
+}
+
+.minipagelink,
+.minipagelinklast{
+	border: 1px solid #DEDEC1;
+	font-size: 10px;
+	margin: 0 1px 0 0;
+}
+
+.pagelink a:active,
+.pagelink a:visited,
+.pagelink a:link,
+.pagelinklast a:active,
+.pagelinklast a:visited,
+.pagelinklast a:link,
+.pagecurrent a:active,
+.pagecurrent a:visited,
+.pagecurrent a:link,
+.minipagelink a:active,
+.minipagelink a:visited,
+.minipagelink a:link,
+.minipagelinklast a:active,
+.minipagelinklast a:visited,
+.minipagelinklast a:link{
+	text-decoration: none;
+}
+
+/* fake button effect for some links */
+.fauxbutton{
+	background: #DEDEBE;
+	border: 1px solid #6F781E;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+.fauxbutton a:link,
+.fauxbutton a:visited,
+.fauxbutton a:active{
+	color: #222 !important;
+	text-decoration: none;
+}
+
+.forumdesc,
+.forumdesc a:link,
+.forumdesc a:visited,
+.forumdesc a:active{ 
+	background: transparent;
+	font-size: 10px; 
+	color: #666;
+	line-height: 135%;
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+.searchlite {
+	background-color:yellow;
+	font-weight:bold;
+	color: red;
+}
+
+.activeusers{
+	background: #FFF;
+	border: 1px solid #6F781E;
+	color: #000;
+	margin: 0px;
+	padding: 1px;
+}
+
+.activeuserposting a:link,
+.activeuserposting a:visited,
+.activeuserposting a:active,
+.activeuserposting
+{
+	font-style:italic;
+	text-decoration: none;
+	border-bottom:1px dotted black;
+}
+
+fieldset.search{ 
+	line-height: 150%;
+	padding: 6px; 
+}
+
+label{ 
+	cursor: pointer; 
+}
+
+img.attach{ 
+	background: #808080 url(style_images/bg/click2enlarge.gif) no-repeat top right;
+	border: 1px solid #808080;
+	margin: 0 2px 0 0;
+	padding: 11px 2px 2px 2px;
+}
+
+.thumbwrap,
+.thumbwrapp,
+.fullimagewrap{
+	border: 1px solid #6F781E;
+	margin: 2px;
+}
+
+.thumbwrapp{
+	border: 2px solid #660707;
+}
+
+.fullimagewrap{
+	background: #FDFDF4;
+	text-align: center;
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+.thumbwrap h4,
+.thumbwrapp h4{	
+	background: #F0F0DB;
+	border: 0 !important;
+	border-bottom: 1px solid #999933 !important;
+	color: #999933; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.thumbwrap p,
+.thumbwrapp p{
+	background: #F7F7EE !important;
+	border: 0 !important;
+	border-top: 1px solid #999933 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrap p.alt,
+.thumbwrapp p.alt{
+	background: #F0F0E0 !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	text-align: left;
+}
+
+.thumbwrapp p.pin{
+	background: #EFDFDF !important;
+	text-align: center !important;
+}
+	
+.thumbwrap img.galattach,
+.thumbwrapp img.galattach{
+	background: #FFF url(style_images/bg/img_larger.gif) no-repeat bottom right;
+	border: 1px solid #6F781E;
+	margin: 5px;
+	padding: 2px 2px 10px 2px;
+}
+
+li.helprow{ 
+	margin: 0 0 10px 0;
+	padding: 0; 
+}
+
+ul#help{ 
+	padding: 0 0 0 15px; 
+}
+
+.warngood,
+.warnbad{ 
+	color: #0B9500;
+	font-weight: bold;
+}
+
+.warnbad{ 
+	color: #DD0000;
+}
+
+#padandcenter{ 
+	margin: 0 auto 0 auto;
+	padding: 14px 0 14px 0;
+	text-align: center;
+}
+
+#profilename{ 
+	font-size: 28px; 
+	font-weight: bold; 
+}
+
+#photowrap{ 
+	padding: 6px; 
+}
+
+#phototitle{ 
+	border-bottom: 1px solid #000; 
+	font-size: 24px; 
+}
+
+#photoimg{ 
+	margin: 15px 0 0 0;
+	text-align: center; 
+} 
+
+#ucpmenu,
+#ucpcontent{ 
+	background: #FDFDF5;
+	border: 1px solid #878734;
+	line-height: 150%;
+}
+
+#ucpmenu p{ 
+	margin: 0; 
+	padding: 2px 5px 6px 9px;
+}
+
+#ucpmenu a:link, 
+#ucpmenu a:active, 
+#ucpmenu a:visited{ 
+	text-decoration: none; 
+}
+
+#ucpcontent{ 
+	width: auto;
+}
+
+#ucpcontent p{ 
+	margin: 0;
+	padding: 10px;
+}
+
+.activeuserstrip{ 
+	background: #EDEDBD;
+	padding: 6px;
+}
+
+/* Topic View elements */
+.signature{  
+	background: transparent;
+	color: #8F8F30; 
+	font-size: 10px;
+	line-height: 150%;
+}
+
+.postdetails{ 
+	font-size: 10px;
+	line-height:140%;
+}
+
+.postcolor{ 
+	font-size: 12px; 
+	line-height: 160%;
+}
+
+.normalname{ 
+	color: #2E2E00;
+	font-size: 12px; 
+	font-weight: bold; 
+}
+
+.normalname a:link, 
+.normalname a:visited, 
+.normalname a:active{ 
+	font-size: 12px;
+}
+
+.post1,
+.bg1{ 
+	background: #FDFDF5;
+}
+
+.post2,
+.bg3{ 
+	background: #F7F7EE;
+}
+
+.row2shaded,
+.post1shaded { background-color: #E3E3D9 }
+.row4shaded,
+.post2shaded { background-color: #E7E7E0}
+
+.row1{ 
+	background: #EFEFDF; 
+}
+
+.row2{ 
+	background: #F0F0E3; 
+}
+
+.darkrow1{ 
+	background: #EDEDBD;
+	color: #6D6D3B; 
+}
+
+.darkrow3{ 
+	background: #DFDFB9; 
+	color: #6D6D3B; 
+}
+
+/* tableborders gives the white column / row lines effect */
+.plainborder,
+.tablefill,
+.tablepad{ 
+	background: #FDFDF5;
+	border: 1px solid #878734;
+}
+
+.tablefill,
+.tablepad{ 
+	padding: 6px;  
+}
+
+.tablepad{ 
+	border: 0 !important;
+}
+
+.wrapmini{ 
+	float: left;
+	line-height: 1.5em;
+	width: 30%;
+}
+
+.pagelinks{
+	float: left;
+	line-height: 1.2em;
+	width: 35%;
+}
+
+.desc{ 
+	font-size: 11px; 
+	color: #515143;
+}
+
+.lastaction
+{
+	font-size: 10px; 
+	color: #515143;
+}
+
+.edit{ 
+	font-size: 9px;
+}
+
+.thin{ 
+	border: 1px solid #FFF;
+	border-left: 0;
+	border-right: 0;
+	line-height: 150%;
+	margin: 2px 0 2px 0;
+	padding: 6px 0 6px 0;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* =================================================================================== */
+
+/* 
+ * ========================================
+ * calendar styles 
+ * ========================================
+ */
+	
+.calmonths{ 
+	background: #F8F8EE;
+	border: 1px solid #DEDEC1;
+	font-size: 18px; 
+	font-weight: bold; 
+	margin: 5px 0 5px 0;
+	padding: 8px;
+	text-align: center;
+}
+
+.weekday{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.calmonths a{
+	text-decoration: none;
+}
+
+.calday,
+.calweekday{ 
+	background: #F0F0E0;
+	color: #666;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0;
+	padding: 4px;
+	text-align: right;
+}
+
+.calweekday{
+	border-right: 1px solid #AAA;
+	color: #222;
+	font-size: 14px;
+	padding: 6px;
+	text-align: center;
+}
+
+.celltodayshaded,
+.celldateshaded,
+.cellblank,
+.celldate,
+.celltoday,
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	background: #F7F7EE; 
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+.celltodayshaded,
+.celldateshaded
+{
+	background: #E7E4DF;
+}
+
+.mcellblank,
+.mcelldate,
+.mcelltoday{
+	height: auto;
+}
+
+.cellblank,
+.mcellblank{
+	background: #DEDEC1;
+}
+
+.celltoday,
+.celltodayshaded,
+.mcelltoday{
+	border: 2px solid #8B0000;
+}
+
+.calranged
+{
+	border: 2px outset #DEDEC1;
+	background: #DEDEC1;
+	padding:4px;
+}
+
+.calitem
+{
+	border-bottom: 1px dotted #DEDEC1;
+	padding:4px;
+}
+
+/* 
+ * ========================================
+ * form styles 
+ * ========================================
+ */
+
+.input-warn,
+.input-green,
+input,
+textarea,
+select{
+	background: #FFF;
+	border: 1px solid #B5B55F;
+	color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+.input-warn,
+.input-warn-content
+{
+	border: 1px solid #C00;
+}
+
+.input-ok,
+.input-ok-content
+{
+	border: 1px solid #0C0;
+}
+
+.input-warn-content
+{
+	padding: 4px;
+	margin: 4px;
+	background-color: #FCC;
+}
+
+.input-ok-content
+{
+	padding: 4px;
+	margin: 4px;
+	background-color: #CFC;
+}
+
+
+.input-text
+{
+	color: #900;
+}
+
+select{
+	border: 0;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+input.button{
+	margin: 0;
+	width: auto;
+}
+
+optgroup option{
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.codebuttons{ 
+	font-family: Verdana, Helvetica, Sans-Serif; 
+	font-size: 10px; 
+	vertical-align: middle;
+	margin:2px;
+}
+
+.textarea,
+.searchinput,
+.button,
+.gobutton{
+	background: #FFF;
+	border: 1px solid #B5B55F;
+	color: #000;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 11px;
+	padding: 2px;
+	vertical-align: middle;
+}
+	
+.button{
+	background: #F0F0E0;
+}
+
+.gobutton{
+	background: transparent;
+	border: 0;
+	color: #6F781E;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.radiobutton,
+.checkbox,
+.helpbox { 
+	border: 0;
+	vertical-align: middle;
+}
+
+/* 
+ * class.formtable 
+ *
+ * used for tabled forms 
+ * technically tables should not be used for form display 
+ * but, in the case of IPB a table is easier to work with
+ * for the average webmaster, who has little to no CSS knowledge.
+ *
+ */
+
+.formtable{
+	background: transparent;
+}
+
+.formtable td,
+.pformleft,
+.pformleftw,
+.pformright{
+	background:#FDFDF4;
+	border: 1px solid #DEDEC1;
+	border-bottom: 0;
+	border-left: 0;
+	font-weight: bold;
+	margin: 1px 0 0 0;
+	padding: 6px;
+	width: 25%;
+} 
+
+.formtable td.wider,
+.pformleftw,
+.pformright{
+	width: 40%;
+}
+
+.formtable td.formright,
+.pformright{
+	border-right: 0px;
+	font-weight: normal;
+	width: auto;
+} 
+
+.formtable td.formtitle,
+.formsubtitle{
+	background: #DFDFB9;
+	border: 1px solid #D3D39F; 
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+.formsubtitle{ 
+	border: 0;
+	color: #6D6D3B;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.formtable td.formstrip{
+	background: #F0F0DA;
+	border: 1px solid #D2D29E;
+	border-left: 0;
+	border-right: 0;
+	font-weight: normal;
+}
+
+/* 
+ * ========================================
+ * new style quote and code wrappers MATT's DESIGN 
+ * ========================================
+ */
+
+.quotetop{
+	background: #F2F2E6 url(style_images/bg/css_img_quote.gif) no-repeat right;
+	border: 1px dotted #000;
+	border-bottom: 0;
+	border-left: 4px solid #B0B082;
+	color: #000;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 8px auto 0 auto;
+	padding: 3px;
+}
+
+.quotemain{
+	background: #FCFCF8;
+	border: 1px dotted #000;
+	border-left: 4px solid #B0B082;
+	border-top: 0;
+	color: #818145;
+	padding: 4px;
+	margin: 0 auto 8px auto;
+}
+
+.codetop,
+.sqltop,
+.htmltop{
+	background: #FDDBCC url(style_images/bg/css_img_code.gif) no-repeat right;
+	color: #000;
+	font-weight: bold;
+	margin: 0 auto 0 auto;
+	padding: 3px;
+	width: 98%;
+}
+
+.codemain,
+.sqlmain,
+.htmlmain{
+	background: #FEFEFA;
+	border: 1px dotted #000;
+	color: #838346;
+	font-family: Courier, Courier New, Verdana, Arial;
+	margin: 0 auto 0 auto;
+	padding: 2px;
+	width: 98%;
+}
+
+/* 
+ * ========================================
+ * old school quote and code styles - backwards compatibility 
+ * ========================================
+ */
+
+#QUOTE,
+#CODE{  
+	background: #FCFCF8; 
+	border: 1px solid #000; 
+	color: #828245; 
+	font-family: Verdana, Arial; 
+	font-size: 11px; 
+	padding: 2px; 
+	white-space: normal;
+}
+
+#CODE{ 
+	font-family: Courier, Courier New, Verdana, Arial;
+}
+
+/* 
+ * ========================================
+ * All New Styles 
+ * ========================================
+ */
+.cleared{
+	clear: both;
+}
+
+.borderwrap,
+.borderwrapm{ /* this will affect the outlining border of all the tables and boxes through-out the skin. */
+	background: #FFF; 
+	border: 1px solid #6F781E;
+	padding: 0px; 
+	margin: 0px; 
+}
+
+.borderwrapm{
+	margin: 5px;
+}
+
+.borderwrap h3,
+.maintitle,
+.maintitlecollapse{
+	background: url(style_images/bg/tile_cat.gif);
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #999933;
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0px;
+	padding: 8px;
+}
+
+.maintitle td {
+	color: #FFF; 
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+.maintitlecollapse{
+	border: 1px solid #FFF;
+}
+
+.maintitle p,
+.maintitlecollapse p,
+.formsubtitle p{
+	background: transparent !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.maintitle p.expand,
+.maintitle p.goto,
+.maintitlecollapse p.expand,
+.formsubtitle p.members{
+	float: right;
+	width: auto !important;
+}
+
+.maintitle a:link, 
+.maintitle a:visited,
+.maintitlecollapse a:link, 
+.maintitlecollapse a:visited{ 
+	background: transparent;
+	color: #FFF;
+	text-decoration: none; 
+}
+
+.maintitle a:hover, 
+.maintitle a:active,
+.maintitlecollapse a:hover, 
+.maintitlecollapse a:active{ 
+	background: transparent;
+	color: #F1F1F1;
+}
+
+table th,
+.borderwrap table th,
+.subtitle,
+.subtitlediv,
+.postlinksbar{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border-bottom: 1px solid #999933;
+	color: #6D6D3B; 
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+.subtitlediv{
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #999933;
+	text-align: right;
+}
+
+.borderwrap table th a:link,
+.subtitle a:link,
+.subtitlediv a:link,
+.borderwrap table th a:visited,
+.subtitle a:visited, 
+.subtitlediv a:visited, 
+.borderwrap table th a:active,
+.subtitle a:active,
+.subtitlediv a:active,
+.borderwrap table th a:hover,
+.subtitle a:hover,
+.subtitlediv a:hover{ 
+	background: transparent;
+	color: #6B6B39;
+	text-decoration: none; 
+}
+
+.borderwrap h4{
+	background: #F0F0DB;
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #B5B552;
+	border-top: 1px solid #B5B552;
+	color: #B5B552; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.borderwrap p{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	margin: 5px;
+	padding: 10px;
+	text-align: left;
+}
+
+td.formbuttonrow,
+.borderwrap p.formbuttonrow,
+.borderwrap p.formbuttonrow1{
+	background: #EBEBD0 !important; 
+	border: 1px solid #FFF;
+	border-top: 1px solid #B5B552;
+	margin: 0px !important;
+	padding: 5px !important;
+	text-align: center;
+}
+
+td.formbuttonrow{
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+.borderwrap p.formbuttonrow1{
+	background: #F9F9F9 !important;
+	border: 0;
+	border-top: 1px solid #CCC;
+}
+
+.bar,
+.barb,
+.barc{
+	background: #EFEFDE;
+	border: 1px solid #FFF;
+}
+
+.barc{
+	border-bottom: 0;
+}
+
+.bar p,
+.barb p,
+.barc p{
+	background: transparent;
+	border: 0;
+	color: #222;
+	font-size: 11px;
+	margin: 0;
+	padding: 5px;
+	text-align: left;
+}
+
+.barb p{
+	text-align: right;
+}
+
+.bar p.over,
+.bar p.overs,
+.barc p.over,
+.barc p.overs{
+	float: right;
+}
+
+.barb p.over,
+.barb p.overs{
+	float: left;
+}
+
+.bar p.overs,
+.barb p.overs,
+.barc p.overs{
+	position: relative;
+	top: 5px;
+}
+
+.catend{
+	background: #B1B183;
+	color: #000;
+	font-size: 1px;
+	height: 5px;
+}
+
+.newslink{
+	background: #F8F8EF;
+	border: 1px solid #DFDFC2;
+	margin: 0;
+	width: 100%;
+}
+
+.newslink td{
+	color: #222;
+	font-size: 10px;
+	padding: 5px 5px 5px 10px;
+}
+
+.newslink span{
+	background: transparent;
+	color: #666607;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.newslink input{
+	background: #FFF;
+	border: 1px solid #999;
+	color: #676707;
+	font-size: 10px;
+	padding: 3px;
+	vertical-align: middle;
+	width: auto;
+}
+
+.newslink input.button{
+	background: transparent;
+	border: 0;
+	color: #656507;
+	vertical-align: middle;
+}
+
+.fieldwrap{
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+	text-align: left;
+}
+
+.fieldwrap h4{
+	background: #EEE;
+	border: 1px solid #CCC;
+	border-left: 0;
+	border-right: 0;
+	color: #444; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap {
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	border-top: 0;
+	margin: 5px;
+	padding: 0;
+}
+
+
+.errorwrap h4 {
+	background: #E3C0C0;
+	border: 1px solid #992A2A;
+	border-left: 0;
+	border-right: 0;
+	color: #992A2A; 
+	font-size: 12px;
+	font-weight: bold; 
+	margin: 0;
+	padding: 5px;
+}
+
+.errorwrap p {
+	background: transparent;
+	border: 0;
+	color: #992A2A;
+	margin: 0;
+	padding: 8px;
+}
+
+
+.ruleswrap{
+	background: #F2DDDD;
+	border: 1px solid #992A2A;
+	color: #992A2A; 
+	margin: 5px 0 5px 0;
+	padding: 5px;
+}
+
+#redirectwrap{
+	background: #F9F9EF;
+	border: 1px solid #DFDFC2;
+	margin: 200px auto 0 auto;
+	text-align: left;
+	width: 500px;
+}
+
+#redirectwrap h4{
+	background: #EAEAD1;
+	border-bottom: 1px solid #DFDFC2;
+	color: #6B6B39;
+	font-size: 14px;
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p{
+	margin: 0;
+	padding: 5px;
+}
+
+#redirectwrap p.redirectfoot{
+	background: #F3F3E2;
+	border-top: 1px solid #DFDFC2;
+	text-align: center;
+}
+
+
+#gfooter{
+	background: #B1B183;
+	margin: 5px 0 5px 0;
+	padding: 0;
+	width: 100%;
+}
+
+#gfooter td{
+	color: #FFF;
+	font-size: 10px;
+	padding: 4px;
+}
+
+#gfooter a:link,
+#gfooter a:visited{
+	color: #FFF;
+}
+
+#logostrip{ 
+/* background: #3860BB url(style_images/bg/tile_back.gif);*/
+ border: 1px solid #FFF;
+/* height: 68px;*/
+ margin: 0;
+ padding: 0;
+}
+
+#logographic{
+	background: transparent url(style_images/bg/logo4.gif) no-repeat left;
+	height: 68px;
+	margin: 0;
+	padding: 0;
+}
+
+#submenu{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border: 1px solid #FFF;
+	border-top: 0;
+	color: #6B6B39; 
+	margin: 0; 
+}
+
+#userlinks,
+#userlinksguest{ 
+	background: #F9F9F0;
+	border: 1px solid #DFDFC2;
+	margin: 5px 0 5px 0;
+	padding: 0 5px 0 5px;
+}
+
+#userlinksguest{ 
+	background: #F4E7EA;
+	border: 1px solid #986265;
+}
+
+#submenu p,
+#userlinks p,
+#userlinksguest p{
+	background: transparent !important;
+	border: 0 !important;
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0 !important;
+	padding: 7px 0 7px 0; 
+	text-align: right;
+}
+
+#userlinks p,
+#userlinksguest p{
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+#submenu p.home,
+#userlinks p.home,
+#userlinksguest p.home{
+	float: left;
+}
+
+#userlinksguest p.pcen{
+	text-align: center;
+}
+
+#submenu a:link, 
+#submenu  a:visited{ 
+	background: transparent; 
+	color: #6B6B39; 
+	padding: 0 6px 0 6px;
+	text-decoration: none;
+}
+
+#submenu a:hover, 
+#submenu a:active{
+	background: transparent; 
+	color: #B5B552; 
+}
+
+#navstrip{ 
+	background: transparent;
+	color: #999;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 14px 0px 8px 0px; 
+}
+
+#navstrip a:link, 
+#navstrip  a:visited{ 
+	background: transparent; 
+	color: #222; 
+	text-decoration: none;
+}
+
+#navstrip a:hover, 
+#navstrip a:active{
+	background: transparent; 
+	color: #B5B552; 
+}
+
+.toplinks{
+	background: transparent;
+	color: #000;
+	margin: 0;
+	padding: 0 0 5px 0;
+	text-align: right;
+}
+
+.toplinks span{
+	background: #F8F8EF;
+	border: 1px solid #DFDFC2;
+	border-bottom: 0;
+	color: #000;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 0 10px 0 0;
+	padding: 5px;
+}
+
+.copyright{ 
+	background: #EEE;
+	font-size: 11px; 
+	margin: 0 0 5px 0;
+	padding: 8px;
+}
+
+/* 
+ * ========================================
+ * print page styles 
+ * ========================================
+ */
+
+#print{
+	margin: 20px auto 20px auto;
+	padding: 0;
+	text-align: left;
+	width: 85%;
+}
+
+#print h1,
+#print h2,
+#print h3,
+#print h4,
+#print p{
+	color: #606000;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	padding: 8px;
+}
+
+#print h2,
+#print h3,
+#print p{
+	border-bottom: 1px solid #999;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#print h3{
+	background: #F5F5F5;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+#print h4{
+	background: #F9F9F9;
+	font-size: 11px;
+}
+
+#print p{
+	margin: 0 0 5px 0;
+	padding: 10px;
+}
+
+#print p.printcopy{
+	border: 0;
+	color: #000;
+	text-align: center;
+}
+
+/* ============================================================== */
+/* RTE STYLES
+/* ============================================================== */
+
+.rteimage {
+	/*background: #D3D3D3;*/
+	/*border: 1px outset transparent*/;
+	cursor: pointer;
+	cursor: hand;
+	padding:1px;
+}
+
+.rteImageRaised {
+	/*background: #D3D3D3;*/
+	border: 1px outset;
+	cursor: pointer;
+	cursor: hand;
+	padding:0px;
+}
+
+.rteImageLowered {
+	/*background: #D3D3D3;*/
+	border: 1px inset;
+	cursor: pointer;
+	cursor: hand;
+	padding:0px;
+}
+
+.rteimage:hover {
+	background: #EBEBEB;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.rteVertSep {
+	margin: 0 4px 0 4px;
+}
+
+.rteBack {
+	background: #D3D3D3;
+	border: 1px outset;
+	letter-spacing: 0;
+	padding: 2px;
+}
+
+/* used in ips_rte.js - do not remove */
+.rtebottombutton
+{
+	font-size:10px;
+	border:1px solid #777;
+	border-top:0px;
+	padding:3px;
+	margin:0px;
+	background-color: #EBEBEB;
+}
+
+/* used in ips_rte.js - do not remove */
+.rtebottombuttonon
+{
+	font-size:10px;
+	border:1px solid #777;
+	border-top:0px;
+	padding:3px;
+	margin:0px;
+	background-color: #D3D3D3;
+}
+
+.rtebuttonbar1 {
+	/*background: #D3D3D3;*/
+	background-image: url(style_images/bg/folder_rte_images/rte_tile.gif);
+	border: 1px solid gray;
+	border-bottom:0px;
+	letter-spacing: 0;
+	padding: 2px;
+	height:26px;
+}
+
+.rtebuttonbar2 {
+	/*background: #D3D3D3;*/
+	background-image: url(style_images/bg/folder_rte_images/rte_tile.gif);
+	border: 1px solid gray;
+	border-top:1px solid gray;
+	letter-spacing: 0;
+	padding: 2px;
+	height:26px;
+}
+
+.rtebuttonbar1 tbody tr td,
+.rtebuttonbar1 tr td,
+.rtebuttonbar2 tbody tr td,
+.rtebuttonbar2 tr td,
+.rteBack tbody tr td,
+.rteBack tr td
+{
+	/*background: #D3D3D3;*/
+	padding: 0;
+}
+
+.rteDiv {
+	display: block;
+	position: relative;
+	padding:0px;
+	margin:0px;
+}
+
+.rteiframe
+{
+	border:1px solid #777;
+	background-color:#FFF;
+}
+
+.rteselectbox
+{
+	font-size:11px;
+}
+
+
+.dny-edit-title
+{
+	border:0px;
+	padding:3px;
+	margin:0px;
+	background: #EBEBD0; 
+	color: #6B6B39; 
+}
+
+
+/* ======================================== */
+/* TABS
+/* ======================================== */
+
+.tabon
+{
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #999;
+	background-color:#FFF;
+	padding:8px;
+	padding-bottom:9px;
+	font-size:10px;
+	float:left;
+	width:auto;
+	margin-top:3px;
+}
+
+.taboff
+{
+	border-top: 1px solid #777;
+	border-left: 1px solid #777;
+	border-right: 1px solid #777;
+	background-color: #D9D9B5;
+	color: #333;
+	padding: 8px;
+	font-size:10px;
+	float: left;
+	width: auto;
+	margin-top:3px;
+}
+
+.tabon a:link, 
+.tabon a:visited, 
+.tabon a:active
+{
+	text-decoration:none;
+	color: #000;
+}
+
+.taboff a:link, 
+.taboff a:visited, 
+.taboff a:active
+{
+	text-decoration:none;
+	color: #333;
+}
+
+.mya-back
+{
+	background: #656507;
+	margin:1px;
+}
+
+.mya-content
+{
+	background: #FFF;
+	padding:8px;
+	margin:1px;
+	border: 1px solid #777;
+}
+
+/* -------------------------------- */
+/* Create PM box defaults           */
+/* -------------------------------- */
+
+.iframeshim
+{
+	position:absolute;
+	display:none;
+	background: #FFF;
+	filter:alpha(opacity=0);
+	border:0px;
+	width:auto;
+	height:auto;
+}
+
+
+
+/* -------------------------------- */
+/* Experimental                     */
+/* -------------------------------- */
+
+.popupmenu
+{
+   background: #F9F9F0;
+   border: 1px solid #6B6B39;
+   text-align:left;
+   font-size:10px;
+   white-space:nowrap;
+   /*padding:3px 5px 3px 3px;*/
+   /*width:300px;*/
+}
+
+.popupmenu-item
+{
+	padding: 5px;
+	/*margin-top:4px;*/
+	white-space: nowrap;
+	border-bottom: 1px solid #DFDFC2;
+}
+
+.popupmenu-item-last
+{
+	padding: 5px;
+	/*margin-top:4px;*/
+	white-space: nowrap;
+}
+
+.popmenubutton
+{
+	width:120px;
+	white-space:nowrap;
+	background-color: #DFDFC2;
+	border:1px solid #6B6B39;
+	color: #6B6B39;
+	font-weight:bold;
+	float:right;
+	height:18px;
+	text-align:center;
+	margin:0px;
+	font-size:11px;
+	padding:3px;
+}
+
+
+.popmenubutton a:link, 
+.popmenubutton a:visited,
+.popupmenu-item a:link, 
+.popupmenu-item a:visited,
+.popupmenu-item-last a:link, 
+.popupmenu-item-last a:visited
+{ 
+	color: #6B6B39; 
+	text-decoration: none;
+}
+
+.popmenubutton a:hover, 
+.popupmenu-item a:hover, 
+.popupmenu-item-last a:hover
+{ 
+	color: #B5B552; 
+	text-decoration: none;
+}
+
+.popupmenu-category
+{ 
+	background: transparent url(style_images/bg/tile_sub.gif);
+	border-top: 1px solid #B5B552;
+	border-bottom: 1px solid #B5B552;
+	color: #6B6B39; 
+	font-size: 10px;
+	font-weight: bold; 
+	letter-spacing: 1px;
+	margin: 0; 
+	padding: 5px; 
+}
+
+summary {
+	font-weight: bold;
+	outline: none;
+}
+.yt
+{
+	background-color: #ffffff;
+	border: 2px solid #f0f0f0;
+	border-radius: 8px;
+	font-size: 85%;
+	padding: 3px 5px;
+	vertical-align: top;
+	color: #602020;
+	outline: none;
+}
+.yt iframe { padding: 3px; }
+.yt img	{ vertical-align: bottom; }
+#ytplayer	{ width: 600px; height: 400px; }
+
+</style> 
+ 
+</head> 
+<body>
+<div id="ipbwrapper">
+<!--ipb.javascript.start-->
+<script type="text/javascript">
+ //<![CDATA[
+ var ipb_var_st            = "";
+ var ipb_lang_tpl_q1       = "Введите номер страницы: от 1 до";
+ var ipb_var_s             = "";
+ var ipb_var_phpext        = "php";
+ var ipb_var_base_url      = "https://www.braingames.ru/forum/index.php?s=&";
+ var ipb_var_image_url     = "style_images/bg";
+ var ipb_input_f           = "";
+ var ipb_input_t           = "";
+ var ipb_input_p           = "";
+ var ipb_var_cookieid      = "";
+ var ipb_var_cookie_domain = "";
+ var ipb_var_cookie_path   = "/";
+ var ipb_md5_check         = "880ea6a14ea49e853634fbdc5015a024";
+ var ipb_new_msgs          = 0;
+ var use_enhanced_js       = 0;
+ var use_charset       = "windows-1251";
+var ipb_myass_chars_lang = "Недостаточно символов";
+ //]]>
+</script>
+<script type="text/javascript" src='jscripts/ipb_global.js'></script>
+<script type="text/javascript" src='jscripts/ips_menu.js'></script>
+<script type="text/javascript" src='style_images/bg/folder_js_skin/ips_menu_html.js'></script>
+<!--ipb.javascript.end-->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(11243257, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/11243257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->    
+<div class="borderwrap">
+	<div id="logostrip"><table border=0 width=100%><tr><td><a href='https://www.braingames.ru/forum/index.php?'><!--ipb.logo.start--><img src='style_images/logo.gif' style='vertical-align:top' alt='IPB' border='0' /><!--ipb.logo.end--></a></td><td align=right valign=top>
+<!-- Yandex.RTB R-A-270597-1 -->
+<div id="yandex_rtb_R-A-270597-1"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-270597-1",
+                renderTo: "yandex_rtb_R-A-270597-1",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+       
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! здесь был гугл -->
+
+
+</td></tr></table>
+</div>
+	<div id="submenu">
+		<p class="home"><!--ipb.leftlinks.start--><a href="../index.html">Игры разума</a><!--IBF.RULES--><!--ipb.leftlinks.end--></p>
+		<p><!--ipb.rightlinks.start-->	<a href="https://www.braingames.ru/forum/index.php?act=Help">Помощь</a><a href="https://www.braingames.ru/forum/index.php?act=Search&amp;f=">Поиск</a><a href="https://www.braingames.ru/forum/index.php?act=Members">Пользователи</a><a href="https://www.braingames.ru/forum/index.php?act=calendar">Календарь</a>
+		<!--ipb.rightlinks.end--></p>
+	</div>
+</div><!-- / End board header -->
+<div id="userlinksguest">
+	<p class="pcen"><b>Добро пожаловать, гость</b> ( <a href="https://www.braingames.ru/forum/index.php?act=Login&amp;CODE=00">Вход</a> | <a href="https://www.braingames.ru/forum/index.php?act=Reg&amp;CODE=00">Регистрация</a> )
+
+	</p>
+</div>
+<div id="navstrip"><img src='style_images/bg/nav.gif' border='0'  alt='&gt;' />&nbsp;<a href='https://www.braingames.ru/forum/index.php?act=idx'>Форум Игры разума [braingames]</a>&nbsp;>&nbsp;Просмотр профиля</div>
+<!--IBF.NEWPMBOX-->
+<script type="text/javascript" src="jscripts/ipb_profile.js"></script>
+<div class="borderwrap">
+	<div class="maintitle" style='height:24px'>
+	 <div align='right'>
+	   <div class='popmenubutton' id='profile-options'><a href='index.php@showuser=26256.html#profileoptions'>Опции профиля</a> <img src='style_images/bg/menu_action_down.gif' alt='V' title='Открыть меню' border='0' /></div>
+	 </div>
+	 <div style='float:left'>Просмотр профиля: Sheogorath</div>
+	</div>
+	<table class='ipbtable' cellspacing="1">
+		<tr>
+			<td width="1%" nowrap="nowrap" valign="top" class="row1">
+				<div id="profilename">Sheogorath</div>
+				<br />
+				<div></div>
+				<div>Новичок</div>
+				<div><img src='style_images/bg/pip.gif' border='0'  alt='*' /></div>
+				<br />
+				<div class="postdetails">
+					Группа пользователя: Пользователи Braingames<br />
+					Регистрация: 26.6.2011
+				</div>
+				<!--{WARN_LEVEL}-->
+			</td>
+			<td width="1%" align="right" class="row1"></td>
+		</tr>
+	</table>
+</div>
+<br />
+<table class='ipbtable' cellspacing="1">
+	<tr>
+		<!-- STATS -->
+		<td width="50%" valign="top" style="padding-left: 0;">
+			<table cellspacing="1" width='100%' class="borderwrap">
+				<tr>
+					<td align="center" colspan="2" class="maintitle">Статистика активности</td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Часовой пояс пользователя</b></td>
+					<td class="row1">26.7.2021, 18:33</td>
+				</tr>
+				<tr>
+					<td class="row2" width="30%" valign="top"><b>Всего полезных сообщений</b></td>
+					<td width="70%" class="row1"><b>25</b>
+					<br />( 0 сообщений в день / 0.02% всех сообщений форума )
+					</td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Наибольшая активность в</b></td>
+					<td class="row1"><a href="https://www.braingames.ru/forum/index.php?act=SF&amp;f=23"><b>Разминка для мозгов</b></a><br />( 11 сообщений / 44% от всех сообщений этого пользователя )</td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Последнее посещение</b></td>
+					<td class="row1">Сегодня, 18:26</td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Статус</b></td>
+					<td class="row1"><img src='style_images/bg/p_online.gif' border='0'  alt='Пользователь в онлайне!' /> (Находится в форуме Игроки о себе)</td>
+				</tr>
+			</table>
+		</td>
+		<!-- Communication -->
+		<td width="50%" valign="top" style="padding-right: 0;">
+			<table cellspacing="1" width='100%' class="borderwrap">
+				<tr>
+					<td align="center" colspan="2" class="maintitle">Связь</td>
+				</tr>
+				<tr>
+					<td width="1%" class="row1"><img src='style_images/bg/profile_aim.gif' border='0'  alt='AIM' /></td>
+					<td width="99%" class="row2"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td width="1%" class="row1"><img src='style_images/bg/profile_yahoo.gif' border='0'  alt='Yahoo' /></td>
+					<td width="99%" class="row2"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td width="1%" class="row1"><img src='style_images/bg/profile_icq.gif' border='0'  alt='ICQ' /></td>
+					<td width="99%" class="row2"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td width="1%" class="row1"><img src='style_images/bg/profile_msn.gif' border='0'  alt='MSN' /></td>
+					<td width="99%" class="row2"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td width="1%" class="row1"><img src='style_images/bg/icon_msg_nonew.gif' border='0'  alt='Контакт' /></td>
+					<td width="99%" class="row2"><a href="https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=4&amp;MID=26256">Отправить личное письмо</a></td>
+				</tr>
+				<tr>
+					<td width="1%" class="row1"><img src='style_images/bg/icon_msg_nonew.gif' border='0'  alt='Контакт' /></td>
+					<td width="99%" class="row2"><i>Приват</i></td>
+				</tr>
+			</table>
+		</td>
+		<!-- END CONTENT ROW 1 -->
+		<!-- information -->
+	</tr>
+	<tr>
+		<td width="50%" valign="top" style="padding-left: 0;">
+			<table cellspacing="1" width='100%' class="borderwrap">
+				<tr>
+					<td align="center" colspan="2" class="maintitle">Информация</td>
+				</tr>				<tr>
+					<td class="row2" width="30%" valign="top"><b>Сайт</b></td>
+					<td width="70%" class="row1"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Дата рождения</b></td>
+					<td class="row1"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Место жительства</b></td>
+					<td class="row1"><i>Нет данных</i></td>
+				</tr>
+				<tr>
+					<td class="row2" valign="top"><b>Увлечения</b></td>
+					<td class="row1"><i>Нет данных</i></td>
+				</tr>
+			</table>
+		</td>
+		<!-- Profile -->
+		<td width="50%" valign="top" style="padding-right: 0;">
+			<table cellspacing="1" width='100%' class="borderwrap">
+				<tr>
+					<td align="center" colspan="2" class="maintitle">Дополнительная информация</td>
+				</tr>
+				<tr>
+	<td class="row2" valign="top"><b>ФИО</b></td>
+	<td class="row1"><i>Нет данных</i></td>
+</tr>
+			</table>
+		</td>
+	</tr>
+</table><!--MEM OPTIONS-->
+<script type="text/javascript">
+//<![CDATA[
+  var dname_title = "История смены имени";
+  menu_build_menu(
+  "profile-options",
+  new Array(
+  			 '<img src="style_images/bg/profile_item.gif" border="0" />' + " <a href='https://www.braingames.ru/forum/index.php?act=Search&amp;CODE=getalluser&amp;mid=26256'>Найти сообщения пользователя</a>",
+  			 '<img src="style_images/bg/profile_item.gif" border="0" />' + " <a href='https://www.braingames.ru/forum/index.php?act=Search&amp;CODE=gettopicsuser&amp;mid=26256'>Найти темы пользователя</a>",
+  			 '<img src="style_images/bg/profile_item.gif" border="0" />' + " <a href='https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=01&amp;stext=Sheogorath'>Найти всю переписку в ЛС</a>",'<img src="style_images/bg/profile_item.gif" border="0" />' + " <a href='index.php@showuser=26256.html#' onclick='return profile_dname_history(26256)'>История смены имени</a>",			'<img src="style_images/bg/profile_item.gif" border="0" />' + " <a href='https://www.braingames.ru/forum/index.php?act=Msg&amp;CODE=02&amp;MID=26256'>Добавить в контакты</a>"
+		) );
+//]]>
+</script><!--TASK--><img src='index.php@act=task' border='0' height='1' width='1' alt='' /><!--ETASK-->
+<table cellspacing="0" id="gfooter">
+	<tr>
+		<td width="45%"><img id="rsssyndication" src='style_images/bg/rss.png' border='0' alt='-' class='ipd' />
+<script type="text/javascript">
+//<![CDATA[
+  menu_build_menu(
+  "rsssyndication",
+  new Array( "<a href='https://braingames.ru/forum/index.php?act=rssout&amp;id=1' style='color:black'>BG New posts</a>"
+           ) );
+//]]>
+</script> </td>
+		<td width="10%" align="center" nowrap="nowrap"><a href="https://www.braingames.ru/forum/lofiversion/index.php"><b>Упрощённая версия</b></a></td>
+		<td width="45%" align="right" nowrap="nowrap">Сейчас: 26.7.2021, 18:33</td>
+	</tr>
+</table>
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=11243257&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/11243257/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="11243257" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<script type='text/javascript'>
+//<![CDATA[
+menu_do_global_init();//]]>
+</script>
+ 
+<!-- Copyright Information -->
+        				  <div align='center' class='copyright'>
+        				  	Invision Power Board
+        				  	v2.1.4 &copy; 2021 &nbsp;IPS, Inc.
+        				  </div>
+		<!-- / Copyright -->
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"674eaf4f3a5019e3","version":"2021.7.0","r":1,"token":"786201510e0549d4be4b6cb300bdbbeb","si":10}'></script>
+</body> 
+</html>

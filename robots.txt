@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow: /test/
+
+User-Agent: Yandex
+Disallow: /test/
+Host: https://www.braingames.ru
