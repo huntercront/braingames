@@ -470,6 +470,8 @@ a.common-link:hover {
 
 .rating-inprogress tbody td {
     filter: blur(4px);
+    user-select: none;
+    pointer-events: none;
 }
 
 .btn.close-message {
