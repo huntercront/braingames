@@ -673,16 +673,18 @@ a.common-link:hover {
 
 .m-mark {
     position: absolute;
-    height: 5px;
-    top: -2px;
+    height: 7px;
+    top: -3px;
+    left: 4px;
     border-left: 2px solid #FEE600;
 }
 
 .h-mark {
     position: absolute;
     height: 5px;
-    top: -2px;
+    top: -1.5px;
     border-left: 1px solid #9F9F9F;
+    left: 2px;
 }
 
 .time-line {
