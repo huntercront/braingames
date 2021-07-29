@@ -12,7 +12,11 @@
 
 .message {
     padding: 0.75em 3em;
-    background: #635B39;
+    background: #2B2D33;
+}
+
+.message-content {
+    text-decoration: none;
 }
 
 .tournament-main section+section {
@@ -102,7 +106,8 @@
     margin-bottom: 0.25em;
 }
 
-.bold {
+.bold,
+p.bold {
     font-weight: bold;
 }
 
@@ -119,7 +124,7 @@
 }
 
 .tournament-head {
-    background: #918657;
+    background: #F3F3F3;
 }
 
 .tournament-wraper {
@@ -163,12 +168,16 @@ button.btn-sm,
 }
 
 button.button-sub {
-    background: #918657;
+    background: #F3F3F3;
+    color: #000000;
 }
 
-button.button-sub:hover,
+button.button-sub:hover {
+    background: #e0e0e0;
+}
+
 .btn.close-message:hover {
-    background: #776e47;
+    background: #ccb800;
 }
 
 input.tournament-input {
@@ -214,7 +223,7 @@ input.inline-input {
 }
 
 .tournament-sub {
-    background: #524C31;
+    background: #A6A6A6;
     padding: 1.5em 3em 4em 3em;
 }
 
@@ -253,8 +262,8 @@ input.inline-input {
 }
 
 .bg-icon {
-    border-radius: 4em;
-    background: #918657;
+    border-radius: 14px;
+    background: #FEE600;
 }
 
 .icon-m {
@@ -263,6 +272,13 @@ input.inline-input {
     flex: 0 0 3.64em;
     user-select: none;
     margin-right: 1.25em;
+}
+
+.icon-xl {
+    width: 4.75em;
+    height: 4.75em;
+    flex: 0 0 4.75em;
+    margin-right: 1em;
 }
 
 .icon-s img,
@@ -290,6 +306,8 @@ input.inline-input {
 
 .tournament-icon {
     vertical-align: top;
+    width: 25px;
+    height: 25px;
 }
 
 .tournament-icon img {
@@ -476,7 +494,7 @@ a.common-link:hover {
 
 .btn.close-message {
     padding: 0.45em;
-    background: #918657;
+    background: #FEE600;
 }
 
 .tournament-archive .title-xl {
@@ -530,4 +548,173 @@ a.common-link:hover {
 .preloader-inner {
     padding: 100px 0;
     background: #fafafa;
+}
+
+.c-12 {
+    width: 100%;
+    max-width: calc(100% / 17 * 12);
+    flex: 0 0 calc(100% / 17 * 12);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-1 {
+    width: 100%;
+    max-width: calc(100% / 17 * 1);
+    flex: 0 0 calc(100% / 17 * 1);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-2 {
+    width: 100%;
+    max-width: calc(100% / 17 * 2);
+    flex: 0 0 calc(100% / 17 * 2);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-3 {
+    width: 100%;
+    max-width: calc(100% / 17 * 3);
+    flex: 0 0 calc(100% / 17 * 3);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-4 {
+    width: 100%;
+    max-width: calc(100% / 17 * 4);
+    flex: 0 0 calc(100% / 17 * 4);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-8 {
+    width: 100%;
+    max-width: calc(100% / 17 * 8);
+    flex: 0 0 calc(100% / 17 * 8);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-5 {
+    width: 100%;
+    max-width: calc(100% / 17 * 5);
+    flex: 0 0 calc(100% / 17 * 5);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-6 {
+    width: 100%;
+    max-width: calc(100% / 17 * 6);
+    flex: 0 0 calc(100% / 17 * 6);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.c-10 {
+    width: 100%;
+    max-width: calc(100% / 17 * 10);
+    flex: 0 0 calc(100% / 17 * 10);
+    box-sizing: border-box;
+    padding: 0 3px;
+    position: relative;
+}
+
+.row-c {
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: -3px;
+    margin-right: -3px;
+    position: relative;
+}
+
+.task-name {
+    background: #F5F5F5;
+    color: #8C8C8C;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.task-name.active-task {
+    background: #FEE600;
+    color: #000000;
+}
+
+.empty-name {
+    padding-left: 5px;
+    height: 20px;
+    box-sizing: border-box;
+}
+
+.c-date {
+    color: #BABABA;
+    font-size: 10px;
+}
+
+.c-line {
+    border: 0.2px dashed #dfdfdf;
+    position: absolute;
+    width: calc(100% - 6px);
+    top: 0;
+    left: 3px;
+}
+
+.m-mark {
+    position: absolute;
+    height: 5px;
+    top: -2px;
+    border-left: 2px solid #FEE600;
+}
+
+.h-mark {
+    position: absolute;
+    height: 5px;
+    top: -2px;
+    border-left: 1px solid #9F9F9F;
+}
+
+.time-line {
+    margin-top: 10px;
+}
+
+.c-dot {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    background: #FEE600;
+}
+
+.time-line .row-c {
+    margin-bottom: 8px;
+}
+
+.active-period {
+    position: absolute;
+    border-bottom: 2px solid #FEE600;
+    top: 0;
+    left: 3px;
+    width: 100%;
+}
+
+.task-group {
+    margin-top: 10px;
+}
+
+.task-group .task-name+.task-name {
+    margin-top: 5px;
 }
